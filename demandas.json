@@ -1,0 +1,671 @@
+{
+  "versao": 1,
+  "corte": "2026-07-01",
+  "atualizado_em": "2026-07-29",
+  "clusters": [
+    {
+      "id": "contas",
+      "nome": "Contas & Varejos",
+      "hint": "ativação, treinamento, PDV, rotina de conta"
+    },
+    {
+      "id": "risco",
+      "nome": "Risco & Cobrança",
+      "hint": "FPD, inadimplência, política de crédito"
+    },
+    {
+      "id": "time",
+      "nome": "Time & Gestão",
+      "hint": "metas, cobertura, férias, desenvolvimento"
+    },
+    {
+      "id": "processo",
+      "nome": "Processo & Dados",
+      "hint": "playbook, planilhas, cadastros, dashboards"
+    },
+    {
+      "id": "contrato",
+      "nome": "Contratos & $",
+      "hint": "escrow, rebate, aporte, assinaturas"
+    },
+    {
+      "id": "novos",
+      "nome": "Novos Negócios",
+      "hint": "pilotos, modelos de atuação, parcerias"
+    },
+    {
+      "id": "admin",
+      "nome": "Admin & Automação",
+      "hint": "viagens, acessos, Granola/Claude/Drive"
+    }
+  ],
+  "demandas": [
+    {
+      "id": "d00",
+      "titulo": "Ligar para Michelle (Polishop) e alinhar material de PDV, campanha e visita às lojas",
+      "cluster": "contas",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "2026-07-30",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Polishop 27/jul"
+    },
+    {
+      "id": "d01",
+      "titulo": "Confirmar lojas modelo da Polishop e providenciar notebook/celular para a Priscila",
+      "cluster": "contas",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Polishop 27/jul"
+    },
+    {
+      "id": "d02",
+      "titulo": "Confirmar arte do QR do app no carnê do Baianão (checar no grupo)",
+      "cluster": "contas",
+      "conta": "Baianão",
+      "responsavel": "Luana",
+      "prazo": "2026-07-30",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Comunicado gerentes 23/jul"
+    },
+    {
+      "id": "d03",
+      "titulo": "Criar o grupo do piloto com as 12 lojas do Baianão",
+      "cluster": "contas",
+      "conta": "Baianão",
+      "responsavel": "Antenor (Baianão)",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Comunicado gerentes 23/jul"
+    },
+    {
+      "id": "d04",
+      "titulo": "Clusterização Baianão: marcar reunião com gerentes dos estados com pior desempenho",
+      "cluster": "contas",
+      "conta": "Baianão",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Alinhamento Baianão 21/jul"
+    },
+    {
+      "id": "d05",
+      "titulo": "Comunicar oficialmente a meta de agosto do Big Lar (~R$44M) na reunião de operações",
+      "cluster": "contas",
+      "conta": "Big Lar",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Big Lar Semanal 28/jul"
+    },
+    {
+      "id": "d06",
+      "titulo": "Antecipar reunião com a Série para terça 4/ago",
+      "cluster": "contas",
+      "conta": "Big Lar",
+      "responsavel": "Luiza Falcone",
+      "prazo": "2026-08-04",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Big Lar Semanal 28/jul"
+    },
+    {
+      "id": "d07",
+      "titulo": "Incluir a Luiza na conversa de acesso ao dashboard com o Alexei",
+      "cluster": "contas",
+      "conta": "Big Lar",
+      "responsavel": "Marina Lima",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Big Lar Semanal 28/jul"
+    },
+    {
+      "id": "d08",
+      "titulo": "Compartilhar o link atualizado da planilha de metas no grupo",
+      "cluster": "contas",
+      "conta": "Big Lar",
+      "responsavel": "Marina Lima",
+      "prazo": "2026-07-30",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Big Lar Semanal 28/jul"
+    },
+    {
+      "id": "d09",
+      "titulo": "Avisar o grupo caso o Big Lar peça verba para as ações de aniversário",
+      "cluster": "contas",
+      "conta": "Big Lar",
+      "responsavel": "Luana",
+      "prazo": null,
+      "urgente": false,
+      "status": "aguardando",
+      "origem": "Big Lar Semanal 28/jul"
+    },
+    {
+      "id": "d10",
+      "titulo": "Acionar o time da Jamile para o treinamento de smartphones (50 lojas)",
+      "cluster": "contas",
+      "conta": "Casa&Vídeo",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Inadimplência 28/jul"
+    },
+    {
+      "id": "d11",
+      "titulo": "Decidir expansão de multicategoria: segurar agosto e retomar na 1ª quinzena de setembro",
+      "cluster": "contas",
+      "conta": "Casa&Vídeo",
+      "responsavel": "Luana",
+      "prazo": "2026-08-28",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Priorização Agosto 20/jul"
+    },
+    {
+      "id": "d12",
+      "titulo": "Visita pontual em Minas (destravar quando a Carol voltar de férias)",
+      "cluster": "contas",
+      "conta": "Casa&Vídeo",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Priorização Agosto 20/jul"
+    },
+    {
+      "id": "d13",
+      "titulo": "Decidir se o kick-off com o varejo fica na quarta (29/jul) ou segunda (3/ago)",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Luana",
+      "prazo": "2026-07-29",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d14",
+      "titulo": "Confirmar dados de incentivo e concorrência presencialmente",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Herbert Alencar",
+      "prazo": "2026-07-28",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d15",
+      "titulo": "Solicitar cadastro dos operadores das 4 lojas",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Amanda / Herbert",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d16",
+      "titulo": "Enviar fotos do PDV para o marketing",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Herbert Alencar",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d17",
+      "titulo": "Cadastrar as lojas adicionais para completar 10 e marcar o treinamento online",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d18",
+      "titulo": "Visita e cliente oculto em Fortaleza",
+      "cluster": "contas",
+      "conta": "Top Móveis",
+      "responsavel": "Nicholas Agudo",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d19",
+      "titulo": "Acionar o Gustavo Monteiro para a Tainá assinar o contrato",
+      "cluster": "contas",
+      "conta": "Boticário",
+      "responsavel": "Luana",
+      "prazo": "2026-07-29",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d20",
+      "titulo": "Agendar retreinamento com o Rafael (consultor) na semana do retorno dele",
+      "cluster": "contas",
+      "conta": "Boticário",
+      "responsavel": "Luana",
+      "prazo": "2026-08-10",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d21",
+      "titulo": "Alinhar com a Camila o que fazer na convenção de 11 de agosto",
+      "cluster": "contas",
+      "conta": "Boticário",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d22",
+      "titulo": "Pegar o diagnóstico de CPFs desengajados para testar o modelo de promotor com o Lucas",
+      "cluster": "contas",
+      "conta": "Boticário",
+      "responsavel": "Luana",
+      "prazo": "2026-08-14",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d23",
+      "titulo": "Acionar o Rodrigo (crédito) para revisar a política de aprovação por faixa de ticket",
+      "cluster": "risco",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "2026-07-30",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Polishop 27/jul"
+    },
+    {
+      "id": "d24",
+      "titulo": "Investigar contratos suspeitos da loja MEI do Baianão (FPD alto, possível venda sem garantia)",
+      "cluster": "risco",
+      "conta": "Baianão",
+      "responsavel": "Alexander Magalhães",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Inadimplência 28/jul"
+    },
+    {
+      "id": "d25",
+      "titulo": "Compartilhar a lista de lojas priorizadas por rentabilidade para cobrança",
+      "cluster": "risco",
+      "conta": "Baianão",
+      "responsavel": "Henrique Ianelli",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Inadimplência 28/jul"
+    },
+    {
+      "id": "d26",
+      "titulo": "Compartilhar a análise de FPD elevado (loja do Meia) com o Henrique Padovani",
+      "cluster": "risco",
+      "conta": "Casa&Vídeo",
+      "responsavel": "Alexander Magalhães",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Inadimplência 28/jul"
+    },
+    {
+      "id": "d27",
+      "titulo": "Elaborar proposta de campanha de comissão turbinada para agosto (carteiras com baixa inadimplência)",
+      "cluster": "risco",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano inadimplência IVS 24/jul"
+    },
+    {
+      "id": "d28",
+      "titulo": "Mapear as 5 piores lojas do IVS e agendar reunião com os franqueados",
+      "cluster": "risco",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Plano inadimplência IVS 24/jul"
+    },
+    {
+      "id": "d29",
+      "titulo": "Agendar reunião com os top 5 franqueados de pior inadimplência",
+      "cluster": "risco",
+      "conta": "Boticário",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d30",
+      "titulo": "Régua de cobrança conjunta com IVS: aguardar a Lari definir o que pode ser compartilhado antes de acionar o Henrique",
+      "cluster": "risco",
+      "conta": "Boticário",
+      "responsavel": "Lari (Legal)",
+      "prazo": null,
+      "urgente": false,
+      "status": "aguardando",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d31",
+      "titulo": "Ajustar as metas individuais e enviar para a Caroline antes da apresentação",
+      "cluster": "time",
+      "conta": "Supervisores",
+      "responsavel": "Luana",
+      "prazo": "2026-08-02",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano metas 22/jul"
+    },
+    {
+      "id": "d32",
+      "titulo": "Alinhar a estrutura de metas com o Vini (peso da originação: 25% ou maior)",
+      "cluster": "time",
+      "conta": "Supervisores",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano metas 22/jul"
+    },
+    {
+      "id": "d33",
+      "titulo": "Apresentar as metas ao time em 3/ago, 15h30",
+      "cluster": "time",
+      "conta": "Supervisores",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Plano metas 22/jul"
+    },
+    {
+      "id": "d34",
+      "titulo": "Marcar agenda das 16h às 18h de 5/ago com a Carol (retorno das férias)",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "1:1 Carol 20/jul"
+    },
+    {
+      "id": "d35",
+      "titulo": "Acompanhar o time durante as férias da Carol (foco em Baianão e 10&Cia)",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "1:1 Carol 20/jul"
+    },
+    {
+      "id": "d36",
+      "titulo": "Falar com a Amanda sobre o Livino dar treinamentos para os varejos do pacote principal",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d37",
+      "titulo": "Propor plantão de dúvidas semanal fixo com o Livino para Polishop e Casa&Vídeo",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d38",
+      "titulo": "Alinhar o cancelamento das férias de agosto da Bárbara e a ampliação de outubro para 20 dias",
+      "cluster": "time",
+      "conta": "10&Cia",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano 10&Cia 27/jul"
+    },
+    {
+      "id": "d39",
+      "titulo": "Finalizar a parte quantitativa da planilha (originação YTD, ano passado, mês passado)",
+      "cluster": "processo",
+      "conta": "Playbook CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Playbook CS 24/jul"
+    },
+    {
+      "id": "d40",
+      "titulo": "Conversar com o Ale antes de qualquer mudança na planilha de varejos",
+      "cluster": "processo",
+      "conta": "Playbook CS",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Playbook CS 24/jul"
+    },
+    {
+      "id": "d41",
+      "titulo": "Verificar o histórico da planilha de varejos (Top Móveis x Quero Bahia)",
+      "cluster": "processo",
+      "conta": "Top Móveis",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Top Móveis 27/jul"
+    },
+    {
+      "id": "d42",
+      "titulo": "Verificar a política de nome social no cadastro Ume",
+      "cluster": "processo",
+      "conta": "Baianão",
+      "responsavel": "Pedro Gedeon",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Comunicado gerentes 23/jul"
+    },
+    {
+      "id": "d43",
+      "titulo": "Conversar com a Amanda sobre cadastro de varejos pequenos e automatização",
+      "cluster": "processo",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 27/jul"
+    },
+    {
+      "id": "d44",
+      "titulo": "Confirmar a assinatura da conta escrow com a Ana",
+      "cluster": "contrato",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "2026-07-30",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "IVS Rebate 13/jul"
+    },
+    {
+      "id": "d45",
+      "titulo": "Mapear 2 a 3 opções de banco para a conta escrow (BTG e outros)",
+      "cluster": "contrato",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "2026-07-17",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "IVS Rebate 13/jul"
+    },
+    {
+      "id": "d46",
+      "titulo": "Combinar com o Tony os números e o processo mensal de aporte",
+      "cluster": "contrato",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "IVS Rebate 13/jul"
+    },
+    {
+      "id": "d47",
+      "titulo": "Formatar e compartilhar a pesquisa de modelos de atuação (agência, franquia, sub-representante, promotor) com prós, contras e responsabilidades",
+      "cluster": "novos",
+      "conta": "Modelo Parceiro",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Modelo Atuação Parceiro 28/jul"
+    },
+    {
+      "id": "d48",
+      "titulo": "Criar o projeto e pesquisar modelos de engajamento no varejo",
+      "cluster": "novos",
+      "conta": "Modelo Parceiro",
+      "responsavel": "Luana",
+      "prazo": "2026-08-05",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Modelo Engajamento 24/jul"
+    },
+    {
+      "id": "d49",
+      "titulo": "Definir varejo e praças do projeto piloto (Boticário é candidato forte)",
+      "cluster": "novos",
+      "conta": "Grupo GPS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "GPS 16/jul"
+    },
+    {
+      "id": "d50",
+      "titulo": "Enviar os dados do projeto para a Carol (GPS) depois da definição interna",
+      "cluster": "novos",
+      "conta": "Grupo GPS",
+      "responsavel": "Luana",
+      "prazo": "2026-08-07",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "GPS 16/jul"
+    },
+    {
+      "id": "d51",
+      "titulo": "Desbloquear o cartão corporativo e comprar as passagens da semana 1 (Bárbara viaja em 3/ago)",
+      "cluster": "admin",
+      "conta": "10&Cia",
+      "responsavel": "Luana",
+      "prazo": "2026-07-30",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano 10&Cia 27/jul"
+    },
+    {
+      "id": "d52",
+      "titulo": "Confirmar datas e comprar a passagem para São Paulo (5, 6 e 7/ago)",
+      "cluster": "admin",
+      "conta": "Viagens",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Plano metas 22/jul"
+    },
+    {
+      "id": "d53",
+      "titulo": "Colocar aviso de ausência no e-mail e status de férias no Slack",
+      "cluster": "admin",
+      "conta": "Viagens",
+      "responsavel": "Luana",
+      "prazo": "2026-07-31",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Plano metas 22/jul"
+    },
+    {
+      "id": "d54",
+      "titulo": "Chamar o Henrique para a sessão presencial de automações (segunda)",
+      "cluster": "admin",
+      "conta": "Automações",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Automações Drive 24/jul"
+    },
+    {
+      "id": "d55",
+      "titulo": "Alinhar com a Juliana antes da sessão (contextos e pastas, 15–20 min)",
+      "cluster": "admin",
+      "conta": "Automações",
+      "responsavel": "Luana",
+      "prazo": "2026-08-03",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Automações Drive 24/jul"
+    },
+    {
+      "id": "d56",
+      "titulo": "Resolver a persistência dos checks de to-do entre sessões",
+      "cluster": "admin",
+      "conta": "Automações",
+      "responsavel": "Luana",
+      "prazo": "2026-07-28",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Automações Drive 24/jul"
+    }
+  ]
+}
