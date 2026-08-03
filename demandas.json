@@ -191,7 +191,7 @@
       "responsavel": "Luana",
       "prazo": "2026-07-29",
       "urgente": true,
-      "status": "aberto",
+      "status": "feito",
       "origem": "Top Móveis 27/jul"
     },
     {
@@ -213,7 +213,7 @@
       "responsavel": "Amanda / Herbert",
       "prazo": "2026-07-31",
       "urgente": false,
-      "status": "aberto",
+      "status": "feito",
       "origem": "Top Móveis 27/jul"
     },
     {
@@ -257,7 +257,7 @@
       "responsavel": "Luana",
       "prazo": "2026-07-29",
       "urgente": true,
-      "status": "aberto",
+      "status": "feito",
       "origem": "Weekly CS 27/jul"
     },
     {
