@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Demandas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-k">Painel de Demandas</span>
+      <span class="brand-sub" id="corteInfo"></span>
+    </div>
+    <div class="counters" id="counters" aria-label="Resumo"></div>
+  </header>
+
+  <section class="carne" id="carne" aria-label="Clusters (clique para filtrar)"></section>
+
+  <section class="controls">
+    <input type="search" id="q" class="busca" placeholder="Buscar título, conta, pessoa, origem…" aria-label="Buscar">
+    <select id="conta" class="sel" aria-label="Filtrar por conta"></select>
+
+    <div class="seg" role="group" aria-label="Escopo" id="escopo">
+      <button type="button" data-v="todas" aria-pressed="true">Todas</button>
+      <button type="button" data-v="minhas" aria-pressed="false">Minhas</button>
+      <button type="button" data-v="cobrar" aria-pressed="false">Cobrar</button>
+    </div>
+
+    <div class="seg" role="group" aria-label="Agrupar por" id="agrupar">
+      <button type="button" data-v="cluster" aria-pressed="true">Cluster</button>
+      <button type="button" data-v="conta" aria-pressed="false">Conta</button>
+      <button type="button" data-v="prazo" aria-pressed="false">Prazo</button>
+    </div>
+
+    <div class="spacer"></div>
+
+    <button type="button" class="ghost" id="btnNova">+ Nova</button>
+    <button type="button" class="ghost" id="btnCopiar">Copiar resumo</button>
+    <button type="button" class="ghost" id="btnImportar">Importar</button>
+    <button type="button" class="ghost" id="btnConcluidas">Concluídas</button>
+    <button type="button" class="ghost" id="btnArquivo">Arquivo</button>
+  </section>
+
+  <main id="lista" aria-live="polite"></main>
+
+  <section class="done-wrap" id="doneWrap" hidden>
+    <h2 class="done-h">Concluídas</h2>
+    <div id="doneList"></div>
+  </section>
+
+  <section class="done-wrap arquivo-wrap" id="arqWrap" hidden>
+    <h2 class="done-h">Arquivo</h2>
+    <div id="arqList"></div>
+  </section>
+
+  <dialog id="dlgImportar" class="dlg">
+    <h2>Importar em massa</h2>
+    <p class="dlg-hint">Uma demanda por linha, tolera prefixo <code>- [ ]</code>:</p>
+    <p class="dlg-fmt"><code>cluster | conta | responsável | AAAA-MM-DD | descrição</code></p>
+    <textarea id="impText" rows="9" spellcheck="false" aria-label="Bloco para importar"></textarea>
+    <div class="dlg-actions">
+      <span class="report" id="impReport" role="status"></span>
+      <span class="spacer"></span>
+      <button type="button" class="ghost" id="impFechar">Fechar</button>
+      <button type="button" class="primary" id="impRun">Importar</button>
+    </div>
+  </dialog>
+
+  <dialog id="dlgNova" class="dlg">
+    <h2>Nova demanda</h2>
+    <div class="form-grid">
+      <label>Título<textarea id="nvTitulo" rows="2"></textarea></label>
+      <label>Cluster<select id="nvCluster"></select></label>
+      <label>Conta<input id="nvConta" type="text"></label>
+      <label>Responsável<input id="nvResp" type="text" value="Luana"></label>
+      <label>Prazo<input id="nvPrazo" type="date"></label>
+    </div>
+    <div class="dlg-actions">
+      <span class="report" id="nvReport" role="status"></span>
+      <span class="spacer"></span>
+      <button type="button" class="ghost" id="nvFechar">Cancelar</button>
+      <button type="button" class="primary" id="nvRun">Criar</button>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" hidden role="status"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

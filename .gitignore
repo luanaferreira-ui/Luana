@@ -1,0 +1,11 @@
+.backup/
+*.tmp
+.demandas.*.tmp
+node_modules/
+.DS_Store
+
+# Estado mutável local do painel: só a sua máquina escreve. A semente
+# (demandas.seed.json) é versionada e serve de ponto de partida no 1º boot.
+demandas.json
+# Marcações de quais itens da caixa do radar já foram importados localmente.
+.radar-consumed.json
