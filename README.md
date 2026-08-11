@@ -13,6 +13,29 @@ npm start
 
 Depois abra **http://localhost:4321**. Só isso — não há build nem `npm install`.
 
+No `npm start`, antes de subir o servidor, roda o `sync-radar.js`: ele dá um
+`git pull` e importa as demandas novas que o radar deixou na caixa de entrada
+(veja *Atualização automática* abaixo). Ou seja, **toda vez que você abre o
+painel, ele já vem atualizado**. Na primeiríssima execução, se ainda não existe
+`demandas.json` na máquina, ele é criado a partir de `demandas.seed.json`.
+
+## Atualização automática (radar do Granola)
+
+O `demandas.json` é **seu** — só o painel local escreve nele (marcar feito,
+editar prazo etc.). O radar **nunca** toca nesse arquivo: ele só acrescenta as
+demandas novas em `radar-inbox.jsonl` (uma demanda em JSON por linha). Ao abrir
+o painel, o `sync-radar.js`:
+
+1. `git pull --ff-only` (se estiver offline, segue sem travar);
+2. lê a caixa `radar-inbox.jsonl` e importa só o que ainda não entrou —
+   deduplicando por título, respeitando o `corte` e **sem mexer no status do
+   que já existe**;
+3. registra o que consumiu em `.radar-consumed.json` (local) para não repetir.
+
+Como o radar só escreve a caixa (append-only) e você só escreve o
+`demandas.json`, o `git pull` é sempre fast-forward — **nunca dá conflito**.
+Para forçar uma sincronização sem reabrir o servidor: `npm run sync`.
+
 ## Como funciona
 
 - **Fonte de verdade:** `demandas.json`. Toda mutação (marcar feito, editar prazo,

@@ -16,6 +16,7 @@ const path = require('node:path');
 
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'demandas.json');
+const SEED_FILE = path.join(ROOT, 'demandas.seed.json');
 const BACKUP_DIR = path.join(ROOT, '.backup');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const HOST = '127.0.0.1';
@@ -32,6 +33,11 @@ let state = loadState();
 let backupSeq = 0;
 
 function loadState() {
+  // 1º boot (ou máquina nova): o arquivo mutável nasce da semente versionada.
+  if (!fs.existsSync(DATA_FILE) && fs.existsSync(SEED_FILE)) {
+    fs.copyFileSync(SEED_FILE, DATA_FILE);
+    console.log('  (demandas.json criado a partir de demandas.seed.json)');
+  }
   const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
   if (!Array.isArray(data.demandas)) data.demandas = [];
   if (!Array.isArray(data.clusters)) data.clusters = [];

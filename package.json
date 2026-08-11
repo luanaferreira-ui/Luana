@@ -4,6 +4,8 @@
   "private": true,
   "description": "Painel local de demandas de CS — fonte de verdade em demandas.json, servidor node:http sem dependências.",
   "scripts": {
-    "start": "node server.js"
+    "prestart": "node sync-radar.js",
+    "start": "node server.js",
+    "sync": "node sync-radar.js"
   }
 }
