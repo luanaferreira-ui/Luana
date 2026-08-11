@@ -13,6 +13,10 @@ npm start
 
 Depois abra **http://localhost:4321**. Só isso — não há build nem `npm install`.
 
+> **Windows:** dê dois cliques em **`abrir-painel.bat`** — ele sincroniza, sobe
+> o servidor e abre o navegador sozinho. (Se a página abrir antes do servidor,
+> é só atualizar com F5.)
+
 No `npm start`, antes de subir o servidor, roda o `sync-radar.js`: ele dá um
 `git pull` e importa as demandas novas que o radar deixou na caixa de entrada
 (veja *Atualização automática* abaixo). Ou seja, **toda vez que você abre o
