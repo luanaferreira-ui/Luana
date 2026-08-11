@@ -3,8 +3,8 @@
 /* Painel de Demandas — SPA vanilla. Carrega estado via GET /api/state e
  * redesenha sempre a partir da resposta do servidor (fonte de verdade). */
 
-let S = { corte: '2026-07-01', clusters: [], demandas: [] };
-const ui = { escopo: 'todas', cluster: null, conta: '', q: '', agrupar: 'cluster', mostrarConcluidas: false };
+let S = { corte: '2026-07-01', arquivo_dias: 15, clusters: [], demandas: [] };
+const ui = { escopo: 'todas', cluster: null, conta: '', q: '', agrupar: 'cluster', mostrarConcluidas: false, mostrarArquivo: false };
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -26,6 +26,14 @@ function parseData(s) { if (!s) return null; const [y, m, dd] = s.split('-').map
 function diasAte(s) { const p = parseData(s); if (!p) return null; return Math.round((p - hoje()) / 86400000); }
 function isAtrasada(d) { if (d.status === 'feito' || !d.prazo) return false; return parseData(d.prazo) < hoje(); }
 function dentro7(d) { if (!d.prazo) return false; const n = diasAte(d.prazo); return n >= 0 && n <= 7; }
+function diasDesde(s) { const p = parseData(s); if (!p) return null; return Math.round((hoje() - p) / 86400000); }
+// Concluída há >= arquivo_dias vira Arquivo. Sem data de conclusão (itens antigos)
+// nunca arquiva sozinha — fica em Concluídas até ganhar o carimbo.
+function isArquivada(d) {
+  if (d.status !== 'feito' || !d.concluido_em) return false;
+  const n = diasDesde(d.concluido_em);
+  return n != null && n >= (S.arquivo_dias || 15);
+}
 
 function ehMinha(d) { return norm(d.responsavel).startsWith('luana'); }
 
@@ -104,6 +112,7 @@ function render(rebuildSelects) {
   renderSegs();
   renderLista();
   renderConcluidas();
+  renderArquivo();
 }
 
 function counter(label, val, mod) {
@@ -247,33 +256,49 @@ function renderLista() {
   }
 }
 
+function doneRow(d, selo) {
+  const row = el('div', 'row done');
+  const cb = el('span', 'cb on');
+  cb.setAttribute('role', 'checkbox');
+  cb.setAttribute('aria-checked', 'true');
+  cb.setAttribute('aria-label', 'Reabrir demanda');
+  cb.tabIndex = 0;
+  const reabrir = () => patch(d.id, { status: 'aberto' });
+  cb.addEventListener('click', reabrir);
+  cb.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); reabrir(); } });
+  const body = el('div', 'row-body');
+  body.append(el('div', 'titulo', d.titulo));
+  const meta = el('div', 'meta');
+  meta.append(tag('conta', d.conta));
+  meta.append(tag('resp' + (ehMinha(d) ? ' me' : ''), d.responsavel));
+  if (d.concluido_em) meta.append(el('span', 'concl', 'concluída ' + d.concluido_em));
+  body.append(meta);
+  row.append(cb, body, el('span', 'stamp' + (selo === 'ARQUIVO' ? ' arq' : ''), selo));
+  return row;
+}
+
 function renderConcluidas() {
-  const done = S.demandas.filter((d) => d.status === 'feito');
-  $('#btnConcluidas').textContent = 'Concluídas (' + done.length + ')';
+  // "Concluídas" = feitas que ainda não arquivaram (janela de arquivo_dias).
+  const recentes = S.demandas.filter((d) => d.status === 'feito' && !isArquivada(d));
+  $('#btnConcluidas').textContent = 'Concluídas (' + recentes.length + ')';
   const wrap = $('#doneWrap');
   wrap.hidden = !ui.mostrarConcluidas;
   if (!ui.mostrarConcluidas) return;
   const host = $('#doneList'); host.innerHTML = '';
-  if (!done.length) { host.append(el('p', 'vazio', 'Nenhuma concluída ainda.')); return; }
-  for (const d of ordenar(done)) {
-    const row = el('div', 'row done');
-    const cb = el('span', 'cb on');
-    cb.setAttribute('role', 'checkbox');
-    cb.setAttribute('aria-checked', 'true');
-    cb.setAttribute('aria-label', 'Reabrir demanda');
-    cb.tabIndex = 0;
-    const reabrir = () => patch(d.id, { status: 'aberto' });
-    cb.addEventListener('click', reabrir);
-    cb.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); reabrir(); } });
-    const body = el('div', 'row-body');
-    body.append(el('div', 'titulo', d.titulo));
-    const meta = el('div', 'meta');
-    meta.append(tag('conta', d.conta));
-    meta.append(tag('resp' + (ehMinha(d) ? ' me' : ''), d.responsavel));
-    body.append(meta);
-    row.append(cb, body, el('span', 'stamp', 'OK'));
-    host.append(row);
-  }
+  if (!recentes.length) { host.append(el('p', 'vazio', 'Nenhuma concluída ainda.')); return; }
+  for (const d of ordenar(recentes)) host.append(doneRow(d, 'OK'));
+}
+
+function renderArquivo() {
+  const arq = S.demandas.filter(isArquivada);
+  $('#btnArquivo').textContent = 'Arquivo (' + arq.length + ')';
+  const wrap = $('#arqWrap');
+  wrap.hidden = !ui.mostrarArquivo;
+  if (!ui.mostrarArquivo) return;
+  const host = $('#arqList'); host.innerHTML = '';
+  if (!arq.length) { host.append(el('p', 'vazio', 'Arquivo vazio (concluídas há mais de ' + (S.arquivo_dias || 15) + ' dias vêm para cá).')); return; }
+  const porData = arq.slice().sort((a, b) => (b.concluido_em || '').localeCompare(a.concluido_em || ''));
+  for (const d of porData) host.append(doneRow(d, 'ARQUIVO'));
 }
 
 /* ---------- copiar resumo ---------- */
@@ -317,6 +342,7 @@ function wire() {
 
   $('#btnCopiar').addEventListener('click', copiarResumo);
   $('#btnConcluidas').addEventListener('click', () => { ui.mostrarConcluidas = !ui.mostrarConcluidas; renderConcluidas(); });
+  $('#btnArquivo').addEventListener('click', () => { ui.mostrarArquivo = !ui.mostrarArquivo; renderArquivo(); });
 
   // importar
   const dlgI = $('#dlgImportar');

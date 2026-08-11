@@ -23,6 +23,9 @@ const PORT = 4321;
 const MAX_BACKUPS = 20;
 
 const STATUS = ['aberto', 'aguardando', 'feito'];
+// Dias após a conclusão para a demanda sair de "Concluídas" e ir para "Arquivo".
+// Constante única: o front lê este valor via /api/state (arquivo_dias).
+const ARQUIVO_DIAS = 15;
 
 // --- estado em memória (carregado do disco) ---
 let state = loadState();
@@ -109,6 +112,7 @@ function publicState() {
   return {
     versao: state.versao,
     corte: state.corte,
+    arquivo_dias: ARQUIVO_DIAS,
     atualizado_em: state.atualizado_em || null,
     clusters: state.clusters,
     demandas: state.demandas,
@@ -123,6 +127,13 @@ function atualizar(id, body) {
   const cids = clusterIds();
   if ('status' in body) {
     if (!STATUS.includes(body.status)) return { ok: false, erro: 'status inválido' };
+    // Carimba a data de conclusão ao virar "feito" (preserva se já estava feito);
+    // limpa ao reabrir/pausar, para o relógio do arquivamento reiniciar.
+    if (body.status === 'feito') {
+      if (d.status !== 'feito' || !d.concluido_em) d.concluido_em = new Date().toISOString().slice(0, 10);
+    } else {
+      delete d.concluido_em;
+    }
     d.status = body.status;
   }
   if ('cluster' in body) {

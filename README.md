@@ -25,12 +25,17 @@ Depois abra **http://localhost:4321**. Só isso — não há build nem `npm inst
   esse campo no JSON.
 - **Clusters:** os 7 vêm do próprio JSON (natureza da demanda). `conta` é a tag
   transversal — você fatia pelos dois eixos sem duplicar item.
+- **Arquivo:** ao concluir uma demanda o servidor carimba `concluido_em` (a data
+  some se você reabrir). Passados **15 dias** da conclusão, o item sai de
+  **Concluídas** e vai para **Arquivo** — sozinho, sem mexer no status, só pela
+  data. A janela é a constante `ARQUIVO_DIAS` no `server.js`, exposta em
+  `/api/state` como `arquivo_dias`.
 
 ## API (localhost only, 127.0.0.1)
 
 | Método | Rota | O quê |
 |---|---|---|
-| GET | `/api/state` | estado inteiro (`corte`, `clusters`, `demandas`) |
+| GET | `/api/state` | estado inteiro (`corte`, `arquivo_dias`, `clusters`, `demandas`) |
 | PATCH | `/api/demanda/:id` | atualiza `status` / `prazo` / `titulo` / `cluster` (também `conta`, `responsavel`, `urgente`) |
 | POST | `/api/demanda` | cria |
 | DELETE | `/api/demanda/:id` | remove |

@@ -1,7 +1,7 @@
 {
   "versao": 1,
   "corte": "2026-07-01",
-  "atualizado_em": "2026-07-29",
+  "atualizado_em": "2026-08-11",
   "clusters": [
     {
       "id": "contas",
@@ -192,7 +192,8 @@
       "prazo": "2026-07-29",
       "urgente": true,
       "status": "feito",
-      "origem": "Top Móveis 27/jul"
+      "origem": "Top Móveis 27/jul",
+      "concluido_em": "2026-08-11"
     },
     {
       "id": "d14",
@@ -214,7 +215,8 @@
       "prazo": "2026-07-31",
       "urgente": false,
       "status": "feito",
-      "origem": "Top Móveis 27/jul"
+      "origem": "Top Móveis 27/jul",
+      "concluido_em": "2026-08-11"
     },
     {
       "id": "d16",
@@ -258,7 +260,8 @@
       "prazo": "2026-07-29",
       "urgente": true,
       "status": "feito",
-      "origem": "Weekly CS 27/jul"
+      "origem": "Weekly CS 27/jul",
+      "concluido_em": "2026-08-11"
     },
     {
       "id": "d20",
