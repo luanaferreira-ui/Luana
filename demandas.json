@@ -955,6 +955,226 @@
       "urgente": false,
       "status": "aberto",
       "origem": "Top Móveis 31/jul"
+    },
+    {
+      "id": "d83",
+      "titulo": "Pedir ao Henrique (Padovani) o manual da central de atendimento e distribuir nos grupos de varejo",
+      "cluster": "processo",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Metas 4/ago"
+    },
+    {
+      "id": "d84",
+      "titulo": "Revisar cargos, faixas salariais e plano de carreira do time com o relatório de salários da Amanda",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Pessoa x Varejo 4/ago"
+    },
+    {
+      "id": "d85",
+      "titulo": "Desenhar o perfil e a estrutura da nova vaga sênior de gestão de contas/engajamento do time de CS",
+      "cluster": "time",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Amanda/Amanda 4/ago"
+    },
+    {
+      "id": "d86",
+      "titulo": "Definir com a Amanda o processo do back office avisar o atendimento sempre que entrar novo varejo/produto (ex.: Top Móveis na central)",
+      "cluster": "processo",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "RDV Lojas 5/ago"
+    },
+    {
+      "id": "d87",
+      "titulo": "Garantir a participação do CS nos fóruns quinzenais de priorização e decisão de contas (comercial/crédito) para alinhar os handoffs",
+      "cluster": "processo",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Emanuelle 6/ago"
+    },
+    {
+      "id": "d88",
+      "titulo": "Definir com a Emanuele os objetivos, metas e critérios de sucesso do piloto (2 lojas, 3 meses) e montar o business plan da conta",
+      "cluster": "novos",
+      "conta": "Emanuelle",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Emanuelle 6/ago"
+    },
+    {
+      "id": "d89",
+      "titulo": "Segmentar os franqueados IVS por inadimplência e disparar comunicações de crédito (parabéns/atenção/alerta) via WhatsApp e agendas",
+      "cluster": "risco",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "IVS Ume 7/ago"
+    },
+    {
+      "id": "d90",
+      "titulo": "Obter com o Tony o faturamento total das lojas IVS para medir a penetração da Ume",
+      "cluster": "processo",
+      "conta": "IVS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "IVS Ume 7/ago"
+    },
+    {
+      "id": "d91",
+      "titulo": "Definir com o Erick as metas do piloto Emanuelle (novos clientes/share por loja) na reunião de passagem",
+      "cluster": "novos",
+      "conta": "Emanuelle",
+      "responsavel": "Luana",
+      "prazo": "2026-08-11",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Kick-off Emanuelle 7/ago"
+    },
+    {
+      "id": "d92",
+      "titulo": "Agendar as duas turmas de treinamento operacional das lojas Emanuelle (quarta) e disparar a comunicação aos grupos",
+      "cluster": "contas",
+      "conta": "Emanuelle",
+      "responsavel": "Luana",
+      "prazo": "2026-08-12",
+      "urgente": true,
+      "status": "aberto",
+      "origem": "Kick-off Emanuelle 7/ago"
+    },
+    {
+      "id": "d93",
+      "titulo": "Enviar ao parceiro as artes de PDV do crédito Emanuelle",
+      "cluster": "contas",
+      "conta": "Emanuelle",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Kick-off Emanuelle 7/ago"
+    },
+    {
+      "id": "d94",
+      "titulo": "Obter com o Massuda a documentação de API/integração de caixa e repassar à Emanuelle",
+      "cluster": "processo",
+      "conta": "Emanuelle",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Kick-off Emanuelle 7/ago"
+    },
+    {
+      "id": "d95",
+      "titulo": "Criar no Drive a pasta com o plano de ação do time (arquivo vivo único em PowerPoint)",
+      "cluster": "admin",
+      "conta": "Time CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Reunião semanal 10/ago"
+    },
+    {
+      "id": "d96",
+      "titulo": "Ver com o Massuda como obter os nomes/telefones dos vendedores da Polishop para ações diretas",
+      "cluster": "processo",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Reunião semanal 10/ago"
+    },
+    {
+      "id": "d97",
+      "titulo": "Destravar com o Arthur/Ianeri o acesso ao Super Compras 2.0 para os business leads (Nick e Weberty)",
+      "cluster": "admin",
+      "conta": "Business Lead",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Business lead 10/ago"
+    },
+    {
+      "id": "d98",
+      "titulo": "Criar o playbook/kit de entrada de CS para novos varejos (mapear canais de comunicação e montar a trilha de conteúdo)",
+      "cluster": "processo",
+      "conta": "Playbook CS",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 10/ago"
+    },
+    {
+      "id": "d99",
+      "titulo": "Sentar com a Michelle (Polishop) e inserir a comunicação/vídeos da Ume na plataforma interna deles ainda em agosto",
+      "cluster": "contas",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 10/ago"
+    },
+    {
+      "id": "d100",
+      "titulo": "Investigar com o Massuda o fluxo de desconto x Policred na Polishop e montar o passo a passo/disclaimer no treinamento",
+      "cluster": "processo",
+      "conta": "Polishop",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "Weekly CS 10/ago"
+    },
+    {
+      "id": "d101",
+      "titulo": "Apoiar o time de suporte na criação dos materiais de orientação ao varejo (FAQ/faca), acionando o marketing",
+      "cluster": "processo",
+      "conta": "Suporte Varejo",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "OKR VRJ 10/ago"
+    },
+    {
+      "id": "d102",
+      "titulo": "Compartilhar com o Henrique a FAQ do treinamento de smartphone da Casa&Vídeo gerada no Claude",
+      "cluster": "processo",
+      "conta": "Casa&Vídeo",
+      "responsavel": "Luana",
+      "prazo": "",
+      "urgente": false,
+      "status": "aberto",
+      "origem": "OKR VRJ 10/ago"
     }
   ]
 }
