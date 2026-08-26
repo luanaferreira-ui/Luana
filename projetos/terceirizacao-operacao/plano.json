@@ -1,0 +1,1031 @@
+{
+  "versao": 2,
+  "projeto": "Modelo de Terceirização da Operação",
+  "atualizado_em": "2026-08-26",
+  "origem": "Reunião 'Escalabilidade time' (Luiza Falcone e Luana Ferreira, 26/ago/2026) + foto do quadro",
+  "patrocinador": "Lucas",
+  "capacidade_semanal_h": 8,
+  "fases": [
+    {
+      "id": "F1",
+      "nome": "Enquadramento",
+      "dono": "Luana",
+      "apoio": "Luiza",
+      "inicio": "2026-08-26",
+      "fim": "2026-09-04",
+      "objetivo": "Fechar escopo, métricas e cadência antes de aprofundar qualquer coisa.",
+      "entregavel": "One-pager de escopo + régua de segmentação + tracker no ar",
+      "saida": "Escopo escrito e aprovado pelo Lucas; 4 métricas com baseline; tracker populado e cadência na agenda.",
+      "depende": "—",
+      "fim_p0": "2026-09-04"
+    },
+    {
+      "id": "F2",
+      "nome": "Descoberta e escolha do modelo",
+      "dono": "Luana",
+      "apoio": "Luiza",
+      "inicio": "2026-09-08",
+      "fim": "2026-10-02",
+      "objetivo": "Saber o que o mercado faz e o que o jurídico proíbe, e escolher UM modelo — sem ainda desenhar remuneração.",
+      "entregavel": "Comparativo de modelos com recomendação + direcional jurídico mínimo + baseline de CAC",
+      "saida": "Um modelo escolhido e defendido ao Lucas, com os red flags jurídicos conhecidos e o inventário da operação levantado.",
+      "depende": "F1",
+      "fim_p0": "2026-09-25"
+    },
+    {
+      "id": "F3",
+      "nome": "Desenho do modelo",
+      "dono": "Luana",
+      "apoio": "Luiza",
+      "inicio": "2026-10-01",
+      "fim": "2026-11-13",
+      "objetivo": "Transformar o modelo escolhido em remuneração, business case, contrato e playbook.",
+      "entregavel": "Cenário de remuneração escolhido + business case + minuta de contrato + guias e specs de dash",
+      "saida": "Remuneração escolhida entre 3 cenários, business case aprovado pelo Financeiro, parecer do Thiago e minuta de contrato pronta.",
+      "depende": "F2",
+      "fim_p0": "2026-10-30"
+    },
+    {
+      "id": "F4",
+      "nome": "Prontidão operacional",
+      "dono": "Luiza",
+      "apoio": "Luana",
+      "inicio": "2026-11-16",
+      "fim": "2026-12-18",
+      "objetivo": "Contratar o parceiro e deixar a operação pronta para ir a campo.",
+      "entregavel": "Contrato assinado, dashboards no ar, guias publicados e representante certificado",
+      "saida": "Checklist de go/no-go assinado: contrato válido, ciclo de pagamento testado, dash no ar, carteira transferida.",
+      "depende": "F3",
+      "fim_p0": "2026-12-18"
+    },
+    {
+      "id": "F5",
+      "nome": "Piloto assistido e decisão",
+      "dono": "Luiza",
+      "apoio": "Luana",
+      "inicio": "2027-01-11",
+      "fim": "2027-04-16",
+      "objetivo": "Rodar a carteira-piloto, apurar três ciclos e decidir escalar, ajustar ou encerrar.",
+      "entregavel": "Piloto em campo + 3 apurações + recomendação formal ao Lucas",
+      "saida": "Recomendação entregue com leitura das hipóteses e do business case real contra o modelado.",
+      "depende": "F4",
+      "fim_p0": "2027-04-16"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": "T1.1",
+      "fase": "F1",
+      "titulo": "Escrever o one-pager de escopo: objetivo, dentro, fora e definição de pronto",
+      "dono": "Luana",
+      "esforco_h": 3,
+      "data_alvo": "2026-08-28",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.2",
+      "fase": "F1",
+      "titulo": "Fechar as 4 métricas de sucesso com baseline atual e meta",
+      "dono": "Luana",
+      "esforco_h": 3,
+      "data_alvo": "2026-09-04",
+      "dependencia": "T1.1",
+      "prioridade": "P0",
+      "areas": "Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.3",
+      "fase": "F1",
+      "titulo": "Régua de segmentação do long tail: critério objetivo de qual varejo entra",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-08-28",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "Comercial, Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.4",
+      "fase": "F1",
+      "titulo": "Assumir o tracker: revisar tarefas, esforços e datas e travar as quatro views",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-09-04",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.5",
+      "fase": "F1",
+      "titulo": "Importar as tarefas da quinzena no Painel de Demandas e travar o ritual de baixa",
+      "dono": "Luiza",
+      "esforco_h": 1,
+      "data_alvo": "2026-08-28",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.6",
+      "fase": "F1",
+      "titulo": "Criar os convites da cadência: touchpoint ter/qui, bloco de sexta, status quinzenal e comitê mensal",
+      "dono": "Luiza",
+      "esforco_h": 1,
+      "data_alvo": "2026-09-04",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.7",
+      "fase": "F1",
+      "titulo": "Escrever as hipóteses que o piloto precisa testar",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-09-04",
+      "dependencia": "T1.2",
+      "prioridade": "P1",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.8",
+      "fase": "F1",
+      "titulo": "Mapa de stakeholders: um ponto focal em Jurídico, Financeiro, People/DP, CS, Dados e MKT",
+      "dono": "Luiza",
+      "esforco_h": 3,
+      "data_alvo": "2026-09-04",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "Todas",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T1.9",
+      "fase": "F1",
+      "titulo": "Apresentar o enquadramento ao Lucas e fechar o escopo",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-09-04",
+      "dependencia": "T1.1,T1.2",
+      "prioridade": "P0",
+      "areas": "Liderança",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.1",
+      "fase": "F2",
+      "titulo": "Revisar a transcrição Amanda/Júlia x Thiago e extrair o direcional jurídico mínimo",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-11",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "Jurídico",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.2",
+      "fase": "F2",
+      "titulo": "Lista de red flags e perguntas para o Thiago: o que pode remunerar por modelo, vínculo, exclusividade, uso de marca",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-09-11",
+      "dependencia": "T2.1",
+      "prioridade": "P0",
+      "areas": "Jurídico",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.3",
+      "fase": "F2",
+      "titulo": "Sessão de 45 min com o Thiago para o direcional (não é o parecer formal)",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-09-18",
+      "dependencia": "T2.2",
+      "prioridade": "P0",
+      "areas": "Jurídico",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.4",
+      "fase": "F2",
+      "titulo": "Ficha do modelo de representação comercial (DTX/Imperium): remuneração, territorialidade, sub-regionais, prazo de revisão",
+      "dono": "Luana",
+      "esforco_h": 5,
+      "data_alvo": "2026-09-18",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.5",
+      "fase": "F2",
+      "titulo": "Ficha dos modelos alternativos: agência de promotor (orçamento-referência) e franquia (obrigação por região)",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-25",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.6",
+      "fase": "F2",
+      "titulo": "Duas conversas de referência: Jérico/Imperium e um franqueado Stone regional",
+      "dono": "Luana",
+      "esforco_h": 3,
+      "data_alvo": "2026-10-02",
+      "dependencia": "T2.4",
+      "prioridade": "P1",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.7",
+      "fase": "F2",
+      "titulo": "Baseline de aquisição: R$14/novo cliente, 1-2% de incentivo sobre originação e o CAC real do projeto da Mandinha",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-18",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "Financeiro, Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.8",
+      "fase": "F2",
+      "titulo": "Comparativo pró x contra com a recomendação de modelo e defesa ao Lucas",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-25",
+      "dependencia": "T2.3,T2.4,T2.5,T2.7",
+      "prioridade": "P0",
+      "areas": "Liderança",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.9",
+      "fase": "F2",
+      "titulo": "Inventário do onboarding do representante: tudo que ele precisa saber para representar a UME",
+      "dono": "Luiza",
+      "esforco_h": 5,
+      "data_alvo": "2026-09-25",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.10",
+      "fase": "F2",
+      "titulo": "Inventário do onboarding do varejo, no modelo do que foi feito com o Habit",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-11",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "Comercial",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.11",
+      "fase": "F2",
+      "titulo": "Mapear com o time da Amanda o fluxo de cadastro de lojas/operadores e a distribuição de acessos",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-18",
+      "dependencia": "—",
+      "prioridade": "P0",
+      "areas": "Comercial, Tech",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.12",
+      "fase": "F2",
+      "titulo": "Gap de dados: o que o Looker já entrega contra o que o dash self-service precisa",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-09-25",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.13",
+      "fase": "F3",
+      "titulo": "Mapa de exceções: o que o atendimento resolve e o que sobra para o time interno",
+      "dono": "Luiza",
+      "esforco_h": 3,
+      "data_alvo": "2026-10-23",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "CS",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T2.14",
+      "fase": "F3",
+      "titulo": "Levantar o que existe hoje de peça de trade e de brand book",
+      "dono": "Luiza",
+      "esforco_h": 2,
+      "data_alvo": "2026-11-13",
+      "dependencia": "—",
+      "prioridade": "P2",
+      "areas": "MKT",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.1",
+      "fase": "F3",
+      "titulo": "Árvore de métricas: CAC como âncora, componente de recorrência e guardrails de FPD, MOIC e inadimplência",
+      "dono": "Luana",
+      "esforco_h": 5,
+      "data_alvo": "2026-10-02",
+      "dependencia": "T2.7,T2.8",
+      "prioridade": "P0",
+      "areas": "Financeiro, Risco",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.2",
+      "fase": "F3",
+      "titulo": "Modelar os 3 cenários de remuneração: 100% variável em CAC; CAC + recorrência; fixo + variável com gatilho",
+      "dono": "Luana",
+      "esforco_h": 8,
+      "data_alvo": "2026-10-09",
+      "dependencia": "T3.1",
+      "prioridade": "P0",
+      "areas": "Financeiro",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.3",
+      "fase": "F3",
+      "titulo": "Business case: ponto de equilíbrio por carteira e custo de incentivo contra originação",
+      "dono": "Luana",
+      "esforco_h": 6,
+      "data_alvo": "2026-10-16",
+      "dependencia": "T3.2",
+      "prioridade": "P0",
+      "areas": "Financeiro",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.4",
+      "fase": "F3",
+      "titulo": "Regras de apuração e pagamento (parte em 30 dias, parte condicionada) e emissão de NF",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-10-23",
+      "dependencia": "T3.2",
+      "prioridade": "P0",
+      "areas": "Financeiro, DP",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.5",
+      "fase": "F3",
+      "titulo": "Matriz de alçadas: o que o representante negocia (limite, juros, MDR) e o que a UME nunca terceiriza",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-10-23",
+      "dependencia": "T2.1",
+      "prioridade": "P0",
+      "areas": "Risco, Crédito",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.6",
+      "fase": "F3",
+      "titulo": "Parecer do Thiago sobre o cenário escolhido",
+      "dono": "Luana",
+      "esforco_h": 3,
+      "data_alvo": "2026-10-30",
+      "dependencia": "T3.3,T3.5",
+      "prioridade": "P0",
+      "areas": "Jurídico",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.7",
+      "fase": "F3",
+      "titulo": "Minuta de contrato: prazos, métricas, custos, responsabilidades, territorialidade, LGPD e rescisão",
+      "dono": "Luana",
+      "esforco_h": 6,
+      "data_alvo": "2026-10-30",
+      "dependencia": "T3.6",
+      "prioridade": "P0",
+      "areas": "Jurídico",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.8",
+      "fase": "F3",
+      "titulo": "Perfil e critérios de seleção do representante, com People",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-11-06",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "People",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.9",
+      "fase": "F3",
+      "titulo": "Estrutura hierárquica: quem é o dono do modelo na UME e por qual canal o representante fala com a gente",
+      "dono": "Luana",
+      "esforco_h": 3,
+      "data_alvo": "2026-11-06",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "People",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.10",
+      "fase": "F3",
+      "titulo": "Trilha de onboarding do representante: conteúdo, roteiro e certificação de aptidão",
+      "dono": "Luiza",
+      "esforco_h": 8,
+      "data_alvo": "2026-10-02",
+      "dependencia": "T2.9",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.11",
+      "fase": "F3",
+      "titulo": "Guia 'o que fazer com o varejo': ativação passo a passo, treinamento operacional e financeiro",
+      "dono": "Luiza",
+      "esforco_h": 8,
+      "data_alvo": "2026-10-09",
+      "dependencia": "T2.10",
+      "prioridade": "P0",
+      "areas": "CS",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.12",
+      "fase": "F3",
+      "titulo": "Spec do dash de operação self-service: consulta, venda, aprovação, conversão, filtros e export CSV",
+      "dono": "Luiza",
+      "esforco_h": 5,
+      "data_alvo": "2026-10-16",
+      "dependencia": "T2.12",
+      "prioridade": "P0",
+      "areas": "Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.13",
+      "fase": "F3",
+      "titulo": "Spec do dash financeiro e do CSV que sustenta a apuração da remuneração",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-10-23",
+      "dependencia": "T3.1",
+      "prioridade": "P0",
+      "areas": "Dados, Financeiro",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.14",
+      "fase": "F3",
+      "titulo": "'DP do representante': NF, prazo e forma de pagamento, canal oficial e acessos",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-10-30",
+      "dependencia": "T3.4",
+      "prioridade": "P1",
+      "areas": "DP, Tech",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.15",
+      "fase": "F3",
+      "titulo": "Fluxo alvo de cadastro e acessos + SLA com o time da Amanda",
+      "dono": "Luiza",
+      "esforco_h": 5,
+      "data_alvo": "2026-10-30",
+      "dependencia": "T2.11",
+      "prioridade": "P1",
+      "areas": "Comercial, Tech",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.16",
+      "fase": "F3",
+      "titulo": "Guia de boas práticas (uniformização, promotor de loja) escrito como recomendação, nunca obrigação",
+      "dono": "Luiza",
+      "esforco_h": 3,
+      "data_alvo": "2026-11-06",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "Jurídico, MKT",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.17",
+      "fase": "F3",
+      "titulo": "FAQ e canais de atendimento do varejo",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-11-13",
+      "dependencia": "T3.11",
+      "prioridade": "P2",
+      "areas": "CS",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T3.18",
+      "fase": "F3",
+      "titulo": "Rotina de ongoing do representante: report, apuração, agenda de alinhamento e fluxo de exceção",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-11-06",
+      "dependencia": "T2.13",
+      "prioridade": "P1",
+      "areas": "CS",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.1",
+      "fase": "F4",
+      "titulo": "Definir a carteira do piloto aplicando a régua de segmentação",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-11-20",
+      "dependencia": "T1.3",
+      "prioridade": "P0",
+      "areas": "Comercial, Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.2",
+      "fase": "F4",
+      "titulo": "Prospectar e selecionar o parceiro do piloto, avaliando usar a estrutura que já roda como piloto zero",
+      "dono": "Luana",
+      "esforco_h": 10,
+      "data_alvo": "2026-11-27",
+      "dependencia": "T3.8",
+      "prioridade": "P0",
+      "areas": "People",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.3",
+      "fase": "F4",
+      "titulo": "Negociar e assinar o contrato do piloto",
+      "dono": "Luana",
+      "esforco_h": 6,
+      "data_alvo": "2026-12-04",
+      "dependencia": "T3.7,T4.2",
+      "prioridade": "P0",
+      "areas": "Jurídico, Financeiro",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.4",
+      "fase": "F4",
+      "titulo": "Cadastrar o parceiro como fornecedor e testar o ciclo apuração > NF > pagamento",
+      "dono": "Luana",
+      "esforco_h": 4,
+      "data_alvo": "2026-12-11",
+      "dependencia": "T4.3",
+      "prioridade": "P0",
+      "areas": "Financeiro, DP",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.5",
+      "fase": "F4",
+      "titulo": "Status de fechamento do ano para o Lucas",
+      "dono": "Luana",
+      "esforco_h": 2,
+      "data_alvo": "2026-12-11",
+      "dependencia": "—",
+      "prioridade": "P1",
+      "areas": "Liderança",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.6",
+      "fase": "F4",
+      "titulo": "Publicar o dash de operação e o dash financeiro com a carteira-piloto carregada",
+      "dono": "Luiza",
+      "esforco_h": 8,
+      "data_alvo": "2026-12-04",
+      "dependencia": "T3.12,T3.13,T4.1",
+      "prioridade": "P0",
+      "areas": "Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.7",
+      "fase": "F4",
+      "titulo": "Publicar o repositório de peças de trade e o recorte de brand book, com dono e SLA de atualização",
+      "dono": "Luiza",
+      "esforco_h": 5,
+      "data_alvo": "2026-11-20",
+      "dependencia": "T2.14",
+      "prioridade": "P0",
+      "areas": "MKT",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.8",
+      "fase": "F4",
+      "titulo": "Publicar os guias, o FAQ e os canais de atendimento",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-12-04",
+      "dependencia": "T3.11,T3.17",
+      "prioridade": "P0",
+      "areas": "CS, MKT",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.9",
+      "fase": "F4",
+      "titulo": "Rodar o onboarding e certificar o representante do piloto",
+      "dono": "Luiza",
+      "esforco_h": 8,
+      "data_alvo": "2026-12-11",
+      "dependencia": "T3.10,T4.3",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.10",
+      "fase": "F4",
+      "titulo": "Passar a carteira: lojas cadastradas, operadores e acessos na mão do representante",
+      "dono": "Luiza",
+      "esforco_h": 4,
+      "data_alvo": "2026-11-27",
+      "dependencia": "T3.15,T4.1",
+      "prioridade": "P0",
+      "areas": "Comercial",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T4.11",
+      "fase": "F4",
+      "titulo": "Rodar o checklist de go/no-go do piloto",
+      "dono": "Luiza",
+      "esforco_h": 2,
+      "data_alvo": "2026-12-18",
+      "dependencia": "T4.4,T4.6,T4.8,T4.9,T4.10",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.1",
+      "fase": "F5",
+      "titulo": "Go-live e operação assistida, com diário de bordo semanal",
+      "dono": "Luiza",
+      "esforco_h": 36,
+      "data_alvo": "2027-03-26",
+      "dependencia": "T4.11",
+      "prioridade": "P0",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.2",
+      "fase": "F5",
+      "titulo": "Apuração mensal da remuneração (fev, mar e abr)",
+      "dono": "Luana",
+      "esforco_h": 12,
+      "data_alvo": "2027-04-09",
+      "dependencia": "T4.4",
+      "prioridade": "P0",
+      "areas": "Financeiro",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.3",
+      "fase": "F5",
+      "titulo": "Medir as hipóteses: tempo liberado do time interno, originação incremental e qualidade da carteira",
+      "dono": "Luana",
+      "esforco_h": 8,
+      "data_alvo": "2027-04-09",
+      "dependencia": "T1.7",
+      "prioridade": "P0",
+      "areas": "Dados",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.4",
+      "fase": "F5",
+      "titulo": "Retrospectiva por ciclo e ajuste do playbook",
+      "dono": "Luiza",
+      "esforco_h": 9,
+      "data_alvo": "2027-04-02",
+      "dependencia": "T5.1",
+      "prioridade": "P1",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.5",
+      "fase": "F5",
+      "titulo": "Refresh de treinamento a cada atualização operacional, do representante ao varejo",
+      "dono": "Luiza",
+      "esforco_h": 6,
+      "data_alvo": "2027-04-09",
+      "dependencia": "T4.9",
+      "prioridade": "P1",
+      "areas": "—",
+      "status": "Não iniciado"
+    },
+    {
+      "id": "T5.6",
+      "fase": "F5",
+      "titulo": "Escrever a recomendação de escalar, ajustar ou encerrar e levar ao Lucas",
+      "dono": "Luana",
+      "esforco_h": 6,
+      "data_alvo": "2027-04-16",
+      "dependencia": "T5.2,T5.3,T5.4",
+      "prioridade": "P0",
+      "areas": "Liderança",
+      "status": "Não iniciado"
+    }
+  ],
+  "metricas": [
+    {
+      "id": "M1",
+      "metrica": "Horas/semana do time interno gastas com varejo long tail",
+      "baseline": "A medir na F1 (amostra de 2 semanas)",
+      "meta": "-60% até o fim do piloto",
+      "dono": "Luana",
+      "fonte": "Apontamento das duas + agenda"
+    },
+    {
+      "id": "M2",
+      "metrica": "Varejos ativos sob carteira terceirizada",
+      "baseline": "0",
+      "meta": "10 a 15 lojas no piloto",
+      "dono": "Luiza",
+      "fonte": "Dash de operação"
+    },
+    {
+      "id": "M3",
+      "metrica": "CAC do canal terceirizado (R$ por novo cliente)",
+      "baseline": "R$ 14 (referência da central de vendas)",
+      "meta": "Menor ou igual a R$ 14, com teto de 2% sobre originação",
+      "dono": "Luana",
+      "fonte": "Apuração mensal"
+    },
+    {
+      "id": "M4",
+      "metrica": "FPD e inadimplência da carteira terceirizada",
+      "baseline": "A medir (média UME por região)",
+      "meta": "Até 1 p.p. acima da média UME",
+      "dono": "Luana",
+      "fonte": "Risco / BigQuery"
+    },
+    {
+      "id": "M5",
+      "metrica": "Originação da carteira-piloto contra o mesmo período do ano anterior",
+      "baseline": "A medir na F4",
+      "meta": "+15% no 3º ciclo",
+      "dono": "Luiza",
+      "fonte": "Dash financeiro"
+    }
+  ],
+  "riscos": [
+    {
+      "id": "R1",
+      "risco": "Remuneração mal calibrada: pagar sobre originação total estoura o CAC e o modelo deixa de se pagar",
+      "probabilidade": "Alta",
+      "impacto": "Alto",
+      "sinal": "No 1º cenário modelado, o custo por novo cliente passa de R$ 14 sem contrapartida de volume",
+      "mitigacao": "Ancorar em CAC/novos clientes com guardrails de FPD e MOIC, teto por carteira e cláusula de revisão a cada 6 meses",
+      "dono": "Luana"
+    },
+    {
+      "id": "R2",
+      "risco": "Uma restrição jurídica invalida o modelo depois de desenhado",
+      "probabilidade": "Média",
+      "impacto": "Alto",
+      "sinal": "O direcional do Thiago (T2.3) vem com 'depende' em vez de 'pode/não pode'",
+      "mitigacao": "Direcional mínimo na F2, antes de modelar remuneração; três cenários levados ao parecer em vez de um",
+      "dono": "Luana"
+    },
+    {
+      "id": "R3",
+      "risco": "Escopo infla: querer resolver engajamento, prospecção de varejo e comercial no mesmo pacote",
+      "probabilidade": "Alta",
+      "impacto": "Alto",
+      "sinal": "Aparece tarefa de rebate ou MDR no tracker sem decisão do Gate 2",
+      "mitigacao": "Lista de fora de escopo assinada na F1; prospecção só entra se a Q1 for decidida como sim, e mesmo assim fora do piloto",
+      "dono": "Luana"
+    },
+    {
+      "id": "R4",
+      "risco": "As 8h/semana não se sustentam quando a operação do dia a dia aperta",
+      "probabilidade": "Alta",
+      "impacto": "Alto",
+      "sinal": "Duas semanas seguidas com menos de 5h apontadas, ou touchpoint desmarcado 2x",
+      "mitigacao": "Bloco de sexta protegido na agenda; se a semana cair abaixo de 5h, corta-se P2 antes de empurrar P0; capacidade revista no status quinzenal",
+      "dono": "Luiza"
+    },
+    {
+      "id": "R5",
+      "risco": "Cadastro e acessos presos no time da Amanda viram o gargalo da operação terceirizada",
+      "probabilidade": "Média",
+      "impacto": "Médio",
+      "sinal": "Qualquer pedido de acesso do piloto levando mais de 48h",
+      "mitigacao": "SLA escrito na T3.15, com fila visível; automação vira backlog priorizado de Tech antes da onda 2",
+      "dono": "Luiza"
+    }
+  ],
+  "caminho_critico": [
+    "T2.1",
+    "T2.2",
+    "T2.3",
+    "T2.8",
+    "T3.1",
+    "T3.2",
+    "T3.3",
+    "T3.6",
+    "T3.7",
+    "T4.3",
+    "T4.4",
+    "T4.11",
+    "T5.1",
+    "T5.4",
+    "T5.6"
+  ],
+  "carga_semanal": [
+    {
+      "semana": "2026-08-24",
+      "capacidade": 5.0,
+      "Luana": 5.0,
+      "Luiza": 5.0
+    },
+    {
+      "semana": "2026-08-31",
+      "capacidade": 8.0,
+      "Luana": 7.0,
+      "Luiza": 4.0
+    },
+    {
+      "semana": "2026-09-07",
+      "capacidade": 6.4,
+      "Luana": 6.4,
+      "Luiza": 6.4
+    },
+    {
+      "semana": "2026-09-14",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-09-21",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 6.6
+    },
+    {
+      "semana": "2026-09-28",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-10-05",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-10-12",
+      "capacidade": 6.4,
+      "Luana": 6.4,
+      "Luiza": 6.4
+    },
+    {
+      "semana": "2026-10-19",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-10-26",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-11-02",
+      "capacidade": 6.4,
+      "Luana": 6.2,
+      "Luiza": 6.4
+    },
+    {
+      "semana": "2026-11-09",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 5.2
+    },
+    {
+      "semana": "2026-11-16",
+      "capacidade": 6.4,
+      "Luana": 6.4,
+      "Luiza": 6.4
+    },
+    {
+      "semana": "2026-11-23",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-11-30",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 6.6
+    },
+    {
+      "semana": "2026-12-07",
+      "capacidade": 8.0,
+      "Luana": 3.6,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2026-12-14",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 2.0
+    },
+    {
+      "semana": "2027-02-22",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2027-03-01",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2027-03-08",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2027-03-15",
+      "capacidade": 8.0,
+      "Luana": 0.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2027-03-22",
+      "capacidade": 6.4,
+      "Luana": 6.4,
+      "Luiza": 6.4
+    },
+    {
+      "semana": "2027-03-29",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 8.0
+    },
+    {
+      "semana": "2027-04-05",
+      "capacidade": 8.0,
+      "Luana": 8.0,
+      "Luiza": 4.6
+    },
+    {
+      "semana": "2027-04-12",
+      "capacidade": 8.0,
+      "Luana": 3.6,
+      "Luiza": 0.0
+    }
+  ]
+}
