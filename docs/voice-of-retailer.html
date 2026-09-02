@@ -151,9 +151,22 @@
   }
   .pill.p0{background:var(--red-bg); color:var(--red-ink); border-color:var(--red-line)}
   .pill.p1{background:var(--ask-bg); color:var(--verde); border-color:var(--verde-pale)}
-  .pill.na{background:var(--slate-bg); color:var(--slate-ink); border-color:var(--slate-line)}
-  .pill.solo{margin-left:0}
   .tnote{font-size:13.5px; color:var(--muted); margin-top:14px; max-width:74ch; line-height:1.6}
+
+  /* lista de varejistas */
+  .retlist{
+    list-style:none; margin:26px 0 0; padding:0; counter-reset:rl;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  }
+  .retlist li{
+    background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:16px 20px; font-size:15.5px; color:var(--ink);
+    display:flex; gap:14px; align-items:baseline;
+  }
+  .retlist li::before{
+    counter-increment:rl; content:counter(rl,decimal-leading-zero);
+    font-family:var(--mono); font-size:12px; color:var(--verde-mid); flex:none;
+  }
 
   /* flow */
   .flowbox{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px; margin-top:24px}
@@ -277,6 +290,7 @@
   .closing strong{font-weight:700}
 
   @media (max-width:860px){
+    .retlist{grid-template-columns:repeat(2,1fr)}
     .plan-grid{grid-template-columns:1fr}
     .fld:nth-child(odd){border-right:none}
     .kpis, .next, .claims, .frentes, .layers{grid-template-columns:1fr}
@@ -286,6 +300,7 @@
     h1{font-size:33px} h2{font-size:25px}
     .prose{font-size:18px} .lede{font-size:17px}
     .metrics{grid-template-columns:1fr}
+    .retlist{grid-template-columns:1fr}
     .meta{text-align:left}
     .ask{flex-direction:column; gap:12px}
     .cl-body{grid-template-columns:1fr; gap:22px}
@@ -421,6 +436,7 @@
     <p class="tnote"><strong>Rodrigues Colchões não conta duas vezes.</strong> Já existia histórico desde 07/04/2026 e o arquivo novo começa em 19/05/2026 — o período sobreposto não é somado. Conceitualmente é uma janela contínua de 07/04 a 02/09/2026.</p>
     <p class="tnote"><strong>Data de criação do grupo ≠ histórico disponível.</strong> Um grupo criado em 2024 pode ter conversa recuperável só a partir de 2026. As janelas acima são de conversa observada, não de existência do grupo.</p>
     <p class="tnote"><strong>CVLB continua separada.</strong> Ela usa um produto diferente dos demais, e as dúvidas ligadas a integração, catálogo, IMEI, PDV ou finalização são analisadas fora do Core Ume — não generalizadas para os outros dez varejistas.</p>
+    <p class="tnote"><strong>A base de smartphone é outra.</strong> Os 1.105 chamados vêm de outro canal e 99% deles são de um único varejo (Casa do Celular), que não está entre os 11 grupos de WhatsApp analisados.</p>
 
     <h3 style="font-family:var(--serif); font-size:22px; margin:44px 0 0">O que os dois varejistas novos acrescentam</h3>
     <div class="clusters" style="margin-top:20px">
@@ -1242,31 +1258,22 @@
   <!-- ============ VISÃO POR VAREJISTA ============ -->
   <section id="varejistas">
     <p class="overline">Visão por varejista</p>
-    <h2>Onze varejistas, cinco classificações</h2>
-    <p class="sub">A classificação diz se a dor observada naquele varejo é do Core, específica do produto dele, ou se ainda não há amostra suficiente para dizer.</p>
+    <h2>Os onze varejistas analisados</h2>
+    <p class="sub">Base desta rodada. As janelas de observação de cada um estão na seção de escopo.</p>
 
-    <div class="tablewrap">
-    <table>
-      <thead>
-        <tr><th>Varejista</th><th>Classificação</th><th>Observação</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">Clara Eletro</td><td class="name"><span class="pill p1 solo">Transversal Core / Misto</span></td><td class="why">valida dores transversais do Core — pagamentos, acesso, crédito, erros, SMS</td></tr>
-        <tr><td class="name">Ramsons</td><td class="name"><span class="pill p1 solo">Transversal Core</span></td><td class="why">evidência forte de SMS, crédito e Product Recovery; e o achado do autoatendimento divulgado</td></tr>
-        <tr><td class="name">CVLB</td><td class="name"><span class="pill solo">Produto específico</span></td><td class="why">produto diferente dos demais — backlog na Frente D, fora do Core</td></tr>
-        <tr><td class="name">Big Lar</td><td class="name"><span class="pill na solo">Amostra insuficiente</span></td><td class="why">menos de um mês de histórico; produto de limite recorrente, oposto ao transacional</td></tr>
-        <tr><td class="name">Rodrigues Colchões</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">janela contínua de 07/04 a 02/09/2026 — a mais longa da base</td></tr>
-        <tr><td class="name">Sono Show</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-        <tr><td class="name">Novo Lar</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-        <tr><td class="name">Solar Móveis e Eletros</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-        <tr><td class="name">Mag Duarte</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-        <tr><td class="name">Policred</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-        <tr><td class="name">Top Móveis</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p class="tnote"><strong>“A classificar” é um achado, não um vazio.</strong> A taxonomia Transversal / Misto / Específico / CVLB / Amostra insuficiente nasceu nesta rodada. Os sete varejos da base anterior ainda não foram relidos por ela — e reclassificá-los é o que permitirá calcular Cross-Retailer Penetration.</p>
-    <p class="tnote">A base de 1.105 chamados de smartphone é separada desta matriz: vem de outro canal e 99% de um único varejo (Casa do Celular), que não está entre os 11 grupos de WhatsApp analisados.</p>
+    <ol class="retlist">
+      <li>Rodrigues Colchões</li>
+      <li>Sono Show</li>
+      <li>Novo Lar</li>
+      <li>CVLB</li>
+      <li>Solar Móveis e Eletros</li>
+      <li>Mag Duarte</li>
+      <li>Policred</li>
+      <li>Big Lar</li>
+      <li>Top Móveis</li>
+      <li>Clara Eletro</li>
+      <li>Ramsons</li>
+    </ol>
   </section>
 
   <!-- ============ VAZAMENTO ============ -->
