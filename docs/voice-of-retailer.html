@@ -25,6 +25,9 @@
     --red-line:#E5CDC6;
     --red-ink:#A64B36;
     --ask-bg:#E3EFE5;
+    --slate-bg:#ECEEEB;
+    --slate-line:#D4D9D3;
+    --slate-ink:#55605A;
     --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
     --sans:'Source Sans 3', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
     --mono:'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
@@ -44,10 +47,12 @@
   h2{font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.2; margin:0 0 10px; text-wrap:balance}
   h3{font-family:var(--serif); font-weight:600; font-size:17px; margin:0 0 6px}
   .lede{font-family:var(--serif); font-size:19px; line-height:1.55; color:var(--ink-soft); max-width:66ch; margin:0}
-  .sub{font-size:14.5px; color:var(--muted); max-width:62ch; margin:0}
+  .sub{font-size:14.5px; color:var(--muted); max-width:64ch; margin:0}
   .prose{font-family:var(--serif); font-size:21px; line-height:1.55; max-width:70ch; margin:0}
-  section{margin-top:64px}
+  section{margin-top:64px; scroll-margin-top:24px}
   .rule{height:1px; background:var(--line); margin:36px 0 0}
+  a{color:var(--verde)}
+  a:focus-visible, .idx a:focus-visible{outline:2px solid var(--verde); outline-offset:2px; border-radius:4px}
 
   /* header */
   .head-grid{display:flex; gap:40px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
@@ -58,6 +63,25 @@
   .metric{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px}
   .metric .n{font-family:var(--mono); font-weight:500; font-size:34px; color:var(--verde); line-height:1.1; margin-bottom:10px; font-variant-numeric:tabular-nums}
   .metric .l{font-size:14.5px; color:var(--ink-soft); line-height:1.45}
+
+  /* evidence badges */
+  .ev{
+    display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 9px; border-radius:5px; white-space:nowrap;
+    background:var(--ask-bg); color:var(--verde); border:1px solid var(--verde-pale); vertical-align:2px;
+  }
+  .ev.int{background:var(--slate-bg); color:var(--slate-ink); border-color:var(--slate-line)}
+  .ev.hip{background:var(--amber-bg); color:var(--amber-ink); border-color:#EBD9B4; border-style:dashed}
+  .legend{display:flex; gap:22px; flex-wrap:wrap; margin-top:22px; padding:16px 20px; background:var(--card); border:1px solid var(--line); border-radius:10px}
+  .legend div{font-size:13.5px; color:var(--ink-soft); display:flex; gap:9px; align-items:baseline}
+
+  /* index */
+  .idx{display:flex; gap:9px; flex-wrap:wrap; margin-top:22px}
+  .idx a{
+    font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--ink-soft);
+    background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px;
+  }
+  .idx a:hover{border-color:var(--verde-mid); color:var(--verde)}
 
   /* cluster detail */
   .clusters{display:grid; gap:20px; margin-top:28px}
@@ -74,14 +98,38 @@
   .cl-col strong{color:var(--ink); font-weight:600}
   .cl-col p.quote{font-family:var(--serif); font-style:italic; font-size:15.5px; color:var(--ink); border-left:2px solid var(--verde-pale); padding-left:14px}
 
-  /* est hero */
-  .est-hero{display:flex; gap:30px; align-items:flex-start; flex-wrap:wrap}
-  .est-n{font-family:var(--mono); font-weight:500; font-size:44px; color:var(--amber-ink); line-height:1; white-space:nowrap}
-  .est-txt{flex:1 1 380px}
-  .est-txt p{margin:0; font-size:15px; line-height:1.62; color:#6E5426}
-  .est-txt p + p{margin-top:12px}
-  .est-txt strong{color:var(--amber-ink)}
-  .est-note{border-top:1px dashed var(--amber-line); margin-top:24px; padding-top:18px; font-size:14px; line-height:1.62; color:#6E5426}
+  /* two layers */
+  .layers{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:28px}
+  .layer{border-radius:10px; padding:28px; border:1px solid var(--line); background:var(--card)}
+  .layer.b{background:var(--ask-bg); border-color:var(--verde-pale)}
+  .layer .tagline{font-family:var(--mono); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--verde); margin:0 0 10px}
+  .layer h3{font-family:var(--serif); font-size:23px; font-weight:700; margin:0 0 10px}
+  .layer p{margin:0; font-size:14.5px; line-height:1.62; color:var(--ink-soft)}
+  .layer ul{margin:14px 0 0; padding-left:18px; font-size:14.5px; line-height:1.7; color:var(--ink-soft)}
+
+  /* big statement */
+  .statement{
+    font-family:var(--serif); font-weight:700; font-size:27px; line-height:1.35;
+    background:var(--card); border:1px solid var(--line); border-left:4px solid var(--verde);
+    border-radius:10px; padding:30px 34px; margin-top:28px; max-width:none; text-wrap:balance;
+  }
+  .statement small{display:block; font-family:var(--sans); font-weight:400; font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin-top:12px}
+
+  /* narrative steps */
+  .narr{display:grid; gap:0; margin-top:28px}
+  .narr-step{display:grid; grid-template-columns:150px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid var(--line)}
+  .narr-step:last-child{border-bottom:none}
+  .narr-step .k{font-family:var(--mono); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); padding-top:5px}
+  .narr-step .v{font-family:var(--serif); font-size:20px; line-height:1.45; color:var(--ink)}
+  .narr-step.now .k{color:var(--verde)}
+  .narr-step.now .v{font-weight:600}
+
+  /* tests */
+  .tests{display:grid; gap:12px; margin-top:26px}
+  .test{display:grid; grid-template-columns:56px 1fr; gap:20px; align-items:start; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px 22px}
+  .test .t{font-family:var(--mono); font-size:12px; color:var(--verde); background:var(--ask-bg); border:1px solid var(--verde-pale); border-radius:6px; padding:6px 0; text-align:center; line-height:1}
+  .test p{margin:0; font-size:15px; color:var(--ink); line-height:1.55}
+  .test .opts{margin-top:9px; font-size:13.5px; color:var(--ink-soft); font-family:var(--mono)}
 
   /* table */
   .tablewrap{overflow-x:auto; margin-top:26px}
@@ -95,6 +143,7 @@
   tbody tr:last-child td{border-bottom:none}
   td.name{font-size:15.5px; color:var(--ink)}
   td.num{font-family:var(--mono); font-weight:500; font-size:16.5px; white-space:nowrap; font-variant-numeric:tabular-nums}
+  td.date{font-family:var(--mono); font-size:13.5px; white-space:nowrap; color:var(--ink-soft); font-variant-numeric:tabular-nums}
   td.why{color:var(--ink-soft); font-size:14.5px}
   .pill{
     display:inline-block; font-family:var(--mono); font-size:11.5px; padding:4px 11px; border-radius:999px;
@@ -102,7 +151,9 @@
   }
   .pill.p0{background:var(--red-bg); color:var(--red-ink); border-color:var(--red-line)}
   .pill.p1{background:var(--ask-bg); color:var(--verde); border-color:var(--verde-pale)}
-  .tnote{font-size:13.5px; color:var(--muted); margin-top:14px; max-width:70ch; line-height:1.6}
+  .pill.na{background:var(--slate-bg); color:var(--slate-ink); border-color:var(--slate-line)}
+  .pill.solo{margin-left:0}
+  .tnote{font-size:13.5px; color:var(--muted); margin-top:14px; max-width:74ch; line-height:1.6}
 
   /* flow */
   .flowbox{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px; margin-top:24px}
@@ -129,12 +180,77 @@
   .cause h3 .code{font-family:var(--mono); color:var(--verde); margin-right:8px; font-size:14px}
   .cause p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.6}
   .cause.hyp{border-left-color:var(--amber-line)}
+  .cause.hyp h3 .code{color:var(--amber-ink)}
+
+  /* frentes */
+  .frentes{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:26px}
+  .frente{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px}
+  .frente.cvlb{background:var(--amber-bg); border-color:var(--amber-line); border-style:dashed}
+  .frente .letra{font-family:var(--mono); font-size:12px; color:var(--verde); letter-spacing:.07em; margin-bottom:8px}
+  .frente.cvlb .letra{color:var(--amber-ink)}
+  .frente h3{font-family:var(--serif); font-size:20px; font-weight:700; margin:0 0 8px}
+  .frente > p{margin:0 0 14px; font-size:14.5px; color:var(--ink-soft); line-height:1.6}
+  .frente .mini{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 6px}
+  .frente ul{margin:0 0 14px; padding-left:18px; font-size:14px; line-height:1.65; color:var(--ink-soft)}
+  .frente ul:last-child{margin-bottom:0}
+
+  /* action plan */
+  .plan{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:0; margin-top:20px; overflow:hidden}
+  .plan > header{display:flex; gap:18px; align-items:flex-start; padding:26px 28px; background:#F2EFE7; border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .plan-n{font-family:var(--mono); font-weight:500; font-size:15px; color:var(--verde); background:var(--card); border:1px solid var(--verde-pale); border-radius:8px; padding:8px 11px; line-height:1}
+  .plan h3{font-family:var(--serif); font-weight:700; font-size:22px; margin:0 0 4px}
+  .plan .frente-tag{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin:0}
+  .plan-grid{display:grid; grid-template-columns:1fr 1fr; gap:0}
+  .fld{padding:22px 28px; border-bottom:1px solid #EFEBE2}
+  .fld:nth-child(odd){border-right:1px solid #EFEBE2}
+  .plan-grid > .fld.full{grid-column:1 / -1; border-right:none}
+  .fld:last-child, .plan-grid > .fld:nth-last-child(2):nth-child(odd){border-bottom:none}
+  .fld .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--verde); margin:0 0 8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .fld p{margin:0; font-size:14.5px; line-height:1.62; color:var(--ink-soft)}
+  .fld p + p{margin-top:8px}
+  .fld strong{color:var(--ink); font-weight:600}
+  .fld ul{margin:0; padding-left:18px; font-size:14.5px; line-height:1.7; color:var(--ink-soft)}
+  .fld ul + .mini{margin-top:14px}
+  .fld .mini{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 6px}
+  .fld.kpi{background:var(--ask-bg)}
+  .fld.kpi .k{color:var(--verde)}
+  .fld.kpi p, .fld.kpi ul{color:#2C5240}
+
+  /* formula */
+  .formula{
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px 22px;
+    margin-top:26px; display:flex; gap:9px; align-items:stretch; flex-wrap:wrap; justify-content:center;
+  }
+  .fx{flex:1 1 auto; font-size:14px; padding:12px 14px; border-radius:8px; background:var(--ask-bg); border:1px solid var(--verde-pale); color:var(--ink); text-align:center}
+  .fx small{display:block; font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--verde); margin-top:4px}
+  .times{font-family:var(--mono); color:var(--muted); font-size:16px}
+
+  /* indicators */
+  .kpis{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:26px}
+  .kpi-card{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:20px 24px}
+  .kpi-card h3{font-family:var(--mono); font-size:13px; font-weight:500; color:var(--verde); margin:0 0 6px; letter-spacing:.02em}
+  .kpi-card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.55}
+
+  /* claims */
+  .claims{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:26px}
+  .claim{border-radius:10px; padding:26px}
+  .claim.yes{background:var(--ask-bg); border:1px solid var(--verde-pale)}
+  .claim.no{background:var(--red-bg); border:1px solid var(--red-line)}
+  .claim h3{font-family:var(--serif); font-size:19px; font-weight:600; margin:0 0 12px}
+  .claim.yes h3{color:var(--verde)}
+  .claim.no h3{color:var(--red-ink)}
+  .claim ul{margin:0; padding-left:18px; font-size:14.5px; line-height:1.75}
+  .claim.yes ul{color:#2C5240}
+  .claim.no ul{color:#7E3A2A}
+
+  /* next tests */
+  .next{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px; counter-reset:nx}
+  .nx{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px 20px; display:flex; gap:14px; align-items:baseline}
+  .nx::before{counter-increment:nx; content:counter(nx,decimal-leading-zero); font-family:var(--mono); font-size:12px; color:var(--verde-mid); flex:none}
+  .nx span{font-size:14.5px; color:var(--ink-soft); line-height:1.55}
 
   /* callout line */
-  .metaline{
-    font-family:var(--mono); font-size:13.5px; color:var(--ink-soft);
-    margin-top:22px; line-height:2;
-  }
+  .metaline{font-family:var(--mono); font-size:13.5px; color:var(--ink-soft); margin-top:22px; line-height:2}
   .metaline b{color:var(--verde); font-weight:500}
   .metaline .warn{color:var(--red-ink)}
 
@@ -142,6 +258,13 @@
   .est{background:var(--amber-bg); border:1px dashed var(--amber-line); border-radius:10px; padding:26px; margin-top:26px}
   .est-h{font-family:var(--mono); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--amber-ink); margin-bottom:18px}
   .est-h::before{content:"\2022 "}
+  .est-hero{display:flex; gap:30px; align-items:flex-start; flex-wrap:wrap}
+  .est-n{font-family:var(--mono); font-weight:500; font-size:44px; color:var(--amber-ink); line-height:1; white-space:nowrap}
+  .est-txt{flex:1 1 380px}
+  .est-txt p{margin:0; font-size:15px; line-height:1.62; color:#6E5426}
+  .est-txt p + p{margin-top:12px}
+  .est-txt strong{color:var(--amber-ink)}
+  .est-note{border-top:1px dashed var(--amber-line); margin-top:24px; padding-top:18px; font-size:14px; line-height:1.62; color:#6E5426}
 
   /* asks */
   .asks{display:grid; gap:18px; margin-top:26px}
@@ -150,8 +273,14 @@
   .ask h3{font-family:var(--serif); font-weight:600; font-size:19px; margin:0 0 7px}
   .ask p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.62}
 
-  .closing{font-family:var(--serif); font-size:22px; line-height:1.5; max-width:64ch; margin-top:56px; padding-top:36px; border-top:1px solid var(--line)}
+  .closing{font-family:var(--serif); font-size:22px; line-height:1.5; max-width:66ch; margin-top:56px; padding-top:36px; border-top:1px solid var(--line)}
+  .closing strong{font-weight:700}
 
+  @media (max-width:860px){
+    .plan-grid{grid-template-columns:1fr}
+    .fld:nth-child(odd){border-right:none}
+    .kpis, .next, .claims, .frentes, .layers{grid-template-columns:1fr}
+  }
   @media (max-width:760px){
     .wrap{padding:40px 20px 64px}
     h1{font-size:33px} h2{font-size:25px}
@@ -162,6 +291,9 @@
     .cl-body{grid-template-columns:1fr; gap:22px}
     .cl h3{font-size:19px}
     .est-n{font-size:36px}
+    .statement{font-size:21px; padding:24px}
+    .narr-step{grid-template-columns:1fr; gap:6px}
+    .narr-step .v{font-size:17px}
   }
 </style>
 </head>
@@ -169,16 +301,16 @@
 <div class="wrap">
 
   <!-- ============ HEADER ============ -->
-  <p class="overline">CS &middot; Voice of Retailer &mdash; reuni&atilde;o com atendimento</p>
+  <p class="overline">CS · Voice of Retailer — análise de dúvidas e autonomia dos varejistas</p>
   <div class="head-grid">
     <div style="flex:1 1 520px">
-      <h1>O que o varejo resolve no WhatsApp e deveria resolver no canal oficial</h1>
-      <p class="lede">Diagn&oacute;stico de nove grupos de WhatsApp de varejistas, entre mar&ccedil;o e agosto de 2026, mais 1.105 chamados de varejos de smartphone mapeados pelo time de CS. As mensagens dos grupos s&atilde;o insumo deste diagn&oacute;stico, mas n&atilde;o t&ecirc;m contagem exata &mdash; o volume real de demanda por fora do canal oficial &eacute; maior que o mapeado. O vendedor deveria acionar a central ou o live chat. Na pr&aacute;tica, aciona quem ele conhece.</p>
+      <h1>O que o varejo resolve no WhatsApp e deveria resolver sozinho</h1>
+      <p class="lede">Diagnóstico de onze varejistas em grupos de WhatsApp, predominantemente entre março e setembro de 2026, com janelas de observação diferentes por varejo. Mais 1.105 chamados de varejos de smartphone mapeados pelo time de CS, por outro canal. As mensagens dos grupos são insumo deste diagnóstico, mas não têm contagem exata — o volume real de demanda por fora do canal oficial é maior que o mapeado.</p>
     </div>
     <div class="meta">
       Luana Roncato Ferreira<br>
       02 set 2026<br>
-      9 grupos de WhatsApp<br>
+      11 varejistas únicos<br>
       1.105 chamados mapeados
     </div>
   </div>
@@ -186,29 +318,202 @@
 
   <div class="metrics">
     <div class="metric">
+      <div class="n">11</div>
+      <div class="l">varejistas únicos analisados — 9 na base classificada, mais Clara Eletro e Ramsons como sinal qualitativo</div>
+    </div>
+    <div class="metric">
       <div class="n">82,5%</div>
-      <div class="l">das dores concentradas em cinco clusters</div>
+      <div class="l">das dores concentradas em cinco clusters — percentual da base classificada de 9 varejistas, ainda não recalculado</div>
     </div>
     <div class="metric">
       <div class="n">1.105</div>
-      <div class="l">chamados de smartphone mapeados chegando ao CS por fora do canal oficial &mdash; mais as mensagens dos grupos, sem contagem exata</div>
-    </div>
-    <div class="metric">
-      <div class="n">7 de 9</div>
-      <div class="l">varejos analisados s&atilde;o de um &uacute;nico produto: super compras eletro</div>
+      <div class="l">chamados de smartphone mapeados chegando ao CS por fora do canal oficial — base separada, outro canal</div>
     </div>
   </div>
 
-  <!-- ============ FRAMING ============ -->
-  <section>
-    <p class="prose">O objetivo do projeto n&atilde;o &eacute; reduzir mensagens no WhatsApp. &Eacute; reduzir as situa&ccedil;&otilde;es em que o vendedor depende de uma pessoa da Ume para continuar operando. Hoje, quando ele tem uma d&uacute;vida no balc&atilde;o com o cliente na frente, deveria acionar a central ou o live chat &mdash; e acaba acionando o time de CS, que responde r&aacute;pido, sem fila e sem login. Enquanto o atalho funcionar melhor que o caminho oficial, ele vence qualquer canal, por melhor que o canal fique. Fechar os grupos sem resolver isso n&atilde;o migra a demanda: s&oacute; a esconde.</p>
+  <div class="legend">
+    <div><span class="ev">observado</span> está nos arquivos analisados</div>
+    <div><span class="ev int">interpretação</span> leitura do time sobre o observado</div>
+    <div><span class="ev hip">hipótese</span> ainda precisa de dado para confirmar</div>
+  </div>
+
+  <nav class="idx" aria-label="Índice">
+    <a href="#narrativa">Evolução do projeto</a>
+    <a href="#base">Base e janela</a>
+    <a href="#camadas">As duas camadas</a>
+    <a href="#clusters">Camada A · clusters</a>
+    <a href="#metodologia">Metodologia 2.0</a>
+    <a href="#causas">Camada B · causas</a>
+    <a href="#evidencia">Nova evidência</a>
+    <a href="#frentes">Quatro frentes</a>
+    <a href="#plano">Plano por cluster</a>
+    <a href="#prioridade">Priorização</a>
+    <a href="#indicadores">Indicadores</a>
+    <a href="#varejistas">Por varejista</a>
+    <a href="#vazamento">Vazamento do canal</a>
+    <a href="#limites">O que podemos afirmar</a>
+    <a href="#testes">Próximos testes</a>
+    <a href="#pedidos">Pedidos</a>
+  </nav>
+
+  <!-- ============ NARRATIVA ============ -->
+  <section id="narrativa">
+    <p class="overline">Como o projeto evoluiu</p>
+    <h2>De “quais são as dúvidas?” para “por que precisou pedir ajuda?”</h2>
+    <p class="sub">A pergunta mudou no meio do caminho, e é essa mudança que separa um relatório de dúvidas de um plano de ação.</p>
+
+    <div class="narr">
+      <div class="narr-step">
+        <div class="k">Pergunta inicial</div>
+        <div class="v">“Quais são as principais dúvidas dos varejistas?”</div>
+      </div>
+      <div class="narr-step">
+        <div class="k">Primeiro diagnóstico</div>
+        <div class="v">Cinco clusters concentram a maior parte das dores.</div>
+      </div>
+      <div class="narr-step">
+        <div class="k">Evolução</div>
+        <div class="v">Mas frequência de dúvida não significa necessariamente problema de produto.</div>
+      </div>
+      <div class="narr-step now">
+        <div class="k">Nova pergunta</div>
+        <div class="v">Por que o vendedor precisou pedir ajuda?</div>
+      </div>
+      <div class="narr-step">
+        <div class="k">Diagnóstico</div>
+        <div class="v">Knowledge · Self-Service · Product Recovery · CVLB Product</div>
+      </div>
+      <div class="narr-step">
+        <div class="k">Objetivo final</div>
+        <div class="v">Reduzir a dependência de intervenção humana para concluir a operação.</div>
+      </div>
+    </div>
+
+    <p class="prose" style="margin-top:36px">O objetivo do projeto não é reduzir mensagens no WhatsApp. É reduzir as situações em que o vendedor depende de uma pessoa da Ume para continuar operando. Hoje, quando ele tem uma dúvida no balcão com o cliente na frente, deveria acionar a central ou o live chat — e acaba acionando o time de CS, que responde rápido, sem fila e sem login. Enquanto o atalho funcionar melhor que o caminho oficial, ele vence qualquer canal, por melhor que o canal fique. Fechar os grupos sem resolver isso não migra a demanda: só a esconde.</p>
   </section>
 
-  <!-- ============ PARETO ============ -->
-  <section>
-    <p class="overline">Onde a demanda entra</p>
+  <!-- ============ BASE ============ -->
+  <section id="base">
+    <p class="overline">Escopo desta atualização</p>
+    <h2>Onze varejistas, janelas de observação diferentes</h2>
+    <p class="sub">Três arquivos novos entraram nesta rodada, mas só dois trazem varejistas novos. O terceiro é continuação de um varejo que já estava na base.</p>
+
+    <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Varejista</th><th>Janela observada</th><th>Situação nesta rodada</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Rodrigues Colchões</td><td class="date">07/04/2026 – 02/09/2026</td><td class="why">arquivo novo começa em 19/05 — tratado como <strong>continuidade</strong>, não base independente</td></tr>
+        <tr><td class="name">Clara Eletro <span class="pill p1">novo</span></td><td class="date">19/05/2026 – 01/09/2026</td><td class="why">varejista novo nesta rodada</td></tr>
+        <tr><td class="name">Ramsons <span class="pill p1">novo</span></td><td class="date">20/05/2026 – 02/09/2026</td><td class="why">varejista novo nesta rodada</td></tr>
+        <tr><td class="name">Sono Show</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+        <tr><td class="name">Novo Lar</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+        <tr><td class="name">CVLB <span class="pill">produto próprio</span></td><td class="date">não informada</td><td class="why">base anterior — analisada separadamente</td></tr>
+        <tr><td class="name">Solar Móveis e Eletros</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+        <tr><td class="name">Mag Duarte</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+        <tr><td class="name">Policred</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+        <tr><td class="name">Big Lar</td><td class="date">menos de um mês</td><td class="why">base anterior — histórico curto demais para conclusão</td></tr>
+        <tr><td class="name">Top Móveis</td><td class="date">não informada</td><td class="why">base anterior</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="tnote"><strong>Rodrigues Colchões não conta duas vezes.</strong> Já existia histórico desde 07/04/2026 e o arquivo novo começa em 19/05/2026 — o período sobreposto não é somado. Conceitualmente é uma janela contínua de 07/04 a 02/09/2026.</p>
+    <p class="tnote"><strong>Data de criação do grupo ≠ histórico disponível.</strong> Um grupo criado em 2024 pode ter conversa recuperável só a partir de 2026. As janelas acima são de conversa observada, não de existência do grupo.</p>
+    <p class="tnote"><strong>CVLB continua separada.</strong> Ela usa um produto diferente dos demais, e as dúvidas ligadas a integração, catálogo, IMEI, PDV ou finalização são analisadas fora do Core Ume — não generalizadas para os outros dez varejistas.</p>
+
+    <h3 style="font-family:var(--serif); font-size:22px; margin:44px 0 0">O que os dois varejistas novos acrescentam</h3>
+    <div class="clusters" style="margin-top:20px">
+      <article class="cl">
+        <header>
+          <span class="cl-n">novo</span>
+          <div>
+            <h3>Clara Eletro</h3>
+            <p class="cl-share">19/05/2026 – 01/09/2026 · Transversal Core / Misto</p>
+          </div>
+        </header>
+        <div class="cl-body">
+          <div class="cl-col">
+            <div class="cl-lab">Sinais qualitativos <span class="ev">observado</span></div>
+            <p>Pagamentos, parcelas e dúvidas de pós-venda; acesso e cadastro; crédito, aprovação e limite; erros e dificuldade de concluir etapas; SMS e telefone.</p>
+            <div class="cl-lab">Exemplos nos arquivos</div>
+            <p>Dificuldade para concluir cadastro · troca de telefone · necessidade de acesso · dúvida sobre parcelas · solicitações de suporte durante a jornada.</p>
+          </div>
+          <div class="cl-col">
+            <div class="cl-lab">Leitura <span class="ev int">interpretação</span></div>
+            <p>Varejista relevante para <strong>validar dores transversais do Core Ume</strong>. Não deve ser tratada inicialmente como caso específico de integração — o padrão observado é o mesmo dos demais varejos do Core.</p>
+            <div class="cl-lab">Status na quantificação</div>
+            <p>Ainda não entrou no Pareto percentual. Entra como sinal qualitativo até ser classificada pela Metodologia 2.0.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="cl">
+        <header>
+          <span class="cl-n">novo</span>
+          <div>
+            <h3>Ramsons</h3>
+            <p class="cl-share">20/05/2026 – 02/09/2026 · Transversal Core · evidência forte de SMS, crédito e recuperação</p>
+          </div>
+        </header>
+        <div class="cl-body">
+          <div class="cl-col">
+            <div class="cl-lab">Sinais qualitativos <span class="ev">observado</span></div>
+            <p>SMS, telefone e autenticação; crédito e aumento/liberação de limite; acesso e cadastro; erros e instabilidade; pagamentos; finalização em alguns casos.</p>
+            <div class="cl-lab">Recorrências observadas</div>
+            <p>Cliente antecipou ou quitou parcelas e espera novo limite · vendedor pede nova análise ou aumento de limite · necessidade de troca de telefone · SMS e código gerando dependência de suporte · instabilidade em funcionalidades.</p>
+          </div>
+          <div class="cl-col">
+            <div class="cl-lab">O achado que muda a leitura <span class="ev">observado</span></div>
+            <p><strong>O vendedor solicita ajuda mesmo existindo canais de autoatendimento divulgados no próprio grupo.</strong> Esse é o achado mais importante desta rodada e sustenta toda a evolução metodológica descrita adiante.</p>
+            <div class="cl-lab">Leitura <span class="ev int">interpretação</span></div>
+            <p>Reforça principalmente os clusters transversais de <strong>autenticação, crédito e Product Recovery</strong>.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DUAS CAMADAS ============ -->
+  <section id="camadas">
+    <p class="overline">Como ler os dados</p>
+    <h2>Toda dúvida tem duas leituras, não uma</h2>
+    <p class="sub">O cluster diz sobre o que a pessoa perguntou. Ele não diz por que ela precisou perguntar. São perguntas diferentes e levam a soluções diferentes.</p>
+
+    <div class="layers">
+      <div class="layer">
+        <p class="tagline">Camada A</p>
+        <h3>Qual é a dor?</h3>
+        <p>O cluster da dúvida — o assunto sobre o qual o vendedor perguntou. É o que o Pareto mede.</p>
+        <ul>
+          <li>Serve para dimensionar volume</li>
+          <li>Serve para agrupar temas</li>
+          <li><strong>Não</strong> serve para decidir se a solução é produto, conteúdo ou treinamento</li>
+        </ul>
+      </div>
+      <div class="layer b">
+        <p class="tagline">Camada B</p>
+        <h3>Por que precisou pedir ajuda?</h3>
+        <p>A causa da demanda de suporte — o que faltou para a pessoa resolver sozinha. É o que a Metodologia 2.0 e a taxonomia C1–C9 medem.</p>
+        <ul>
+          <li>É aqui que se decide o tipo de solução</li>
+          <li>Duas dúvidas do mesmo cluster podem ter causas opostas</li>
+          <li>É a camada que estava faltando no primeiro diagnóstico</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="statement">
+      Volume de dúvida ≠ necessidade de desenvolvimento de produto.
+      <small>Um cluster grande pode ser inteiramente encontrabilidade — resolve-se centralizando links, não construindo funcionalidade. Um cluster pequeno pode ser falha de produto que trava a venda. Priorizar por volume trata os dois como se fossem a mesma coisa.</small>
+    </div>
+  </section>
+
+  <!-- ============ CAMADA A: PARETO ============ -->
+  <section id="clusters">
+    <p class="overline">Camada A · onde a demanda entra</p>
     <h2>Cinco clusters, cinco motivos diferentes para pedir ajuda</h2>
-    <p class="sub">Pareto das dores classificadas nos grupos de WhatsApp. A prioridade indica o que precisa de corre&ccedil;&atilde;o de produto (P0) e o que se resolve com conhecimento e self-service (P1).</p>
+    <p class="sub">Pareto das dores classificadas nos grupos de WhatsApp. A prioridade indica o que precisa de correção de produto (P0) e o que se resolve com conhecimento e self-service (P1).</p>
 
     <div class="tablewrap">
     <table>
@@ -217,41 +522,35 @@
       </thead>
       <tbody>
         <tr>
-          <td class="name">Pagamento, parcelas e boletos <span class="pill p1">P1</span></td>
+          <td class="name">1 · Pagamentos, parcelas e boletos <span class="pill p1">P1</span></td>
           <td class="num">22,7%</td>
-          <td class="why">pedidos repetidos de links que j&aacute; circularam no grupo &mdash; a informa&ccedil;&atilde;o existe, o acesso &eacute; fragmentado</td>
+          <td class="why">pedidos repetidos de links que já circularam no grupo — a informação existe, o acesso é fragmentado</td>
         </tr>
         <tr>
-          <td class="name">Erros, instabilidade e fluxo travado <span class="pill p0">P0</span></td>
+          <td class="name">2 · Erros, instabilidade e fluxo travado <span class="pill p0">P0</span></td>
           <td class="num">21,9%</td>
-          <td class="why">o vendedor sabe o que deveria acontecer, n&atilde;o sabe como se recuperar quando n&atilde;o acontece</td>
+          <td class="why">o vendedor sabe o que deveria acontecer, não sabe como se recuperar quando não acontece</td>
         </tr>
         <tr>
-          <td class="name">Aprova&ccedil;&atilde;o, limite e entrada <span class="pill p1">P1</span></td>
+          <td class="name">3 · Aprovação, reprovação, limite e entrada <span class="pill p1">P1</span></td>
           <td class="num">21,5%</td>
-          <td class="why">&ldquo;por que n&atilde;o aprovou?&rdquo; &mdash; a decis&atilde;o de cr&eacute;dito n&atilde;o &eacute; explicada na tela</td>
+          <td class="why">“por que não aprovou?” — a decisão de crédito não é explicada na tela</td>
         </tr>
         <tr>
-          <td class="name">SMS, telefone e autentica&ccedil;&atilde;o <span class="pill p0">P0 / P1</span></td>
+          <td class="name">4 · SMS, telefone e autenticação <span class="pill p0">P0 / P1</span></td>
           <td class="num">9,9%</td>
-          <td class="why">dois problemas juntos: d&uacute;vida de procedimento e falha real de entrega do c&oacute;digo</td>
+          <td class="why">dois problemas juntos: dúvida de procedimento e falha real de entrega do código</td>
         </tr>
         <tr>
-          <td class="name">Cat&aacute;logo, IMEI, pre&ccedil;o e servi&ccedil;os <span class="pill">a investigar</span></td>
+          <td class="name">5 · Catálogo, IMEI, preço e serviços <span class="pill">a investigar</span></td>
           <td class="num">6,5%</td>
-          <td class="why">concentrado num varejo que vende aparelho &mdash; prov&aacute;vel assinatura do produto, n&atilde;o caso isolado</td>
+          <td class="why">concentrado num varejo que vende aparelho — provável assinatura do produto, não caso isolado</td>
         </tr>
       </tbody>
     </table>
     </div>
-    <p class="tnote">N&atilde;o h&aacute; Pareto 80/20 cl&aacute;ssico: foram necess&aacute;rios cinco clusters para chegar perto de 80% das dores. O cluster de cr&eacute;dito, com 21,5% aqui, aparece em apenas 0,9% dos 1.105 chamados de smartphone &mdash; a dor de cr&eacute;dito &eacute; espec&iacute;fica de super compras, n&atilde;o do roadmap inteiro.</p>
-  </section>
-
-  <!-- ============ O QUE CADA CLUSTER SIGNIFICA ============ -->
-  <section>
-    <p class="overline">Detalhamento</p>
-    <h2>O que cada cluster significa na pr&aacute;tica</h2>
-    <p class="sub">Mesmo share de volume n&atilde;o quer dizer mesmo tipo de problema. Cada cluster abaixo tem uma dor concreta, uma causa prov&aacute;vel e um dono diferente.</p>
+    <p class="tnote"><strong>Base destes percentuais:</strong> os 9 varejistas da rodada anterior. Clara Eletro e Ramsons entram nesta versão como sinal qualitativo — os sinais deles são consistentes com estes clusters, mas os percentuais <strong>não foram recalculados</strong> para 11 varejistas.</p>
+    <p class="tnote">Não há Pareto 80/20 clássico: foram necessários cinco clusters para passar de 80% das dores. O cluster de crédito, com 21,5% aqui, aparece em apenas 0,9% dos 1.105 chamados de smartphone — a dor de crédito é específica de super compras, não do roadmap inteiro.</p>
 
     <div class="clusters">
 
@@ -259,24 +558,24 @@
         <header>
           <span class="cl-n">01</span>
           <div>
-            <h3>Pagamento, parcelas e boletos</h3>
+            <h3>Pagamentos, parcelas e boletos</h3>
             <p class="cl-share">22,7% das dores <span class="pill p1">P1</span></p>
           </div>
         </header>
         <div class="cl-body">
           <div class="cl-col">
-            <div class="cl-lab">A dor</div>
-            <p>Link de pagamento, boleto, parcelas, antecipa&ccedil;&atilde;o, compensa&ccedil;&atilde;o, qual &eacute; a financeira respons&aacute;vel e corre&ccedil;&atilde;o de dados cadastrais.</p>
+            <div class="cl-lab">A dor <span class="ev">observado</span></div>
+            <p>Link de pagamento, boleto, parcelas, antecipação, compensação, qual é a financeira responsável e correção de dados cadastrais.</p>
             <div class="cl-lab">Como aparece</div>
-            <p class="quote">&ldquo;Algu&eacute;m tem o link do site pra acessar os boletos?&rdquo; &middot; &ldquo;Tem algum canal que o cliente consiga acessar o boleto?&rdquo; &middot; &ldquo;Algu&eacute;m poderia me enviar o QR code de pagamento?&rdquo;</p>
+            <p class="quote">“Alguém tem o link do site pra acessar os boletos?” · “Tem algum canal que o cliente consiga acessar o boleto?” · “Alguém poderia me enviar o QR code de pagamento?”</p>
           </div>
           <div class="cl-col">
-            <div class="cl-lab">O que a segunda an&aacute;lise mudou</div>
-            <p>H&aacute; pedidos repetidos por links que j&aacute; circularam no pr&oacute;prio grupo. A hip&oacute;tese deixa de ser &ldquo;falta FAQ&rdquo; e passa a ser: <strong>a informa&ccedil;&atilde;o existe, mas o acesso &eacute; fragmentado e pouco recuper&aacute;vel</strong>.</p>
-            <div class="cl-lab">Causa prov&aacute;vel</div>
-            <p><strong>C3 &mdash; Encontrabilidade</strong>, seguida de C2 &mdash; Comunica&ccedil;&atilde;o e distribui&ccedil;&atilde;o.</p>
-            <div class="cl-lab">O que resolve</div>
-            <p>Ponto &uacute;nico de p&oacute;s-venda que comece por &ldquo;qual financeira?&rdquo; e ofere&ccedil;a consultar parcelas, gerar boleto ou Pix, antecipar, tratar pagamento n&atilde;o compensado e corrigir dados. FAQ tem papel alto, mas s&oacute; se for centralizada &mdash; criar mais documentos ou seguir enviando links soltos tende a ter impacto baixo.</p>
+            <div class="cl-lab">O que a segunda análise mudou <span class="ev int">interpretação</span></div>
+            <p>Há pedidos repetidos por links que já circularam no próprio grupo. A hipótese deixa de ser “falta FAQ” e passa a ser: <strong>a informação existe, mas o acesso é fragmentado e pouco recuperável</strong>.</p>
+            <div class="cl-lab">Causa provável</div>
+            <p><strong>C3 — Encontrabilidade</strong>, seguida de C2 — Comunicação e distribuição.</p>
+            <div class="cl-lab">Frente responsável</div>
+            <p>B — Self-Service &amp; Encontrabilidade. Plano detalhado adiante.</p>
           </div>
         </div>
       </article>
@@ -291,18 +590,18 @@
         </header>
         <div class="cl-body">
           <div class="cl-col">
-            <div class="cl-lab">A dor</div>
-            <p>Tela que n&atilde;o avan&ccedil;a, erro na venda, upload que falha, configura&ccedil;&atilde;o interrompida, sistema aparentemente indispon&iacute;vel.</p>
+            <div class="cl-lab">A dor <span class="ev">observado</span></div>
+            <p>Tela que não avança, erro na venda, upload que falha, configuração interrompida, sistema aparentemente indisponível.</p>
             <div class="cl-lab">Como aparece</div>
-            <p class="quote">&ldquo;n&atilde;o consigo&rdquo; &middot; &ldquo;erro&rdquo; &middot; &ldquo;falha&rdquo; &middot; &ldquo;parou&rdquo; &middot; &ldquo;caiu&rdquo; &middot; &ldquo;n&atilde;o aparece&rdquo;</p>
+            <p class="quote">“não consigo” · “erro” · “falha” · “parou” · “caiu” · “não aparece”</p>
           </div>
           <div class="cl-col">
-            <div class="cl-lab">O que a segunda an&aacute;lise mudou</div>
-            <p>N&atilde;o &eacute; problema de conhecimento. O vendedor sabe o que deveria acontecer &mdash; <strong>o problema &eacute; que n&atilde;o aconteceu e ele n&atilde;o sabe como se recuperar</strong>.</p>
-            <div class="cl-lab">Causa prov&aacute;vel</div>
-            <p><strong>C7 &mdash; Produto e UX</strong>, com parte em C8 &mdash; Exce&ccedil;&atilde;o operacional.</p>
-            <div class="cl-lab">O que resolve</div>
-            <p>Produto, com papel muito alto. FAQ serve apenas para workarounds conhecidos; treinamento ensina recupera&ccedil;&atilde;o, n&atilde;o corrige falha. Primeiro passo &eacute; um sub-Pareto de erros: etapa, erro, frequ&ecirc;ncia, workaround, interven&ccedil;&atilde;o necess&aacute;ria e impacto na venda. Depois, c&oacute;digos de erro, mensagens acion&aacute;veis, &ldquo;tentar novamente&rdquo;, status do servi&ccedil;o vis&iacute;vel e telemetria por etapa.</p>
+            <div class="cl-lab">O que a segunda análise mudou <span class="ev int">interpretação</span></div>
+            <p>Não é problema de conhecimento. O vendedor sabe o que deveria acontecer — <strong>o problema é que não aconteceu e ele não sabe como se recuperar</strong>.</p>
+            <div class="cl-lab">Causa provável</div>
+            <p><strong>C7 — Produto e UX</strong>, com parte em C8 — Exceção operacional.</p>
+            <div class="cl-lab">Frente responsável</div>
+            <p>C — Product Reliability &amp; Recovery. Não tratar prioritariamente com treinamento.</p>
           </div>
         </div>
       </article>
@@ -311,25 +610,25 @@
         <header>
           <span class="cl-n">03</span>
           <div>
-            <h3>Aprova&ccedil;&atilde;o, limite e entrada</h3>
-            <p class="cl-share">21,5% das dores <span class="pill p1">P1</span> <span class="pill">tr&ecirc;s problemas em um</span></p>
+            <h3>Aprovação, reprovação, limite e entrada</h3>
+            <p class="cl-share">21,5% das dores <span class="pill p1">P1</span> <span class="pill">três problemas em um</span></p>
           </div>
         </header>
         <div class="cl-body">
           <div class="cl-col">
-            <div class="cl-lab">A &middot; Conhecimento de regra</div>
-            <p class="quote">&ldquo;Entrada pode ser no cart&atilde;o?&rdquo; &middot; &ldquo;Esse CPF s&oacute; com entrada?&rdquo;</p>
+            <div class="cl-lab">A · Conhecimento de regra</div>
+            <p class="quote">“Entrada pode ser no cartão?” · “Esse CPF só com entrada?”</p>
             <p>Resolve com FAQ e treinamento.</p>
-            <div class="cl-lab">B &middot; Explicabilidade da decis&atilde;o</div>
-            <p class="quote">&ldquo;Por que n&atilde;o aprovou?&rdquo;</p>
-            <p>O vendedor n&atilde;o entende o resultado que a tela apresentou. Resolve com produto e comunica&ccedil;&atilde;o: explicar o resultado, se cabe nova tentativa, quando e quais condi&ccedil;&otilde;es existem &mdash; sem expor regras sens&iacute;veis de risco.</p>
+            <div class="cl-lab">B · Explicabilidade da decisão</div>
+            <p class="quote">“Por que não aprovou?”</p>
+            <p>O vendedor não entende o resultado que a tela apresentou. Resolve com produto e comunicação: explicar o resultado, se cabe nova tentativa, quando e quais condições existem — sem expor regras sensíveis de risco.</p>
           </div>
           <div class="cl-col">
-            <div class="cl-lab">C &middot; Tentativa de salvar a venda</div>
-            <p class="quote">&ldquo;Como podemos solicitar aumento de limite para o cliente?&rdquo;</p>
-            <p>A necessidade real n&atilde;o &eacute; aumento de limite: &eacute; <strong>&ldquo;existe alguma alternativa para eu fechar essa venda?&rdquo;</strong>. Em super compras e smartphone o limite &eacute; transacional, avaliado a cada consulta, e aumento n&atilde;o existe &mdash; ent&atilde;o a tela precisa dizer isso com clareza e mostrar o caminho real: limite, entrada m&iacute;nima, valor financi&aacute;vel e pr&oacute;xima a&ccedil;&atilde;o poss&iacute;vel.</p>
-            <div class="cl-lab">Causa prov&aacute;vel</div>
-            <p>Mistura de <strong>C1 e C5</strong> (conhecimento e treinamento) com <strong>C7</strong> (produto e UX).</p>
+            <div class="cl-lab">C · Tentativa de salvar a venda</div>
+            <p class="quote">“Como podemos solicitar aumento de limite para o cliente?”</p>
+            <p>A necessidade real não é aumento de limite: é <strong>“existe alguma alternativa para eu fechar essa venda?”</strong>. Em super compras e smartphone o limite é transacional, avaliado a cada consulta, e aumento não existe — então a tela precisa dizer isso com clareza e mostrar o caminho real.</p>
+            <div class="cl-lab">Novo na Ramsons <span class="ev">observado</span></div>
+            <p>Clientes que <strong>anteciparam ou quitaram parcelas e esperam novo limite</strong>. É a mesma lacuna vista de outro ângulo: falta responder “o que acontece com meu limite depois do pagamento?”.</p>
           </div>
         </div>
       </article>
@@ -338,22 +637,24 @@
         <header>
           <span class="cl-n">04</span>
           <div>
-            <h3>SMS, telefone e autentica&ccedil;&atilde;o</h3>
+            <h3>SMS, telefone e autenticação</h3>
             <p class="cl-share">9,9% das dores <span class="pill p0">P0 / P1</span> <span class="pill">dois tipos</span></p>
           </div>
         </header>
         <div class="cl-body">
           <div class="cl-col">
-            <div class="cl-lab">Tipo A &middot; Conhecimento &mdash; P1/P2</div>
-            <p class="quote">Qual telefone usar? &middot; Como alterar? &middot; Posso alterar depois? &middot; Qual chip deve permanecer?</p>
-            <p>D&uacute;vida de procedimento. Resolve com FAQ, UX contextual e treinamento.</p>
+            <div class="cl-lab">Tipo A · Procedimento — P1/P2</div>
+            <p class="quote">Qual telefone usar? · Como alterar? · Posso alterar depois? · Qual chip deve permanecer?</p>
+            <p>Dúvida de procedimento. Resolve com FAQ, UX contextual e treinamento.</p>
+            <div class="cl-lab">Reforço da Ramsons <span class="ev">observado</span></div>
+            <p>Troca de telefone aparece de novo, agora em outro varejo — deixa de ser padrão de um cliente só.</p>
           </div>
           <div class="cl-col">
-            <div class="cl-lab">Tipo B &middot; Falha &mdash; P0</div>
-            <p class="quote">SMS n&atilde;o chegou &middot; c&oacute;digo n&atilde;o chega &middot; reenvio n&atilde;o funciona</p>
-            <p>A pessoa sabe o que deveria acontecer; o sistema n&atilde;o entregou. &Eacute; produto e opera&ccedil;&atilde;o, n&atilde;o conhecimento. A evolu&ccedil;&atilde;o na tela &eacute; mostrar <strong>&ldquo;c&oacute;digo enviado para &bull;&bull;&bull;&bull;1234&rdquo;</strong> com reenviar, alterar telefone, &ldquo;n&atilde;o recebeu?&rdquo; e alternativa de autentica&ccedil;&atilde;o quando permitido.</p>
+            <div class="cl-lab">Tipo B · Falha — P0</div>
+            <p class="quote">SMS não chegou · código não chega · reenvio não funciona</p>
+            <p>A pessoa sabe o que deveria acontecer; o sistema não entregou. É produto e operação, não conhecimento.</p>
             <div class="cl-lab">Por que dividir importa</div>
-            <p>Tratado como bloco &uacute;nico, esse cluster receberia FAQ &mdash; que n&atilde;o resolve o Tipo B, e &eacute; ele que trava a venda com o cliente no balc&atilde;o.</p>
+            <p>Tratado como bloco único, esse cluster receberia FAQ — que não resolve o Tipo B, e é ele que trava a venda com o cliente no balcão.</p>
           </div>
         </div>
       </article>
@@ -362,22 +663,22 @@
         <header>
           <span class="cl-n">05</span>
           <div>
-            <h3>Cat&aacute;logo, IMEI, pre&ccedil;o e servi&ccedil;os</h3>
+            <h3>Catálogo, IMEI, preço e serviços</h3>
             <p class="cl-share">6,5% das dores <span class="pill">a investigar</span></p>
           </div>
         </header>
         <div class="cl-body">
           <div class="cl-col">
-            <div class="cl-lab">A dor</div>
-            <p>Modelo n&atilde;o aparece no cat&aacute;logo, IMEI n&atilde;o reconhecido, IMEI 1 versus IMEI 2, diverg&ecirc;ncia de pre&ccedil;o e regras de servi&ccedil;os.</p>
-            <div class="cl-lab">O que a documenta&ccedil;&atilde;o registrou</div>
-            <p>Concentra&ccedil;&atilde;o forte num varejo s&oacute; (CVLB), o que levou a n&atilde;o tratar o tema como problema transversal.</p>
+            <div class="cl-lab">A dor <span class="ev">observado</span></div>
+            <p>Modelo não aparece no catálogo, IMEI não reconhecido, IMEI 1 versus IMEI 2, divergência de preço e regras de serviços.</p>
+            <div class="cl-lab">O que a documentação registrou</div>
+            <p>Concentração forte num varejo só (CVLB), o que levou a não tratar o tema como problema transversal.</p>
           </div>
           <div class="cl-col">
-            <div class="cl-lab">O que os chamados acrescentam</div>
-            <p>IMEI, trava e cadastro de aparelho aparecem com for&ccedil;a numa base 100% smartphone, sem CVLB nenhuma. A leitura passa a ser: <strong>n&atilde;o &eacute; problema de um cliente, &eacute; a assinatura da venda de aparelho</strong> &mdash; e a CVLB era o &uacute;nico varejo com essa mec&acirc;nica na amostra do WhatsApp.</p>
-            <div class="cl-lab">O que resolve</div>
-            <p>Backlog de jornada de aparelho &mdash; integra&ccedil;&atilde;o cat&aacute;logo &times; PDV, SKU e modelo, IMEI, c&oacute;digos e pre&ccedil;o &mdash; com dois consumidores: o produto smartphone e a fatia de aparelho dentro do multicategoria.</p>
+            <div class="cl-lab">O que os chamados acrescentam <span class="ev int">interpretação</span></div>
+            <p>IMEI, trava e cadastro de aparelho aparecem com força numa base 100% smartphone, sem CVLB nenhuma. A leitura passa a ser: <strong>não é problema de um cliente, é a assinatura da venda de aparelho</strong>.</p>
+            <div class="cl-lab">Como tratar</div>
+            <p>Backlog CVLB separado do Core Ume, e monitoramento da incidência do tema nos varejistas novos antes de generalizar.</p>
           </div>
         </div>
       </article>
@@ -385,163 +686,721 @@
     </div>
   </section>
 
-  <!-- ============ CASO A PARTE ============ -->
-  <section>
-    <p class="overline">Um caso &agrave; parte &mdash; e mede o projeto todo</p>
-    <h2>O diagn&oacute;stico descreve um produto, n&atilde;o a Ume</h2>
-    <p class="sub">Sete dos nove varejos analisados s&atilde;o super compras eletro. Os outros tr&ecirc;s produtos entram com um varejo cada, ou nenhum.</p>
+  <!-- ============ METODOLOGIA ============ -->
+  <section id="metodologia">
+    <p class="overline">Metodologia 2.0</p>
+    <h2>Sete testes aplicados a cada dúvida</h2>
+    <p class="sub">Antes de decidir a solução, cada dúvida passa por esta sequência. Os testes são cumulativos: a resposta de um muda o peso do seguinte.</p>
 
-    <div class="flowbox">
-      <div class="flow-lab">Como o contato deveria acontecer</div>
-      <div class="flow">
-        <span class="node">Vendedor na loja</span><span class="arrow">&rarr;</span>
-        <span class="node">Central ou live chat</span><span class="arrow">&rarr;</span>
-        <span class="node">Resolvido no canal oficial</span>
+    <div class="tests">
+      <div class="test"><div class="t">T1</div><p>A informação necessária <strong>já existia</strong>?</p></div>
+      <div class="test"><div class="t">T2</div><p>A mesma pergunta <strong>já havia sido respondida anteriormente</strong>?</p></div>
+      <div class="test"><div class="t">T3</div><p>A <strong>mesma pessoa</strong> já havia recebido aquela resposta?</p></div>
+      <div class="test"><div class="t">T4</div><p>FAQ, link, treinamento ou material oficial <strong>já havia sido disponibilizado</strong>?</p></div>
+      <div class="test">
+        <div class="t">T5</div>
+        <div>
+          <p>Era possível resolver <strong>apenas com informação</strong>?</p>
+          <p class="opts">Self-service possível · Self-service assistido · Intervenção necessária</p>
+        </div>
       </div>
-      <div class="flow-split"></div>
-      <div class="flow-lab">Como acontece hoje</div>
-      <div class="flow">
-        <span class="node bad">Vendedor na loja</span><span class="arrow">&rarr;</span>
-        <span class="node bad">Grupo de WhatsApp</span><span class="arrow">&rarr;</span>
-        <span class="node bad">Time de CS intermedia</span><span class="arrow">&rarr;</span>
-        <span class="node bad">Central</span>
+      <div class="test"><div class="t">T6</div><p>A informação era <strong>razoavelmente fácil de encontrar</strong>?</p></div>
+      <div class="test">
+        <div class="t">T7</div>
+        <div>
+          <p>Que <strong>tipo</strong> de situação era?</p>
+          <p class="opts">Regra básica · Como fazer · Exceção operacional · Erro · Situação não documentada</p>
+        </div>
       </div>
     </div>
+    <p class="tnote">O T5 é o que conecta o diagnóstico ao indicador: a distribuição entre <em>self-service possível</em>, <em>assistido</em> e <em>intervenção necessária</em> é o que o projeto se propõe a mover.</p>
+  </section>
+
+  <!-- ============ CAMADA B: CAUSAS ============ -->
+  <section id="causas">
+    <p class="overline">Camada B · causa raiz</p>
+    <h2>Por que o vendedor pede ajuda — nove causas prováveis</h2>
+    <p class="sub">Uma mesma dúvida pode ter causas diferentes, e cada causa exige uma solução diferente. Priorizar só por frequência trata todas como se fossem a mesma coisa.</p>
+
+    <div class="causes">
+      <div class="cause"><h3><span class="code">C1</span>Conhecimento inexistente</h3><p>A informação não existe em lugar nenhum. Resolve-se criando o conteúdo.</p></div>
+      <div class="cause"><h3><span class="code">C2</span>Comunicação e distribuição</h3><p>A informação existe, mas não chegou de forma adequada a quem precisa dela no balcão.</p></div>
+      <div class="cause"><h3><span class="code">C3</span>Encontrabilidade</h3><p>A informação existe e chegou, mas recuperá-la exige mais esforço do que perguntar. Causa predominante no cluster de pagamentos.</p></div>
+      <div class="cause hyp"><h3><span class="code">C4</span>Retenção</h3><p>O usuário já recebeu essa resposta antes. Hipótese comportamental — exige dado que o WhatsApp não fornece.</p></div>
+      <div class="cause hyp"><h3><span class="code">C5</span>Onboarding e treinamento</h3><p>Regra básica que reaparece sugere lacuna de capacitação, não de documentação.</p></div>
+      <div class="cause hyp"><h3><span class="code">C6</span>Preferência pelo suporte humano / caminho de menor esforço</h3><p>O canal informal exige menos esforço que o oficial. Parte dos vendedores não tenta a central — vai direto ao WhatsApp.</p></div>
+      <div class="cause"><h3><span class="code">C7</span>Produto e UX</h3><p>O produto não explica a situação nem permite resolver. Nenhuma FAQ cobre esse caso.</p></div>
+      <div class="cause"><h3><span class="code">C8</span>Exceção operacional</h3><p>Necessidade legítima de intervenção da Ume. Deve existir, mas com fluxo definido.</p></div>
+      <div class="cause hyp"><h3><span class="code">C9</span>Inconclusivo</h3><p>Evidência insuficiente para atribuir causa. Em 112 dos 1.105 chamados o próprio registro anota que o varejo não enviou print.</p></div>
+    </div>
+
+    <div class="statement" style="border-left-color:var(--amber-line)">
+      C4, C5 e C6 são hipóteses comportamentais — não julgamentos sobre o vendedor.
+      <small>Não usamos e não devemos usar termos como “preguiça” ou “não prestou atenção”. A pergunta correta é objetiva e mensurável: <strong>o esforço para pedir ajuda é menor que o esforço para encontrar a resposta sozinho?</strong> Se for, o comportamento é racional e o que precisa mudar é a relação entre os dois esforços — não a pessoa.</small>
+    </div>
+
+    <p class="tnote">Nos chamados, 358 registros dizem “a central não responde”, mas isso é relato do varejo: sem os dados da central não há como verificar. Essa é a diferença entre fricção real e caminho de menor esforço, e é ela que decide se a solução é capacidade de atendimento ou redirecionamento.</p>
+  </section>
+
+  <!-- ============ NOVA EVIDÊNCIA ============ -->
+  <section id="evidencia">
+    <p class="overline">Achado desta rodada</p>
+    <h2>O autoatendimento foi divulgado — e a demanda continuou</h2>
+
+    <div class="statement">
+      Nos novos históricos, canais e links de autoatendimento são explicitamente divulgados no grupo e, depois disso, continuam existindo solicitações de suporte relacionadas à operação.
+      <small><span class="ev">observado</span> &nbsp;Isso enfraquece a explicação mais simples — “falta informação” — e é a razão de a Camada B existir.</small>
+    </div>
+
+    <p class="prose" style="margin-top:32px">Parte da demanda não decorre necessariamente da ausência de informação. Pode decorrer de dificuldade de encontrabilidade, excesso de links e canais, baixa contextualização, baixa retenção, preferência pelo canal humano — ou de situações específicas que o self-service existente simplesmente não consegue resolver. São causas diferentes, com soluções diferentes, e nenhuma delas se resolve criando mais um documento.</p>
+
+    <div class="statement" style="margin-top:32px">
+      Não assumir que “criar mais FAQ” resolverá dúvidas recorrentes.
+      <small>Antes de produzir qualquer conteúdo novo, o time deve responder às cinco perguntas abaixo. Se a resposta à primeira for “sim”, o problema não é de conteúdo.</small>
+    </div>
+
+    <div class="tests" style="margin-top:20px">
+      <div class="test"><div class="t">1</div><p>A informação <strong>já existe</strong>?</p></div>
+      <div class="test"><div class="t">2</div><p>O vendedor <strong>sabe que existe</strong>?</p></div>
+      <div class="test"><div class="t">3</div><p>Ele <strong>consegue encontrar</strong>?</p></div>
+      <div class="test"><div class="t">4</div><p>É <strong>mais rápido usar o self-service ou perguntar no WhatsApp</strong>?</p></div>
+      <div class="test"><div class="t">5</div><p>A ferramenta <strong>realmente resolve</strong> a situação apresentada?</p></div>
+    </div>
+  </section>
+
+  <!-- ============ QUATRO FRENTES ============ -->
+  <section id="frentes">
+    <p class="overline">Plano de ação · estrutura</p>
+    <h2>Quatro frentes, quatro donos diferentes</h2>
+    <p class="sub">Cada dúvida classificada pela Camada B cai em uma destas frentes. É a frente — não o volume do cluster — que define o tipo de solução.</p>
+
+    <div class="frentes">
+      <div class="frente">
+        <p class="letra">FRENTE A</p>
+        <h3>Knowledge &amp; Enablement</h3>
+        <p>Quando falta conhecimento ou entendimento de regra.</p>
+        <p class="mini">Exemplos</p>
+        <ul>
+          <li>Regras de entrada</li>
+          <li>Formas de pagamento</li>
+          <li>Procedimentos de alteração de cadastro</li>
+          <li>Conceitos básicos da operação</li>
+        </ul>
+        <p class="mini">Soluções</p>
+        <ul>
+          <li>Onboarding e treinamento</li>
+          <li>Materiais e playbooks</li>
+          <li>Comunicação</li>
+        </ul>
+      </div>
+
+      <div class="frente">
+        <p class="letra">FRENTE B</p>
+        <h3>Self-Service &amp; Encontrabilidade</h3>
+        <p>Quando a resposta existe, mas não é encontrada facilmente.</p>
+        <p class="mini">Exemplos</p>
+        <ul>
+          <li>Link de boleto e canal de pagamento</li>
+          <li>Segunda via</li>
+          <li>Links de atendimento</li>
+          <li>Procedimentos já comunicados</li>
+        </ul>
+        <p class="mini">Soluções</p>
+        <ul>
+          <li>Central única</li>
+          <li>Links contextuais, busca e atalhos</li>
+          <li>Redução da fragmentação</li>
+        </ul>
+      </div>
+
+      <div class="frente">
+        <p class="letra">FRENTE C</p>
+        <h3>Product Reliability &amp; Recovery</h3>
+        <p>Quando o vendedor sabe o que deveria acontecer, mas não consegue continuar.</p>
+        <p class="mini">Exemplos</p>
+        <ul>
+          <li>Erro e tela travada</li>
+          <li>SMS não chega, código não funciona</li>
+          <li>Instabilidade, sistema não avança</li>
+        </ul>
+        <p class="mini">Soluções</p>
+        <ul>
+          <li>Correção de produto e recuperação de erro</li>
+          <li>Mensagens acionáveis e retry</li>
+          <li>Telemetria, status e automação de diagnóstico</li>
+        </ul>
+      </div>
+
+      <div class="frente cvlb">
+        <p class="letra">FRENTE D</p>
+        <h3>CVLB Product</h3>
+        <p>Problemas específicos do produto CVLB. <strong>Backlog separado do Core Ume.</strong></p>
+        <p class="mini">Exemplos</p>
+        <ul>
+          <li>Catálogo e códigos</li>
+          <li>IMEI</li>
+          <li>PDV e configuração</li>
+          <li>Integração e finalização específica</li>
+        </ul>
+        <p class="mini">Regra</p>
+        <ul>
+          <li>Não generalizar a dor da CVLB para todo o Core Ume</li>
+          <li>Monitorar se o tema aparece nos varejistas novos antes de promover a transversal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANO POR CLUSTER ============ -->
+  <section id="plano">
+    <p class="overline">Plano de ação detalhado</p>
+    <h2>O que fazer em cada cluster</h2>
+    <p class="sub">Mesma estrutura para os cinco: o que foi observado, por que aconteceu, o que perguntar antes de agir, o que fazer agora, o que construir depois — e como saber se funcionou.</p>
+
+    <!-- CLUSTER 1 -->
+    <article class="plan">
+      <header>
+        <span class="plan-n">01</span>
+        <div>
+          <h3>Pagamentos, parcelas e boletos</h3>
+          <p class="frente-tag">Frente B — Self-Service &amp; Encontrabilidade · 22,7% das dores</p>
+        </div>
+      </header>
+      <div class="plan-grid">
+        <div class="fld">
+          <p class="k">Dor observada <span class="ev">observado</span></p>
+          <p>Link de pagamento, boleto, parcelas, antecipação, compensação, identificação da financeira responsável e correção de dados cadastrais.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Causa provável</p>
+          <p><strong>C3 — Encontrabilidade</strong>, seguida de <strong>C2 — Comunicação e distribuição</strong>. Diagnóstico predominante é encontrabilidade e self-service; <strong>não</strong> assumir ausência de conteúdo.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evidências <span class="ev">observado</span></p>
+          <p>Pedidos repetidos de links que já haviam circulado no próprio grupo. Nos históricos novos, canais de autoatendimento divulgados e demanda persistindo depois.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Perguntas de diagnóstico</p>
+          <ul>
+            <li>O link já foi enviado a esse grupo antes?</li>
+            <li>Quantos canais diferentes de pagamento existem hoje?</li>
+            <li>O vendedor sabe identificar a financeira sem perguntar?</li>
+            <li>Perguntar no grupo é mais rápido que usar o canal?</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Tipo de solução</p>
+          <p>Centralização e redução de fragmentação. Conteúdo novo só depois de confirmar que a informação não existe — o que os arquivos indicam <strong>não</strong> ser o caso.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Ações imediatas</p>
+          <ul>
+            <li>Centralizar os canais de pagamento e reduzir links dispersos</li>
+            <li>Criar entrada única: <strong>“Cliente quer pagar uma parcela”</strong></li>
+            <li>Separar por financeira logo na entrada</li>
+            <li>Disponibilizar boleto, Pix, antecipação, segunda via e tratamento de pagamento não compensado</li>
+            <li>Treinar: como identificar a financeira, como orientar o consumidor, quando usar self-service e quando escalar</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Evolução de médio prazo</p>
+          <p>Avaliar visão de pós-venda diretamente no portal, de forma que o vendedor consulte parcelas e gere cobrança sem sair do fluxo.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Hipótese <span class="ev hip">hipótese</span></p>
+          <p>A informação existe e já chegou ao grupo; o custo de recuperá-la é maior que o custo de perguntar. Se a centralização inverter essa relação, o volume cai sem nenhum conteúdo novo.</p>
+        </div>
+        <div class="fld full">
+          <p class="k">Experimento</p>
+          <p>Centralizar pagamentos para um <strong>varejo piloto</strong> e comparar com os demais no mesmo período.</p>
+        </div>
+        <div class="fld full kpi">
+          <p class="k">Indicador de sucesso</p>
+          <p><strong>Dúvidas sobre pagamento por 100 vendas</strong>, antes versus depois, no varejo piloto contra o grupo de controle.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- CLUSTER 2 -->
+    <article class="plan">
+      <header>
+        <span class="plan-n">02</span>
+        <div>
+          <h3>Erros, instabilidade e fluxo travado</h3>
+          <p class="frente-tag">Frente C — Product Reliability &amp; Recovery · 21,9% das dores</p>
+        </div>
+      </header>
+      <div class="plan-grid">
+        <div class="fld">
+          <p class="k">Dor observada <span class="ev">observado</span></p>
+          <p>Tela que não avança, erro na venda, upload que falha, configuração interrompida, sistema aparentemente indisponível.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Causa provável</p>
+          <p><strong>C7 — Produto e UX</strong>, com parte em <strong>C8 — Exceção operacional</strong>. Não é lacuna de conhecimento.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evidências <span class="ev">observado</span></p>
+          <p>Recorrência de “não consigo”, “erro”, “falha”, “parou”, “caiu”, “não aparece”. Instabilidade em funcionalidades também aparece nos históricos da Ramsons.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Perguntas de diagnóstico</p>
+          <ul>
+            <li>Em que etapa do fluxo o erro acontece?</li>
+            <li>Com que frequência?</li>
+            <li>Existe workaround conhecido?</li>
+            <li>Exigiu intervenção da Ume?</li>
+            <li>Qual foi o resultado da venda?</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Tipo de solução</p>
+          <p>Correção de produto e recuperação de erro. <strong>Não tratar prioritariamente com treinamento</strong> — treinamento ensina a contornar, não corrige a falha.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Ações imediatas</p>
+          <p>Criar o <strong>sub-Pareto de erros</strong> com as colunas:</p>
+          <p><strong>etapa → erro → frequência → workaround → necessidade de intervenção → resultado da venda</strong></p>
+          <p>Sem ele, qualquer priorização dentro deste cluster é chute.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evolução de médio prazo</p>
+          <ul>
+            <li>Códigos de erro e mensagens acionáveis</li>
+            <li>Botão “tentar novamente” e instrução contextual</li>
+            <li>Telemetria por etapa e status do serviço visível</li>
+            <li>Envio automático de contexto ao suporte</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Hipótese <span class="ev hip">hipótese</span></p>
+          <p>O vendedor sabe o que deveria acontecer; falta caminho de recuperação dentro do próprio produto. Onde houver retry e mensagem acionável, o contato com suporte cai sem mudar a taxa de erro.</p>
+        </div>
+        <div class="fld full">
+          <p class="k">Experimento <span class="ev int">proposta</span></p>
+          <p>Escolher os dois erros mais frequentes do sub-Pareto, instrumentar as etapas envolvidas e publicar mensagem acionável com retry apenas neles — medindo os demais erros como controle.</p>
+        </div>
+        <div class="fld full kpi">
+          <p class="k">Indicadores de sucesso</p>
+          <ul>
+            <li>% de erros resolvidos sem intervenção</li>
+            <li>Contatos de suporte por erro</li>
+            <li>Abandono após erro</li>
+            <li>Tempo de recuperação</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- CLUSTER 3 -->
+    <article class="plan">
+      <header>
+        <span class="plan-n">03</span>
+        <div>
+          <h3>Crédito, limite e entrada</h3>
+          <p class="frente-tag">Frentes A + C — três subtipos com donos diferentes · 21,5% das dores</p>
+        </div>
+      </header>
+      <div class="plan-grid">
+        <div class="fld">
+          <p class="k">Dor observada <span class="ev">observado</span></p>
+          <p><strong>A · Regra:</strong> “Entrada pode ser no cartão?”</p>
+          <p><strong>B · Explicabilidade:</strong> “Por que não aprovou?”</p>
+          <p><strong>C · Salvar a venda:</strong> “Como solicito aumento de limite?”</p>
+        </div>
+        <div class="fld">
+          <p class="k">Causa provável</p>
+          <p>Mistura de <strong>C1 e C5</strong> (conhecimento e treinamento) no subtipo A com <strong>C7</strong> (produto e UX) nos subtipos B e C.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evidências <span class="ev">observado</span></p>
+          <p>Nos históricos da Ramsons: clientes que <strong>anteciparam ou quitaram parcelas e esperam novo limite</strong>, e vendedores pedindo nova análise ou aumento.</p>
+          <p>Em super compras e smartphone o limite é transacional — avaliado a cada consulta, sem aumento. A pergunta pede algo que o produto não faz.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Perguntas de diagnóstico</p>
+          <ul>
+            <li>A tela explica o resultado ou só o exibe?</li>
+            <li>O vendedor sabe se cabe nova tentativa e quando?</li>
+            <li>A regra de limite transacional está escrita em algum lugar acessível?</li>
+            <li>Depois de quitar, o cliente recebe alguma resposta sobre o limite?</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Tipo de solução</p>
+          <p><strong>A:</strong> FAQ e treinamento. <strong>B:</strong> produto deve mostrar melhor o resultado e a próxima ação. <strong>C:</strong> produto deve deixar o caminho real explícito.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Ações imediatas</p>
+          <p>Na tela de resultado, deixar visível:</p>
+          <ul>
+            <li>Limite disponível</li>
+            <li>Entrada mínima</li>
+            <li>Valor financiável</li>
+            <li>Se cabe nova análise e quando tentar novamente</li>
+            <li>Alternativas disponíveis</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Evolução de médio prazo</p>
+          <p>Responder de forma explícita, no produto e na comunicação ao consumidor: <strong>“o que acontece com meu limite depois do pagamento?”</strong> — sem expor regras sensíveis de risco.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Hipótese <span class="ev hip">hipótese</span></p>
+          <p>“Aumento de limite” não é o pedido real. O pedido é “existe alguma alternativa para eu fechar essa venda?”. Explicitar limite, entrada mínima e próxima ação reduz o contato mesmo sem mudar nenhuma regra de crédito.</p>
+        </div>
+        <div class="fld full">
+          <p class="k">Experimento <span class="ev int">proposta</span></p>
+          <p>Reescrever a tela de resultado de crédito com os cinco campos acima e liberar para um subconjunto de varejos, medindo o volume de dúvidas de crédito por 100 consultas contra o restante da base.</p>
+        </div>
+        <div class="fld full kpi">
+          <p class="k">Indicadores de sucesso <span class="ev int">proposta</span></p>
+          <ul>
+            <li>Dúvidas de crédito por 100 consultas de limite</li>
+            <li>% de reprovações seguidas de contato com suporte</li>
+            <li>% de perguntas sobre limite pós-pagamento</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- CLUSTER 4 -->
+    <article class="plan">
+      <header>
+        <span class="plan-n">04</span>
+        <div>
+          <h3>SMS, telefone e autenticação</h3>
+          <p class="frente-tag">Frente A no procedimento · Frente C na falha · 9,9% das dores</p>
+        </div>
+      </header>
+      <div class="plan-grid">
+        <div class="fld">
+          <p class="k">Dor observada <span class="ev">observado</span></p>
+          <p><strong>Procedimento:</strong> como alterar telefone, qual telefone usar, qual chip deve permanecer, quando é permitido alterar.</p>
+          <p><strong>Falha:</strong> SMS não chega, código não funciona, reenvio falha.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Causa provável</p>
+          <p>Procedimento: <strong>C1/C3</strong> — conhecimento e encontrabilidade. Falha: <strong>C7</strong> — produto e operação. São causas opostas dentro do mesmo cluster.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evidências <span class="ev">observado</span></p>
+          <p>Troca de telefone e dependência de suporte para receber o código aparecem tanto na base anterior quanto nos históricos novos da Ramsons e da Clara Eletro — deixou de ser padrão de um varejo só.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Perguntas de diagnóstico</p>
+          <ul>
+            <li>O caso é “não sei como fazer” ou “fiz e não funcionou”?</li>
+            <li>A tela informa para qual número o código foi enviado?</li>
+            <li>Existe caminho de correção sem suporte?</li>
+            <li>Existe alternativa de autenticação permitida?</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Tipo de solução</p>
+          <p>Procedimento: FAQ, UX contextual e treinamento. Falha: produto e operação. <strong>Tratar o cluster como bloco único levaria à solução errada em metade dos casos.</strong></p>
+        </div>
+        <div class="fld">
+          <p class="k">Ações imediatas</p>
+          <ul>
+            <li>Mascarar e mostrar o telefone utilizado — <strong>“código enviado para ••••1234”</strong></li>
+            <li>Permitir correção quando aplicável</li>
+            <li>Reenvio com feedback visível</li>
+            <li>Mensagem “não recebeu?” com recuperação contextual</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Evolução de médio prazo</p>
+          <p>Alternativa de autenticação quando permitida, para que a falha de entrega de SMS deixe de ser um ponto único de parada da venda.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Hipótese <span class="ev hip">hipótese</span></p>
+          <p>Boa parte dos contatos do Tipo B existe porque a tela não diz para onde o código foi nem oferece saída. Mostrar o número mascarado e um caminho de correção resolve sem alterar a taxa de entrega de SMS.</p>
+        </div>
+        <div class="fld full">
+          <p class="k">Experimento <span class="ev int">proposta</span></p>
+          <p>Publicar a tela com número mascarado, reenvio com feedback e “não recebeu?” para um subconjunto de varejos, separando na medição os casos de procedimento dos casos de falha.</p>
+        </div>
+        <div class="fld full kpi">
+          <p class="k">Indicador de sucesso</p>
+          <p><strong>% das falhas de autenticação resolvidas sem suporte humano.</strong></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- CLUSTER 5 -->
+    <article class="plan">
+      <header>
+        <span class="plan-n">05</span>
+        <div>
+          <h3>Catálogo, IMEI e preço</h3>
+          <p class="frente-tag">Frente D — CVLB Product, com monitoramento no Core · 6,5% das dores</p>
+        </div>
+      </header>
+      <div class="plan-grid">
+        <div class="fld">
+          <p class="k">Dor observada <span class="ev">observado</span></p>
+          <p>Modelo não aparece no catálogo, IMEI não reconhecido, IMEI 1 versus IMEI 2, divergência de preço e regras de serviços.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Causa provável</p>
+          <p><strong>C7 — Produto e UX</strong>, restrito à mecânica de venda de aparelho: integração catálogo × PDV, SKU e modelo, códigos e preço.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evidências <span class="ev">observado</span></p>
+          <p>Concentração forte na CVLB nos grupos. Nos 1.105 chamados — base 100% smartphone e sem CVLB — IMEI, trava e cadastro de aparelho aparecem com força.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Perguntas de diagnóstico</p>
+          <ul>
+            <li>O tema aparece em Clara Eletro ou Ramsons?</li>
+            <li>É específico da integração CVLB ou da venda de aparelho em geral?</li>
+            <li>Qual etapa falha: catálogo, IMEI, preço ou finalização?</li>
+          </ul>
+        </div>
+        <div class="fld">
+          <p class="k">Tipo de solução</p>
+          <p>Backlog de produto <strong>separado</strong>. Não generalizar a dor da CVLB para todo o Core Ume enquanto a incidência fora dela não estiver medida.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Ações imediatas</p>
+          <p><strong>CVLB:</strong> abrir backlog específico — catálogo, SKU, IMEI, IMEI 1 × IMEI 2, preço, PDV, configuração e finalização.</p>
+          <p><strong>Core Ume:</strong> monitorar a incidência do tema nos varejistas novos antes de qualquer promoção a transversal.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Evolução de médio prazo</p>
+          <p>Se a incidência se confirmar fora da CVLB, tratar como jornada de aparelho com dois consumidores: o produto smartphone e a fatia de aparelho dentro do multicategoria.</p>
+        </div>
+        <div class="fld">
+          <p class="k">Hipótese <span class="ev hip">hipótese</span></p>
+          <p>Não é problema de um cliente, é a assinatura da venda de aparelho — e a CVLB era o único varejo com essa mecânica na amostra do WhatsApp. Os chamados de smartphone apontam nessa direção, mas ainda não confirmam.</p>
+        </div>
+        <div class="fld full">
+          <p class="k">Experimento <span class="ev int">proposta</span></p>
+          <p>Classificar as ocorrências de catálogo/IMEI nos 11 varejistas e verificar em quantos o tema aparece. É um teste de penetração, não de solução — decide se o backlog fica em D ou migra para o Core.</p>
+        </div>
+        <div class="fld full kpi">
+          <p class="k">Indicador de sucesso <span class="ev int">proposta</span></p>
+          <p><strong>Cross-Retailer Penetration do tema catálogo/IMEI</strong> — em quantos dos 11 varejistas ele aparece. Abaixo de um patamar, permanece backlog CVLB.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ PRIORIZAÇÃO ============ -->
+  <section id="prioridade">
+    <p class="overline">Priorização</p>
+    <h2>Volume é uma das cinco variáveis, não a única</h2>
+    <p class="sub">Priorizar só por frequência coloca o cluster maior sempre na frente — mesmo quando ele é encontrabilidade e o cluster menor está travando venda.</p>
+
+    <div class="formula">
+      <div class="fx">Frequência<small>quantas vezes</small></div>
+      <span class="times">×</span>
+      <div class="fx">Penetração<small>em quantos varejos</small></div>
+      <span class="times">×</span>
+      <div class="fx">Recorrência<small>volta a acontecer</small></div>
+      <span class="times">×</span>
+      <div class="fx">Severidade<small>impacto no caso</small></div>
+      <span class="times">×</span>
+      <div class="fx">Dependência<small>intervenção humana</small></div>
+    </div>
+
+    <div class="statement" style="border-left-color:var(--red-ink)">
+      Problemas com volume menor podem ter prioridade maior.
+      <small>Quando impedem a venda, causam abandono, exigem intervenção da Ume, prejudicam o consumidor ou criam risco operacional — a frequência deixa de ser o critério dominante.</small>
+    </div>
+
+    <h3 style="font-family:var(--serif); font-size:22px; margin:44px 0 0">Urgência: quando o cliente está esperando na loja</h3>
+    <p class="sub" style="margin-top:8px">Parte dos casos precisa de resposta em minutos. Hoje entram na mesma fila de um caso que pode esperar dias.</p>
+    <div class="tags">
+      <span class="tag">Erro que trava a venda</span>
+      <span class="tag">Código de autenticação não chega</span>
+      <span class="tag">Emissão de boleto</span>
+      <span class="tag">Reprovação sem explicação</span>
+      <span class="tag">Trava do aparelho não finaliza</span>
+    </div>
+    <p class="metaline">Tempo que o vendedor tem com o cliente no balcão: <b>minutos</b> · Prioridade dos dois clusters P0: <span class="warn">ambos são produto — nenhuma FAQ resolve</span></p>
+  </section>
+
+  <!-- ============ INDICADORES ============ -->
+  <section id="indicadores">
+    <p class="overline">Como medimos</p>
+    <h2>Sete indicadores do Voice of Retailer</h2>
+    <p class="sub">Nenhum deles é calculável hoje com a base atual. Estão aqui como definição — a seção de próximos testes lista o que falta para instrumentá-los.</p>
+
+    <div class="kpis">
+      <div class="kpi-card"><h3>Knowledge Availability Rate</h3><p>% de dúvidas cuja informação já estava disponível.</p></div>
+      <div class="kpi-card"><h3>Repeat Question Rate</h3><p>% de dúvidas que já haviam aparecido anteriormente.</p></div>
+      <div class="kpi-card"><h3>Individual Repeat Rate</h3><p>% de pessoas que repetiram dúvida já respondida para elas.</p></div>
+      <div class="kpi-card"><h3>Self-Service Potential</h3><p>% das demandas que poderiam ser resolvidas sem intervenção humana.</p></div>
+      <div class="kpi-card"><h3>Human Intervention Rate</h3><p>% das ocorrências que realmente exigiram atuação da Ume.</p></div>
+      <div class="kpi-card"><h3>Cross-Retailer Penetration</h3><p>% dos varejistas nos quais cada dor aparece.</p></div>
+      <div class="kpi-card" style="grid-column:1 / -1"><h3>Support Demand Rate</h3><p>Demandas de suporte por 100 vendas. É o indicador que normaliza a comparação entre varejistas de tamanhos diferentes — sem ele, o varejo maior sempre parece o mais problemático.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ VISÃO POR VAREJISTA ============ -->
+  <section id="varejistas">
+    <p class="overline">Visão por varejista</p>
+    <h2>Onze varejistas, cinco classificações</h2>
+    <p class="sub">A classificação diz se a dor observada naquele varejo é do Core, específica do produto dele, ou se ainda não há amostra suficiente para dizer.</p>
 
     <div class="tablewrap">
     <table>
       <thead>
-        <tr><th>Produto Ume</th><th>Varejos</th><th>Evid&ecirc;ncia dispon&iacute;vel</th></tr>
+        <tr><th>Varejista</th><th>Classificação</th><th>Observação</th></tr>
       </thead>
       <tbody>
-        <tr><td class="name">Super compras eletro</td><td class="num">7</td><td class="why">alta &mdash; sustenta todo o Pareto acima</td></tr>
-        <tr><td class="name">Smartphone</td><td class="num">9</td><td class="why">alta em volume (1.105 chamados), mas 99% de um &uacute;nico varejo (Casa do Celular) e por outro canal</td></tr>
-        <tr><td class="name">Super compras multicategoria <span class="pill">CVLB</span></td><td class="num">1</td><td class="why">m&eacute;dia &mdash; indica dire&ccedil;&atilde;o, n&atilde;o conclus&atilde;o</td></tr>
-        <tr><td class="name">Limite recorrente <span class="pill">Big Lar</span></td><td class="num">1</td><td class="why">nenhuma &mdash; menos de um m&ecirc;s de hist&oacute;rico</td></tr>
+        <tr><td class="name">Clara Eletro</td><td class="name"><span class="pill p1 solo">Transversal Core / Misto</span></td><td class="why">valida dores transversais do Core — pagamentos, acesso, crédito, erros, SMS</td></tr>
+        <tr><td class="name">Ramsons</td><td class="name"><span class="pill p1 solo">Transversal Core</span></td><td class="why">evidência forte de SMS, crédito e Product Recovery; e o achado do autoatendimento divulgado</td></tr>
+        <tr><td class="name">CVLB</td><td class="name"><span class="pill solo">Produto específico</span></td><td class="why">produto diferente dos demais — backlog na Frente D, fora do Core</td></tr>
+        <tr><td class="name">Big Lar</td><td class="name"><span class="pill na solo">Amostra insuficiente</span></td><td class="why">menos de um mês de histórico; produto de limite recorrente, oposto ao transacional</td></tr>
+        <tr><td class="name">Rodrigues Colchões</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">janela contínua de 07/04 a 02/09/2026 — a mais longa da base</td></tr>
+        <tr><td class="name">Sono Show</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
+        <tr><td class="name">Novo Lar</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
+        <tr><td class="name">Solar Móveis e Eletros</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
+        <tr><td class="name">Mag Duarte</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
+        <tr><td class="name">Policred</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
+        <tr><td class="name">Top Móveis</td><td class="name"><span class="pill na solo">A classificar</span></td><td class="why">integra a base classificada de 9 que sustenta o Pareto</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="tnote">Super compras e smartphone usam limite transacional: a avalia&ccedil;&atilde;o &eacute; feita a cada consulta e n&atilde;o existe aumento de limite. Limite recorrente &eacute; o oposto &mdash; o cliente &eacute; avaliado uma vez e usa o limite quando vai &agrave; loja. Isso significa que a d&uacute;vida recorrente &ldquo;como solicito aumento de limite?&rdquo; pede algo que o produto n&atilde;o faz: n&atilde;o &eacute; lacuna de funcionalidade, &eacute; lacuna de informa&ccedil;&atilde;o na tela.</p>
-
-    <div class="tags">
-      <span class="tag">Repasse e pagamento</span>
-      <span class="tag">Explicabilidade de cr&eacute;dito</span>
-      <span class="tag">Falha de autentica&ccedil;&atilde;o</span>
-      <span class="tag">Acesso e cadastro de operador</span>
-      <span class="tag">IMEI e trava de aparelho</span>
-    </div>
-    <p class="metaline">Temas que hoje sustentam os grupos: <b>os cinco acima</b> &middot; Fechar os grupos antes de medir a migra&ccedil;&atilde;o: <span class="warn">esconde a demanda, n&atilde;o resolve</span></p>
-  </section>
-
-  <!-- ============ CAUSA RAIZ ============ -->
-  <section>
-    <p class="overline">Causa raiz</p>
-    <h2>Por que o vendedor pede ajuda &mdash; nove causas prov&aacute;veis</h2>
-    <p class="sub">Uma mesma d&uacute;vida pode ter causas diferentes, e cada causa exige uma solu&ccedil;&atilde;o diferente. Priorizar s&oacute; por frequ&ecirc;ncia trata todas como se fossem a mesma coisa.</p>
-
-    <div class="causes">
-      <div class="cause"><h3><span class="code">C1</span>Conhecimento inexistente</h3><p>A informa&ccedil;&atilde;o n&atilde;o existe em lugar nenhum. Resolve-se criando o conte&uacute;do.</p></div>
-      <div class="cause"><h3><span class="code">C2</span>Comunica&ccedil;&atilde;o e distribui&ccedil;&atilde;o</h3><p>A informa&ccedil;&atilde;o existe, mas n&atilde;o chegou de forma adequada a quem precisa dela no balc&atilde;o.</p></div>
-      <div class="cause"><h3><span class="code">C3</span>Encontrabilidade</h3><p>A informa&ccedil;&atilde;o existe e chegou, mas recuper&aacute;-la exige mais esfor&ccedil;o do que perguntar. Causa predominante no cluster de pagamentos.</p></div>
-      <div class="cause hyp"><h3><span class="code">C4</span>Reten&ccedil;&atilde;o</h3><p>O usu&aacute;rio j&aacute; recebeu essa resposta antes. Hip&oacute;tese comportamental &mdash; exige dado que o WhatsApp n&atilde;o fornece.</p></div>
-      <div class="cause hyp"><h3><span class="code">C5</span>Onboarding e treinamento</h3><p>Regra b&aacute;sica que reaparece sugere lacuna de capacita&ccedil;&atilde;o, n&atilde;o de documenta&ccedil;&atilde;o.</p></div>
-      <div class="cause hyp"><h3><span class="code">C6</span>Prefer&ecirc;ncia pelo suporte</h3><p>O canal informal aparenta exigir menos esfor&ccedil;o que o oficial. Parte dos vendedores n&atilde;o tenta a central &mdash; vai direto ao WhatsApp. N&atilde;o &eacute; falha: &eacute; escolha racional enquanto o atalho existir.</p></div>
-      <div class="cause"><h3><span class="code">C7</span>Produto e UX</h3><p>O produto n&atilde;o explica a situa&ccedil;&atilde;o nem permite resolver. Nenhuma FAQ cobre esse caso.</p></div>
-      <div class="cause"><h3><span class="code">C8</span>Exce&ccedil;&atilde;o operacional</h3><p>Necessidade leg&iacute;tima de interven&ccedil;&atilde;o da Ume. Deve existir, mas com fluxo definido.</p></div>
-      <div class="cause hyp"><h3><span class="code">C9</span>Inconclusivo</h3><p>Evid&ecirc;ncia insuficiente para atribuir causa. Em 112 dos 1.105 chamados o pr&oacute;prio registro anota que o varejo n&atilde;o enviou print.</p></div>
-    </div>
-    <p class="tnote">C4, C5 e C6 s&atilde;o hip&oacute;teses comportamentais &mdash; n&atilde;o julgamento sobre o vendedor. Nos chamados, 358 registros dizem &ldquo;a central n&atilde;o responde&rdquo;, mas isso &eacute; relato do varejo: sem os dados da central n&atilde;o h&aacute; como verificar. Essa &eacute; a diferen&ccedil;a entre fric&ccedil;&atilde;o real e h&aacute;bito, e &eacute; ela que decide se a solu&ccedil;&atilde;o &eacute; capacidade de atendimento ou redirecionamento.</p>
+    <p class="tnote"><strong>“A classificar” é um achado, não um vazio.</strong> A taxonomia Transversal / Misto / Específico / CVLB / Amostra insuficiente nasceu nesta rodada. Os sete varejos da base anterior ainda não foram relidos por ela — e reclassificá-los é o que permitirá calcular Cross-Retailer Penetration.</p>
+    <p class="tnote">A base de 1.105 chamados de smartphone é separada desta matriz: vem de outro canal e 99% de um único varejo (Casa do Celular), que não está entre os 11 grupos de WhatsApp analisados.</p>
   </section>
 
   <!-- ============ VAZAMENTO ============ -->
-  <section>
-    <p class="overline">Quando o canal oficial &eacute; pulado</p>
-    <h2>Dois vazamentos diferentes, solu&ccedil;&otilde;es opostas</h2>
-    <p class="sub">Hoje os dois chegam pelo mesmo lugar e s&atilde;o tratados igual. Separ&aacute;-los &eacute; a decis&atilde;o que trava o projeto.</p>
+  <section id="vazamento">
+    <p class="overline">Quando o canal oficial é pulado</p>
+    <h2>Dois vazamentos diferentes, soluções opostas</h2>
+    <p class="sub">Hoje os dois chegam pelo mesmo lugar e são tratados igual. Separá-los é a decisão que trava o projeto.</p>
 
     <div class="flowbox">
-      <div class="flow-lab">Tentou e n&atilde;o foi atendido &mdash; precisa de capacidade e SLA</div>
+      <div class="flow-lab">Como o contato deveria acontecer</div>
       <div class="flow">
-        <span class="node bad">Vendedor</span><span class="arrow">&rarr;</span>
-        <span class="node bad">Central sem resposta</span><span class="arrow">&rarr;</span>
-        <span class="node bad">WhatsApp do CS</span><span class="arrow">&rarr;</span>
+        <span class="node">Vendedor na loja</span><span class="arrow">→</span>
+        <span class="node">Central ou live chat</span><span class="arrow">→</span>
+        <span class="node">Resolvido no canal oficial</span>
+      </div>
+      <div class="flow-split"></div>
+      <div class="flow-lab">Tentou e não foi atendido — precisa de capacidade e SLA</div>
+      <div class="flow">
+        <span class="node bad">Vendedor</span><span class="arrow">→</span>
+        <span class="node bad">Central sem resposta</span><span class="arrow">→</span>
+        <span class="node bad">WhatsApp do CS</span><span class="arrow">→</span>
         <span class="node bad">CS aciona a central por dentro</span>
       </div>
       <div class="flow-split"></div>
-      <div class="flow-lab">N&atilde;o tentou &mdash; precisa de redirecionamento</div>
+      <div class="flow-lab">Não tentou — precisa de redirecionamento</div>
       <div class="flow">
-        <span class="node bad">Vendedor</span><span class="arrow">&rarr;</span>
-        <span class="node bad">WhatsApp do CS direto</span><span class="arrow">&rarr;</span>
+        <span class="node bad">Vendedor</span><span class="arrow">→</span>
+        <span class="node bad">WhatsApp do CS direto</span><span class="arrow">→</span>
         <span class="node bad">CS resolve</span>
       </div>
     </div>
-    <p class="tnote">No segundo caso, melhorar a central n&atilde;o muda nada: o atalho continua mais barato. Enquanto o CS resolver por l&aacute;, o comportamento se mant&eacute;m &mdash; e o volume cresce com cada varejo novo.</p>
+    <p class="tnote">No segundo caso, melhorar a central não muda nada: o atalho continua mais barato. Enquanto o CS resolver por lá, o comportamento se mantém — e o volume cresce com cada varejo novo. Onze já é mais que nove.</p>
   </section>
 
-  <!-- ============ PRIORIZACAO ============ -->
-  <section>
-    <p class="overline">Prioriza&ccedil;&atilde;o</p>
-    <h2>Urg&ecirc;ncia: quando o cliente est&aacute; esperando na loja</h2>
-    <p class="sub">Parte dos casos precisa de resposta em minutos. Hoje entram na mesma fila de um caso que pode esperar dias.</p>
-    <div class="tags">
-      <span class="tag">Erro que trava a venda</span>
-      <span class="tag">C&oacute;digo de autentica&ccedil;&atilde;o n&atilde;o chega</span>
-      <span class="tag">Emiss&atilde;o de boleto</span>
-      <span class="tag">Reprova&ccedil;&atilde;o sem explica&ccedil;&atilde;o</span>
-      <span class="tag">Trava do aparelho n&atilde;o finaliza</span>
+  <!-- ============ LIMITES ============ -->
+  <section id="limites">
+    <p class="overline">Rigor da análise</p>
+    <h2>O que podemos afirmar e o que ainda não</h2>
+    <p class="sub">A distinção abaixo é o que sustenta a credibilidade do diagnóstico numa mesa com Product, CX, Operações e liderança.</p>
+
+    <div class="claims">
+      <div class="claim yes">
+        <h3>Podemos afirmar</h3>
+        <ul>
+          <li>A informação já havia sido enviada</li>
+          <li>A pergunta se repetiu</li>
+          <li>A mesma pessoa voltou a perguntar</li>
+          <li>O self-service estava disponível e divulgado</li>
+          <li>Houve dependência de suporte para concluir a operação</li>
+        </ul>
+      </div>
+      <div class="claim no">
+        <h3>Não podemos afirmar</h3>
+        <ul>
+          <li>Que o vendedor não prestou atenção</li>
+          <li>Que o vendedor é desinteressado</li>
+          <li>Que o treinamento falhou</li>
+          <li>Que a central não respondeu — isso é relato do varejo, não dado verificado</li>
+        </ul>
+      </div>
     </div>
-    <p class="metaline">Tempo que o vendedor tem com o cliente no balc&atilde;o: <b>minutos</b> &middot; Prioridade dos dois clusters P0: <span class="warn">ambos s&atilde;o produto &mdash; nenhuma FAQ resolve</span></p>
+
+    <p class="tnote">Para atribuir causalidade ao treinamento é preciso cruzar, no futuro: <strong>vendedor · data do treinamento · presença · conteúdo ministrado · data da dúvida</strong>. Sem esses cinco campos, qualquer conclusão sobre capacitação é opinião.</p>
+  </section>
+
+  <!-- ============ PRÓXIMOS TESTES ============ -->
+  <section id="testes">
+    <p class="overline">Backlog de discovery</p>
+    <h2>Próximos testes</h2>
+    <p class="sub">Dez análises que transformam as hipóteses acima em dado verificável. Nenhuma exige mudança de produto para começar.</p>
+
+    <div class="next">
+      <div class="nx"><span>Cruzar dúvidas com treinamento</span></div>
+      <div class="nx"><span>Medir uso real da FAQ</span></div>
+      <div class="nx"><span>Medir cliques nos links divulgados</span></div>
+      <div class="nx"><span>Identificar as perguntas mais repetidas pela mesma pessoa</span></div>
+      <div class="nx"><span>Identificar temas em que a FAQ existe mas o suporte continua alto</span></div>
+      <div class="nx"><span>Medir o tempo entre a comunicação oficial e a nova pergunta</span></div>
+      <div class="nx"><span>Cruzar erros do WhatsApp com logs de produto</span></div>
+      <div class="nx"><span>Cruzar dúvida com abandono e conversão</span></div>
+      <div class="nx"><span>Comparar varejistas normalizando por vendas</span></div>
+      <div class="nx"><span>Criar a análise mensal contínua de Voice of Retailer</span></div>
+    </div>
   </section>
 
   <!-- ============ IMPACTO ============ -->
-  <section>
+  <section id="impacto">
     <p class="overline">Impacto no nosso time</p>
-    <h2>Quanto tempo isso est&aacute; custando</h2>
-    <p class="sub">O custo n&atilde;o est&aacute; distribu&iacute;do entre categorias: ele recai sobre as pessoas que respondem os grupos todos os dias.</p>
+    <h2>Quanto tempo isso está custando</h2>
+    <p class="sub">O custo não está distribuído entre categorias: ele recai sobre as pessoas que respondem os grupos todos os dias.</p>
 
     <div class="est">
-      <div class="est-h">Estimativa do time &mdash; n&atilde;o vem de nenhuma base</div>
+      <div class="est-h">Estimativa do time — não vem de nenhuma base</div>
       <div class="est-hero">
         <div class="est-n">+1h/dia</div>
         <div class="est-txt">
           <p><strong>por supervisor</strong>, todos os dias, respondendo demandas nos grupos de WhatsApp.</p>
-          <p>&Eacute; tempo que n&atilde;o aparece em nenhum relat&oacute;rio de atendimento, porque essas tratativas n&atilde;o passam por canal formal. N&atilde;o h&aacute; registro de dura&ccedil;&atilde;o por caso &mdash; a estimativa vem de quem faz a tratativa, n&atilde;o da planilha.</p>
+          <p>É tempo que não aparece em nenhum relatório de atendimento, porque essas tratativas não passam por canal formal. Não há registro de duração por caso — a estimativa vem de quem faz a tratativa, não da planilha.</p>
         </div>
       </div>
-      <p class="est-note">O custo cresce com cada varejo novo. Como n&atilde;o existe fila, SLA nem fluxo definido nesse canal, ele absorve qualquer volume &mdash; at&eacute; o ponto em que o time de CS deixa de ser exce&ccedil;&atilde;o e passa a ser camada permanente de intermedia&ccedil;&atilde;o.</p>
+      <p class="est-note">O custo cresce com cada varejo novo. Como não existe fila, SLA nem fluxo definido nesse canal, ele absorve qualquer volume — até o ponto em que o time de CS deixa de ser exceção e passa a ser camada permanente de intermediação.</p>
     </div>
   </section>
 
   <!-- ============ PEDIDOS ============ -->
-  <section>
+  <section id="pedidos">
     <p class="overline">O que estamos pedindo</p>
-    <h2>Tr&ecirc;s mudan&ccedil;as, n&atilde;o um pedido de socorro</h2>
+    <h2>Três mudanças, não um pedido de socorro</h2>
 
     <div class="asks">
       <div class="ask">
         <div class="num">1</div>
         <div>
           <h3>Dois campos na triagem, antes de fechar qualquer grupo</h3>
-          <p>Registrar em cada demanda se o varejo tentou o canal oficial antes (sim / n&atilde;o / n&atilde;o informou) e, quando sim, o que aconteceu l&aacute; (n&atilde;o respondeu / demorou / n&atilde;o resolveu / n&atilde;o conseguiu acessar). S&atilde;o duas perguntas, sem mudan&ccedil;a de processo. Em quatro semanas isso separa fric&ccedil;&atilde;o de h&aacute;bito &mdash; a informa&ccedil;&atilde;o que hoje falta para decidir entre refor&ccedil;ar a central e redirecionar o vendedor.</p>
+          <p>Registrar em cada demanda se o varejo tentou o canal oficial antes (sim / não / não informou) e, quando sim, o que aconteceu lá (não respondeu / demorou / não resolveu / não conseguiu acessar). São duas perguntas, sem mudança de processo. Em quatro semanas isso separa fricção de caminho de menor esforço — a informação que hoje falta para decidir entre reforçar a central e redirecionar o vendedor.</p>
         </div>
       </div>
       <div class="ask">
         <div class="num">2</div>
         <div>
           <h3>Volume e SLA da central e do live chat</h3>
-          <p>Os 1.105 chamados mapeados s&atilde;o o numerador do vazamento &mdash; e mesmo eles s&atilde;o piso, n&atilde;o teto, porque a demanda dos grupos n&atilde;o est&aacute; contada. Falta o denominador. Sem saber quanto a central absorve hoje e com que tempo de resposta, n&atilde;o h&aacute; como afirmar que ela falhou nem estimar se ela aguenta a carga que vier dos grupos. Hoje esse dado n&atilde;o est&aacute; dispon&iacute;vel para o projeto &mdash; &eacute; a lacuna mais cr&iacute;tica.</p>
+          <p>Os 1.105 chamados mapeados são o numerador do vazamento — e mesmo eles são piso, não teto, porque a demanda dos grupos não está contada. Falta o denominador. Sem saber quanto a central absorve hoje e com que tempo de resposta, não há como afirmar que ela falhou nem estimar se ela aguenta a carga que vier dos grupos. Hoje esse dado não está disponível para o projeto — é a lacuna mais crítica.</p>
         </div>
       </div>
       <div class="ask">
         <div class="num">3</div>
         <div>
-          <h3>Capacita&ccedil;&atilde;o por situa&ccedil;&atilde;o nos temas de maior volume</h3>
-          <p>Pagamento, autentica&ccedil;&atilde;o e acesso de operador concentram a maior parte do que chega por fora e s&atilde;o os mais ensin&aacute;veis. Treinar a primeira linha por situa&ccedil;&atilde;o &mdash; &ldquo;o c&oacute;digo n&atilde;o chegou, o que fazer&rdquo; &mdash; em vez de por fun&ccedil;&atilde;o resolve boa parte do volume sem tocar nos casos que realmente exigem produto ou decis&atilde;o de neg&oacute;cio.</p>
+          <h3>Capacitação por situação nos temas de maior volume</h3>
+          <p>Pagamento, autenticação e acesso de operador concentram a maior parte do que chega por fora e são os mais ensináveis. Treinar a primeira linha por situação — “o código não chegou, o que fazer” — em vez de por função resolve boa parte do volume sem tocar nos casos que realmente exigem produto ou decisão de negócio.</p>
         </div>
       </div>
     </div>
 
-    <p class="closing">O indicador de sucesso n&atilde;o &eacute; a queda de mensagens no WhatsApp. &Eacute; a fatia de demanda que entra pelo canal oficial e se resolve l&aacute; &mdash; com a fatia de &ldquo;nem tentou&rdquo; caindo m&ecirc;s a m&ecirc;s.</p>
+    <p class="closing">Não devemos resolver com produto o que é problema de conhecimento ou encontrabilidade. <strong>Mas também não devemos tentar resolver com FAQ aquilo que é uma falha real de produto.</strong> O indicador de sucesso não é a queda de mensagens no WhatsApp — é a redução da dependência de intervenção humana para concluir a operação.</p>
   </section>
 
 </div>
