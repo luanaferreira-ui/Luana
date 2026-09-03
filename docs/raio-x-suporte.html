@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raio-X do Escalonamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5F0; --ink:#1C1C1A; --ink-soft:#4A4A46; --muted:#7A7873;
+    --verde:#14653F; --verde-mid:#5FA07C; --verde-pale:#C9DCCE;
+    --card:#FFFFFF; --line:#E4DFD4;
+    --amber-bg:#FBF3E4; --amber-line:#C79A3E; --amber-ink:#8A6520;
+    --red-bg:#FBEDEA; --red-line:#E5CDC6; --red-ink:#A64B36;
+    --ask-bg:#E3EFE5; --slate-bg:#ECEEEB; --slate-line:#D4D9D3; --slate-ink:#55605A;
+    /* marcas de dado: passos validados (chroma + contraste >= 3:1 na superficie clara) */
+    --mark:#0E7A46; --mark-soft:#BFDDCB; --mark-off:#C9C6BE; --mark-alert:#A64B36;
+    --grid:#EAE6DD;
+    --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans:'Source Sans 3', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono:'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px; margin:0 auto; padding:64px 32px 96px}
+  .overline{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--verde); margin:0 0 14px}
+  h1{font-family:var(--serif); font-weight:700; font-size:46px; line-height:1.12; letter-spacing:-.01em; margin:0 0 20px; text-wrap:balance}
+  h2{font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.2; margin:0 0 10px; text-wrap:balance}
+  h3{font-family:var(--serif); font-weight:600; font-size:17px; margin:0 0 6px}
+  .lede{font-family:var(--serif); font-size:19px; line-height:1.55; color:var(--ink-soft); max-width:66ch; margin:0}
+  .sub{font-size:14.5px; color:var(--muted); max-width:66ch; margin:0}
+  .prose{font-family:var(--serif); font-size:21px; line-height:1.55; max-width:70ch; margin:0}
+  section{margin-top:64px; scroll-margin-top:24px}
+  .rule{height:1px; background:var(--line); margin:36px 0 0}
+  a{color:var(--verde)}
+  a:focus-visible{outline:2px solid var(--verde); outline-offset:2px; border-radius:4px}
+
+  .head-grid{display:flex; gap:40px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
+  .meta{font-family:var(--mono); font-size:12.5px; color:var(--muted); text-align:right; line-height:2; white-space:nowrap}
+
+  .metrics{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:36px}
+  .metric{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px}
+  .metric .n{font-family:var(--mono); font-weight:500; font-size:30px; color:var(--verde); line-height:1.1; margin-bottom:9px; font-variant-numeric:tabular-nums}
+  .metric .n.alert{color:var(--red-ink)}
+  .metric .l{font-size:13.5px; color:var(--ink-soft); line-height:1.45}
+
+  .idx{display:flex; gap:9px; flex-wrap:wrap; margin-top:22px}
+  .idx a{font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--ink-soft); background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px}
+  .idx a:hover{border-color:var(--verde-mid); color:var(--verde)}
+
+  /* ---- graficos ---- */
+  .fig{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px 28px; margin-top:26px}
+  .fig-h{font-family:var(--sans); font-weight:600; font-size:16px; margin:0 0 4px}
+  .fig-s{font-size:13.5px; color:var(--muted); margin:0 0 22px; max-width:70ch}
+  .fig-n{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin:18px 0 0; padding-top:14px; border-top:1px solid var(--grid)}
+
+  /* barras horizontais, serie unica */
+  .hbars{display:grid; gap:9px}
+  .hb{display:grid; grid-template-columns:186px 1fr 62px; gap:14px; align-items:center}
+  .hb .k{font-size:13.5px; color:var(--ink-soft); text-align:right; line-height:1.3}
+  .hb .track{background:var(--grid); border-radius:0 4px 4px 0; height:20px; position:relative}
+  .hb .bar{background:var(--mark); height:20px; border-radius:0 4px 4px 0}
+  .hb .bar.off{background:var(--mark-off)}
+  .hb .bar.alert{background:var(--mark-alert)}
+  .hb .v{font-family:var(--mono); font-size:13px; color:var(--ink); font-variant-numeric:tabular-nums}
+  .hb .v small{color:var(--muted); font-size:11.5px}
+
+  /* colunas (serie temporal) */
+  .cols{display:flex; align-items:flex-end; gap:6px; height:190px; padding-top:8px; border-bottom:1px solid var(--grid)}
+  .col{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:6px; height:100%}
+  .col .bar{width:100%; background:var(--mark); border-radius:4px 4px 0 0; min-height:2px}
+  .col .bar.partial{background:var(--mark-soft)}
+  .col .v{font-family:var(--mono); font-size:11px; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+  .xaxis{display:flex; gap:6px; margin-top:8px}
+  .xaxis span{flex:1; text-align:center; font-family:var(--mono); font-size:10px; color:var(--muted)}
+
+  /* barra com meta */
+  .slarow{display:grid; grid-template-columns:210px 1fr; gap:18px; align-items:center; padding:30px 0 18px; border-bottom:1px solid var(--grid)}
+  .slarow:last-of-type{border-bottom:none}
+  .slaname{font-size:14.5px; color:var(--ink)}
+  .slaname small{display:block; color:var(--muted); font-size:12.5px; margin-top:2px}
+  .slatrack{position:relative; height:34px; background:var(--grid); border-radius:0 4px 4px 0}
+  .slabar{height:34px; background:var(--mark-alert); border-radius:0 4px 4px 0; display:flex; align-items:center; justify-content:flex-end; padding-right:10px}
+  .slabar span{font-family:var(--mono); font-size:12.5px; color:#fff; font-variant-numeric:tabular-nums; white-space:nowrap}
+  .slameta{position:absolute; top:-14px; bottom:-6px; width:2px; background:var(--ink); border-radius:1px}
+  .slameta::after{content:"meta " attr(data-l); position:absolute; left:6px; top:-15px; font-family:var(--mono); font-size:10.5px; color:var(--ink); white-space:nowrap; background:var(--card); padding:0 3px}
+
+  /* tabela */
+  .tablewrap{overflow-x:auto; margin-top:26px}
+  table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+  thead th{font-family:var(--sans); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); text-align:left; padding:16px 20px; background:#F2EFE7; font-weight:600; border-bottom:1px solid var(--line)}
+  tbody td{padding:16px 20px; border-bottom:1px solid #EFEBE2; font-size:14.5px; vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  td.name{font-size:15px; color:var(--ink)}
+  td.num{font-family:var(--mono); font-weight:500; font-size:15px; white-space:nowrap; font-variant-numeric:tabular-nums}
+  td.why{color:var(--ink-soft)}
+  .pill{display:inline-block; font-family:var(--mono); font-size:11.5px; padding:4px 11px; border-radius:999px; background:var(--amber-bg); color:var(--amber-ink); border:1px solid #EBD9B4; white-space:nowrap}
+  .pill.cs{background:var(--ask-bg); color:var(--verde); border-color:var(--verde-pale)}
+  .pill.at{background:var(--slate-bg); color:var(--slate-ink); border-color:var(--slate-line)}
+  .pill.pr{background:var(--red-bg); color:var(--red-ink); border-color:var(--red-line)}
+  .tnote{font-size:13.5px; color:var(--muted); margin-top:14px; max-width:76ch; line-height:1.6}
+
+  /* cadeia medida */
+  .chain{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:28px; margin-top:26px}
+  .step{display:grid; grid-template-columns:92px 22px 1fr; gap:16px; align-items:start}
+  .step .t{font-family:var(--mono); font-size:12.5px; color:var(--muted); text-align:right; padding-top:2px; font-variant-numeric:tabular-nums}
+  .step .dot{position:relative; display:flex; justify-content:center}
+  .step .dot i{width:11px; height:11px; border-radius:50%; background:var(--mark); margin-top:6px; flex:none}
+  .step .dot::before{content:""; position:absolute; top:17px; bottom:-14px; width:2px; background:var(--grid)}
+  .step:last-child .dot::before{display:none}
+  .step.wait .dot i{background:var(--mark-alert)}
+  .step.wait .dot::before{background:repeating-linear-gradient(to bottom,var(--mark-alert) 0 4px,transparent 4px 9px)}
+  .step .b{padding-bottom:16px}
+  .step .b p{margin:0; font-size:14.5px; line-height:1.55; color:var(--ink-soft)}
+  .step .b .who{font-weight:600; color:var(--ink); font-size:14px}
+  .step .b .gap{display:inline-block; font-family:var(--mono); font-size:11.5px; color:var(--red-ink); background:var(--red-bg); border:1px solid var(--red-line); border-radius:5px; padding:2px 8px; margin-top:6px}
+
+  /* casos */
+  .cases{display:grid; gap:16px; margin-top:26px}
+  .case{background:var(--card); border:1px solid var(--line); border-left:3px solid var(--mark-alert); border-radius:8px; padding:22px 26px}
+  .case h3{font-family:var(--sans); font-weight:600; font-size:15.5px; margin:0 0 4px}
+  .case .m{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin:0 0 10px}
+  .case p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.6}
+  .case p + p{margin-top:8px}
+  .case q{display:block; font-family:var(--serif); font-style:italic; font-size:15px; color:var(--ink); border-left:2px solid var(--verde-pale); padding-left:13px; margin:10px 0}
+
+  .statement{font-family:var(--serif); font-weight:700; font-size:26px; line-height:1.35; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--verde); border-radius:10px; padding:28px 32px; margin-top:28px; text-wrap:balance}
+  .statement small{display:block; font-family:var(--sans); font-weight:400; font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin-top:12px}
+  .statement.alert{border-left-color:var(--mark-alert)}
+
+  .qa{display:grid; gap:18px; margin-top:26px}
+  .q{background:var(--ask-bg); border-radius:10px; padding:24px 28px}
+  .q h3{font-family:var(--serif); font-weight:700; font-size:19px; margin:0 0 8px}
+  .q p{margin:0; font-size:14.5px; color:#2C5240; line-height:1.62}
+  .q p + p{margin-top:9px}
+  .q strong{color:var(--verde)}
+
+  .asks{display:grid; gap:16px; margin-top:26px}
+  .ask{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:24px 28px; display:flex; gap:24px; align-items:flex-start}
+  .ask .num{font-family:var(--serif); font-weight:700; font-size:30px; color:var(--verde); line-height:1; min-width:24px}
+  .ask h3{font-family:var(--serif); font-weight:600; font-size:18px; margin:0 0 6px}
+  .ask p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.62}
+  .ask p + p{margin-top:8px}
+
+  .closing{font-family:var(--serif); font-size:22px; line-height:1.5; max-width:66ch; margin-top:56px; padding-top:36px; border-top:1px solid var(--line)}
+  .closing strong{font-weight:700}
+
+  @media (max-width:860px){
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .hb{grid-template-columns:120px 1fr 58px}
+    .slarow{grid-template-columns:1fr; gap:10px}
+  }
+  @media (max-width:760px){
+    .wrap{padding:40px 20px 64px}
+    h1{font-size:32px} h2{font-size:25px}
+    .prose{font-size:18px} .lede{font-size:17px}
+    .metrics{grid-template-columns:1fr}
+    .meta{text-align:left}
+    .statement{font-size:20px; padding:24px}
+    .step{grid-template-columns:74px 20px 1fr; gap:10px}
+    .ask{flex-direction:column; gap:10px}
+    .cols{height:150px}
+    .xaxis span{font-size:8.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="overline">CS · Raio-X do escalonamento — parte 1 de 2: Slack</p>
+  <div class="head-grid">
+    <div style="flex:1 1 540px">
+      <h1>O que acontece com a demanda depois que ela sai da central</h1>
+      <p class="lede">Censo completo do canal <strong>#ask-retail-priority</strong> entre 03/06 e 03/09/2026: 303 demandas de atendimento, classificadas por tipo, motivo, urgência e tempo. É a metade da jornada que estava escura — o que acontece <em>depois</em> que o varejo desiste do canal oficial e o CS pede prioridade. A outra metade, os grupos de WhatsApp, entra na parte 2.</p>
+    </div>
+    <div class="meta">
+      Luana Roncato Ferreira<br>
+      03 set 2026<br>
+      303 demandas · 92 dias<br>
+      1 canal · 20 solicitantes
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="n">303</div>
+      <div class="l">demandas de atendimento em 3 meses, 4,0 por dia útil em média</div>
+    </div>
+    <div class="metric">
+      <div class="n">+60%</div>
+      <div class="l">de crescimento na média diária entre junho e agosto</div>
+    </div>
+    <div class="metric">
+      <div class="n alert">48,6 min</div>
+      <div class="l">mediana de duração quando o cliente está esperando na loja</div>
+    </div>
+    <div class="metric">
+      <div class="n alert">7,5%</div>
+      <div class="l">é quanto desses casos caberia no SLA de 5 minutos proposto</div>
+    </div>
+  </div>
+
+  <nav class="idx" aria-label="Índice">
+    <a href="#metodo">Método</a>
+    <a href="#volume">Volume</a>
+    <a href="#oque">O que chega</a>
+    <a href="#tempo">Quanto demora</a>
+    <a href="#sla">Teste do SLA</a>
+    <a href="#cadeia">A cadeia real</a>
+    <a href="#falhas">Modos de falha</a>
+    <a href="#central">O canal oficial</a>
+    <a href="#respostas">Suas perguntas</a>
+    <a href="#dono">O que fica com quem</a>
+    <a href="#proposta">Escalonamento proposto</a>
+    <a href="#falta">O que falta</a>
+  </nav>
+
+  <!-- MÉTODO -->
+  <section id="metodo">
+    <p class="overline">Método</p>
+    <h2>Como este raio-x foi feito</h2>
+    <p class="sub">Duas camadas com confiabilidade diferente. A distinção importa para o que se pode afirmar.</p>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Camada</th><th>Cobertura</th><th>O que sustenta</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Censo estrutural</td><td class="num">303 / 303</td><td class="why">volume, motivo, tipo, urgência, duração da thread, recorrência de contato. Todos os números com percentual neste material vêm daqui.</td></tr>
+        <tr><td class="name">Busca dirigida por expressão</td><td class="num">canal inteiro</td><td class="why">contagem de desfechos e de menções a falha do canal oficial. Cobertura total, mas só encontra o que foi escrito com aquelas palavras — é piso, não teto.</td></tr>
+        <tr><td class="name">Leitura profunda de thread</td><td class="num">6 threads</td><td class="why">a cadeia de repasses e os modos de falha. <strong>Amostra escolhida de propósito entre os casos difíceis</strong> — serve para descrever mecanismo, não para medir frequência.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="tnote"><strong>Dados pessoais.</strong> Os títulos das demandas trazem telefone de cliente em texto aberto. Nada disso aparece aqui: cada contato foi convertido, no processamento, em um identificador derivado por hash (<code>CLI-xxxxxx</code>). Isso preserva a capacidade de dizer "é o mesmo cliente de novo" e de cruzar com o WhatsApp na parte 2, sem reproduzir o número. CPF não é usado como chave — quase não aparece no canal.</p>
+    <p class="tnote"><strong>O relógio começa tarde.</strong> Tudo aqui é medido a partir do momento em que o CS postou no Slack. O trecho anterior — o varejo ou o cliente ligando para a central e não sendo resolvido — não está instrumentado em lugar nenhum a que este diagnóstico tenha acesso. Onde este material fala em "tempo", é sempre tempo de Slack em diante.</p>
+    <p class="tnote"><strong>Duração ≠ tempo de resolução.</strong> A métrica de duração é do post até a última mensagem da thread. Como muitas terminam em "obrigada", ela superestima um pouco o tempo de trabalho e subestima os casos que morrem sem despedida. Onde o número exato importa, os casos foram lidos um a um.</p>
+  </section>
+
+  <!-- VOLUME -->
+  <section id="volume">
+    <p class="overline">Volume</p>
+    <h2>A demanda cresce, e acelera no fim da janela</h2>
+
+    <div class="fig">
+      <p class="fig-h">Demandas abertas por semana</p>
+      <p class="fig-s">Semanas ISO de 2026. As duas barras claras são semanas parciais — a janela começa numa quarta e termina numa quinta —, então não comparam com as demais.</p>
+      <div class="cols">
+        <div class="col"><span class="v">12</span><div class="bar partial" style="height:30%"></div></div>
+        <div class="col"><span class="v">19</span><div class="bar" style="height:47.5%"></div></div>
+        <div class="col"><span class="v">14</span><div class="bar" style="height:35%"></div></div>
+        <div class="col"><span class="v">18</span><div class="bar" style="height:45%"></div></div>
+        <div class="col"><span class="v">20</span><div class="bar" style="height:50%"></div></div>
+        <div class="col"><span class="v">15</span><div class="bar" style="height:37.5%"></div></div>
+        <div class="col"><span class="v">22</span><div class="bar" style="height:55%"></div></div>
+        <div class="col"><span class="v">15</span><div class="bar" style="height:37.5%"></div></div>
+        <div class="col"><span class="v">25</span><div class="bar" style="height:62.5%"></div></div>
+        <div class="col"><span class="v">29</span><div class="bar" style="height:72.5%"></div></div>
+        <div class="col"><span class="v">23</span><div class="bar" style="height:57.5%"></div></div>
+        <div class="col"><span class="v">19</span><div class="bar" style="height:47.5%"></div></div>
+        <div class="col"><span class="v">32</span><div class="bar" style="height:80%"></div></div>
+        <div class="col"><span class="v">40</span><div class="bar partial" style="height:100%"></div></div>
+      </div>
+      <div class="xaxis">
+        <span>S23</span><span>S24</span><span>S25</span><span>S26</span><span>S27</span><span>S28</span><span>S29</span>
+        <span>S30</span><span>S31</span><span>S32</span><span>S33</span><span>S34</span><span>S35</span><span>S36</span>
+      </div>
+      <p class="fig-n">n = 303 demandas · 03/06 a 03/09/2026</p>
+    </div>
+
+    <div class="fig">
+      <p class="fig-h">Média diária por mês</p>
+      <p class="fig-s">Normalizada por dias com movimento, o que remove o efeito de feriado e fim de semana. Junho e setembro são meses parciais.</p>
+      <div class="hbars">
+        <div class="hb"><span class="k">junho (a partir de 03)</span><div class="track"><div class="bar" style="width:32%"></div></div><span class="v">3,0</span></div>
+        <div class="hb"><span class="k">julho</span><div class="track"><div class="bar" style="width:39%"></div></div><span class="v">3,6</span></div>
+        <div class="hb"><span class="k">agosto</span><div class="track"><div class="bar" style="width:52%"></div></div><span class="v">4,8</span></div>
+        <div class="hb"><span class="k">setembro (3 dias)</span><div class="track"><div class="bar off" style="width:100%"></div></div><span class="v">9,3</span></div>
+      </div>
+      <p class="fig-n">demandas por dia com movimento · barra cinza = amostra pequena demais para ler como tendência</p>
+    </div>
+
+    <p class="prose" style="margin-top:36px">Entre julho e agosto — os dois meses cheios da janela — o volume subiu 32%. Os três primeiros dias de setembro correm a 9,3 por dia, quase o dobro de agosto, mas três dias não são tendência: podem ser um pico de início de mês, quando vencem parcelas. O que já dá para afirmar é a direção. O canal não está estabilizando.</p>
+
+    <div class="statement">
+      Vinte pessoas abrem demanda no canal, mas três abrem 60% delas.
+      <small>Pamela (21,8%), Fernanda (20,8%) e Thiago (17,8%). Isso concentra o conhecimento do processo em pouca gente e torna o canal frágil a férias e desligamento — e é também o motivo de a estimativa de "+1h/dia por supervisor" do diagnóstico anterior ser plausível.</small>
+    </div>
+  </section>
+
+  <!-- O QUE CHEGA -->
+  <section id="oque">
+    <p class="overline">Composição</p>
+    <h2>O que chega pelo canal</h2>
+
+    <div class="fig">
+      <p class="fig-h">Motivo da demanda</p>
+      <p class="fig-s">Classificação por expressão no título. "Outros" reúne casos sem padrão reconhecível e pedidos únicos.</p>
+      <div class="hbars">
+        <div class="hb"><span class="k">Boleto e 2ª via</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="v">68 <small>22,4%</small></span></div>
+        <div class="hb"><span class="k">Telefone e vínculo</span><div class="track"><div class="bar" style="width:78%"></div></div><span class="v">53 <small>17,5%</small></span></div>
+        <div class="hb"><span class="k">Outros</span><div class="track"><div class="bar off" style="width:49%"></div></div><span class="v">33 <small>10,9%</small></span></div>
+        <div class="hb"><span class="k">Baixa de pagamento</span><div class="track"><div class="bar" style="width:43%"></div></div><span class="v">29 <small>9,6%</small></span></div>
+        <div class="hb"><span class="k">Código de compra</span><div class="track"><div class="bar" style="width:38%"></div></div><span class="v">26 <small>8,6%</small></span></div>
+        <div class="hb"><span class="k">Cancelamento</span><div class="track"><div class="bar" style="width:35%"></div></div><span class="v">24 <small>7,9%</small></span></div>
+        <div class="hb"><span class="k">Acesso e senha</span><div class="track"><div class="bar" style="width:31%"></div></div><span class="v">21 <small>6,9%</small></span></div>
+        <div class="hb"><span class="k">Cadastro e dados</span><div class="track"><div class="bar" style="width:29%"></div></div><span class="v">20 <small>6,6%</small></span></div>
+        <div class="hb"><span class="k">Crédito e limite</span><div class="track"><div class="bar" style="width:24%"></div></div><span class="v">16 <small>5,3%</small></span></div>
+        <div class="hb"><span class="k">Comercial e parceria</span><div class="track"><div class="bar" style="width:13%"></div></div><span class="v">9 <small>3,0%</small></span></div>
+        <div class="hb"><span class="k">Erro e instabilidade</span><div class="track"><div class="bar" style="width:6%"></div></div><span class="v">4 <small>1,3%</small></span></div>
+      </div>
+      <p class="fig-n">n = 303 · barra cinza = categoria residual, não é um tema</p>
+    </div>
+
+    <p class="prose" style="margin-top:36px">Dois temas respondem por 40% de tudo: <strong>boleto e telefone</strong>. Nenhum dos dois é decisão de negócio. Ambos são operação repetitiva — gerar um documento, trocar um cadastro — e ambos já existem como função no produto. Chegam aqui porque em algum ponto o caminho normal não entregou.</p>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Corte</th><th>Demandas</th><th>Leitura</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Sobre o cliente final</td><td class="num">160 · 52,8%</td><td class="why">o CS está intermediando o atendimento do consumidor, não só do lojista</td></tr>
+        <tr><td class="name">Sobre o varejo</td><td class="num">110 · 36,3%</td><td class="why">vendedor, acesso, código, repasse, cancelamento</td></tr>
+        <tr><td class="name">Cliente esperando na loja</td><td class="num">43 · 14,2%</td><td class="why">a coorte que justifica um SLA curto — mede-se separado a partir daqui</td></tr>
+        <tr><td class="name">Marcado explicitamente urgente</td><td class="num">6 · 2,0%</td><td class="why">a marcação de urgência praticamente não é usada; "cliente em loja" é o sinal real</td></tr>
+        <tr><td class="name">Cita central, live chat, chat ou bot</td><td class="num">24 · 7,9%</td><td class="why">só no título; a busca no corpo das mensagens encontra bem mais</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="tnote">A demanda se concentra em dois picos de horário: <strong>11h–12h</strong> (83 demandas, 27% do total) e a virada da tarde, entre 16h e 18h (82). Quarta-feira é o dia mais pesado (71), sábado o mais leve (21). Apenas 1,7% das demandas entra fora da faixa 8h–19h — o canal é diurno, o que facilita desenhar turno e plantão.</p>
+  </section>
+
+  <!-- TEMPO -->
+  <section id="tempo">
+    <p class="overline">Tempo</p>
+    <h2>Metade resolve em meia hora. A outra metade é o problema.</h2>
+
+    <div class="fig">
+      <p class="fig-h">Duração da thread, do post até a última mensagem</p>
+      <p class="fig-s">Faixas exclusivas — cada thread conta uma vez só. As 298 que tiveram ao menos uma resposta.</p>
+      <div class="hbars">
+        <div class="hb"><span class="k">até 5 min</span><div class="track"><div class="bar" style="width:84%"></div></div><span class="v">50 <small>16,8%</small></span></div>
+        <div class="hb"><span class="k">5 a 15 min</span><div class="track"><div class="bar" style="width:82%"></div></div><span class="v">49 <small>16,4%</small></span></div>
+        <div class="hb"><span class="k">15 a 30 min</span><div class="track"><div class="bar" style="width:82%"></div></div><span class="v">49 <small>16,4%</small></span></div>
+        <div class="hb"><span class="k">30 min a 1 h</span><div class="track"><div class="bar" style="width:88%"></div></div><span class="v">52 <small>17,4%</small></span></div>
+        <div class="hb"><span class="k">1 h a 4 h</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="v">59 <small>19,8%</small></span></div>
+        <div class="hb"><span class="k">mais de 4 h</span><div class="track"><div class="bar alert" style="width:66%"></div></div><span class="v">39 <small>13,1%</small></span></div>
+      </div>
+      <p class="fig-n">mediana 30,1 min · p75 89,7 min · p90 16,2 h · máximo 40 dias · n = 298 · faixa em argila = a cauda que o SLA precisa eliminar</p>
+    </div>
+
+    <p class="prose" style="margin-top:36px">A distribuição tem duas populações dentro dela. Metade das demandas se resolve em até meia hora — é o pedido simples, alguém pega, entrega, acabou. A outra metade tem cauda longa: o p90 é de <strong>16 horas</strong>, e 39 demandas passaram de quatro horas. Uma média de 648 minutos não descreve nada: ela é o efeito de um punhado de casos que ficaram dias abertos. Por isso tudo aqui é lido por mediana.</p>
+
+    <div class="fig">
+      <p class="fig-h">Mediana de duração por motivo</p>
+      <p class="fig-s">Em minutos. Ordenado do mais lento para o mais rápido. Motivos com menos de 10 casos estão marcados.</p>
+      <div class="hbars">
+        <div class="hb"><span class="k">Erro e instabilidade</span><div class="track"><div class="bar off" style="width:100%"></div></div><span class="v">521 <small>n=4</small></span></div>
+        <div class="hb"><span class="k">Baixa de pagamento</span><div class="track"><div class="bar alert" style="width:29%"></div></div><span class="v">153</span></div>
+        <div class="hb"><span class="k">Comercial e parceria</span><div class="track"><div class="bar off" style="width:17%"></div></div><span class="v">89 <small>n=9</small></span></div>
+        <div class="hb"><span class="k">Crédito e limite</span><div class="track"><div class="bar" style="width:12%"></div></div><span class="v">62</span></div>
+        <div class="hb"><span class="k">Acesso e senha</span><div class="track"><div class="bar" style="width:8%"></div></div><span class="v">41</span></div>
+        <div class="hb"><span class="k">Cancelamento</span><div class="track"><div class="bar" style="width:7.5%"></div></div><span class="v">39</span></div>
+        <div class="hb"><span class="k">Boleto e 2ª via</span><div class="track"><div class="bar" style="width:5.6%"></div></div><span class="v">29</span></div>
+        <div class="hb"><span class="k">Cadastro e dados</span><div class="track"><div class="bar" style="width:3.8%"></div></div><span class="v">20</span></div>
+        <div class="hb"><span class="k">Código de compra</span><div class="track"><div class="bar" style="width:3.4%"></div></div><span class="v">18</span></div>
+        <div class="hb"><span class="k">Telefone e vínculo</span><div class="track"><div class="bar" style="width:1.8%"></div></div><span class="v">9</span></div>
+      </div>
+      <p class="fig-n">minutos · barra cinza = base pequena, indicativo apenas · barra em argila = maior tempo com base robusta</p>
+    </div>
+
+    <div class="statement alert">
+      Baixa de pagamento é o gargalo real: 29 casos, mediana de 153 minutos e p90 de 4 dias.
+      <small>É o oposto de "telefone e vínculo", que tem 53 casos e mediana de 9 minutos. Um é despacho, o outro é investigação — e hoje os dois entram pela mesma porta, na mesma fila, sem distinção. Qualquer SLA único vai ser frouxo demais para um e impossível para o outro.</small>
+    </div>
+  </section>
+
+  <!-- SLA -->
+  <section id="sla">
+    <p class="overline">Teste da sua proposta</p>
+    <h2>O SLA de 15 e 5 minutos, medido contra o histórico</h2>
+    <p class="sub">A proposta era: varejo até 15 minutos, cliente em loja até 5 minutos, e depois disso passa obrigatoriamente para uma pessoa. Rodando essa régua sobre os três meses:</p>
+
+    <div class="fig">
+      <p class="fig-h">Mediana observada contra a meta proposta</p>
+      <p class="fig-s">A barra é a mediana real da coorte. A linha vertical marca a meta.</p>
+
+      <div class="slarow">
+        <div class="slaname">Cliente esperando na loja<small>n = 40 casos</small></div>
+        <div class="slatrack">
+          <div class="slabar" style="width:81%"><span>48,6 min</span></div>
+          <div class="slameta" style="left:8.3%" data-l="5 min"></div>
+        </div>
+      </div>
+
+      <div class="slarow">
+        <div class="slaname">Demais demandas<small>n = 258 casos</small></div>
+        <div class="slatrack">
+          <div class="slabar" style="width:45%"><span>26,9 min</span></div>
+          <div class="slameta" style="left:25%" data-l="15 min"></div>
+        </div>
+      </div>
+
+      <p class="fig-n">escala comum de 0 a 60 min para as duas linhas · mediana da duração da thread</p>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Coorte</th><th>Meta</th><th>Mediana hoje</th><th>Cumpriria a meta</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Cliente esperando na loja</td><td class="num">5 min</td><td class="num">48,6 min</td><td class="num" style="color:var(--red-ink)">3 de 40 · 7,5%</td></tr>
+        <tr><td class="name">Demais demandas</td><td class="num">15 min</td><td class="num">26,9 min</td><td class="num" style="color:var(--red-ink)">92 de 258 · 35,7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="prose" style="margin-top:36px">O SLA está certo como intenção e é inatingível como configuração atual. Não porque as pessoas sejam lentas — em vários casos lidos, quem tinha a resposta respondeu em menos de cinco minutos. É porque <strong>o tempo não é gasto resolvendo, é gasto encontrando quem resolve</strong>. Enquanto a demanda precisar de duas ou três marcações até achar dono, nenhuma meta de cinco minutos sobrevive.</p>
+
+    <div class="statement">
+      A cláusula mais importante da sua proposta não é o número. É o "depois disso passa obrigatoriamente para uma pessoa".
+      <small>Hoje não existe esse gatilho. Quando ninguém responde, o que acontece é o CS cobrar de novo — e a cobrança é manual, depende de a pessoa estar olhando o canal, e em um dos casos lidos veio 30 minutos depois. O SLA só vira mecanismo se o estouro disparar alguém automaticamente, em vez de disparar uma cobrança.</small>
+    </div>
+  </section>
+
+  <!-- CADEIA -->
+  <section id="cadeia">
+    <p class="overline">A cadeia real</p>
+    <h2>Um caso reconstruído minuto a minuto</h2>
+    <p class="sub">Pagamento não reconhecido, cliente já havia falado com a central. É um caso extremo — está entre os 13% que passam de quatro horas —, mas cada etapa dele aparece nos outros. Contatos pseudonimizados.</p>
+
+    <div class="chain">
+      <div class="step">
+        <div class="t">01/09 10:25</div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">CS abre a demanda.</span> Cliente em contato com a central sobre pagamento não reconhecido. Três prints anexados.</p></div>
+      </div>
+      <div class="step">
+        <div class="t">10:28 <b>+3min</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">1º repasse.</span> A pessoa marcada não resolve e indica outra: <q>acredito que a [colega] saiba quem pode ajudar</q></p></div>
+      </div>
+      <div class="step">
+        <div class="t">10:30 <b>+5min</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">2º repasse.</span> Três pessoas marcadas de uma vez. Ninguém assume nominalmente.</p></div>
+      </div>
+      <div class="step">
+        <div class="t">10:43 <b>+17min</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">3º repasse.</span> Uma quarta pessoa aponta quem deve puxar. Esse é o último movimento da manhã.</p></div>
+      </div>
+      <div class="step wait">
+        <div class="t">10:43 → 17:32</div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">Silêncio.</span> Nada acontece no canal.<span class="gap">6 h 50 min sem nenhuma atualização</span></p></div>
+      </div>
+      <div class="step">
+        <div class="t">17:32 <b>+7h</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">CS cobra.</span> <q>Cliente está no varejo novamente</q> — o cliente voltou à loja no mesmo dia porque não teve retorno. Nova cobrança 9 minutos depois: <q>tô com o varejo em linha pedindo algum retorno</q></p></div>
+      </div>
+      <div class="step wait">
+        <div class="t">02/09 08:59</div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">Perda de turno.</span> <q>desculpe, eu já tinha ido embora</q> — a demanda atravessou a virada de expediente sem dono designado.<span class="gap">a thread ficou 15 h sem responsável</span></p></div>
+      </div>
+      <div class="step">
+        <div class="t">10:57 <b>+24h30</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">Reaparece o desfecho de ontem.</span> <q>Ontem encerrei as 17:20 [...] entrei em ctt na parte da tarde e não houve retorno da parte do cliente</q> — o atendimento tinha encerrado e ninguém no canal soube.</p></div>
+      </div>
+      <div class="step">
+        <div class="t">15:09 <b>+28h44</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">Nova tentativa, pedida pelo CS.</span> Duas tentativas seguidas, ambas sem resposta do cliente.</p></div>
+      </div>
+      <div class="step wait">
+        <div class="t">15:34 <b>+29h09</b></div><div class="dot"><i></i></div>
+        <div class="b"><p><span class="who">Fim, sem resolução.</span> <q>reforcei com o varejo que o cliente não atendeu</q> — a demanda encerra sem que o pagamento não reconhecido tenha sido tratado.</p></div>
+      </div>
+    </div>
+
+    <p class="tnote">Nenhum dos três repasses do começo levou mais de 17 minutos: quando alguém está olhando, o canal é rápido. O tempo todo está nos dois vazios — 6h50 até a primeira cobrança e a virada de turno sem entrega de bastão. E as três tentativas de contato com o cliente foram todas disparadas por cobrança do CS, nenhuma por rotina do atendimento.</p>
+  </section>
+
+  <!-- MODOS DE FALHA -->
+  <section id="falhas">
+    <p class="overline">Padrões</p>
+    <h2>Cinco modos de falha, todos observados</h2>
+    <p class="sub">Extraídos das 6 threads lidas linha a linha. Descrevem mecanismo — a frequência de cada um exige classificar as 303, o que é o próximo passo natural deste trabalho.</p>
+
+    <div class="cases">
+      <div class="case">
+        <h3>1 · Repasse em cadeia até achar dono</h3>
+        <p class="m">observado em 4 das 6 threads lidas</p>
+        <p>A demanda entra sem destinatário. Cada pessoa marcada indica a próxima em vez de assumir ou recusar. O caso da seção anterior teve três repasses antes de qualquer ação; outro teve dois em 20 minutos, com cliente na loja.</p>
+        <p>O custo não é o tempo de cada repasse — são todos curtos. É que a cadeia só anda enquanto alguém está olhando, e o relógio do cliente continua correndo.</p>
+      </div>
+
+      <div class="case">
+        <h3>2 · "Sem retorno do cliente" como desfecho final</h3>
+        <p class="m">13 threads no canal inteiro contêm essa expressão ou equivalente</p>
+        <p>O atendimento tenta contato, o cliente não responde, e a thread encerra ali. Não há registro de nova tentativa programada, nem de prazo, nem de quem retoma.</p>
+        <q>Somente visualizou e não respondeu mais. Finalizado.</q>
+        <p>Em um dos casos houve segunda tentativa — 47 minutos depois, pedida pelo CS. Em outro, três tentativas, todas puxadas por cobrança. <strong>A retomada existe, mas é manual e depende de o CS lembrar.</strong></p>
+      </div>
+
+      <div class="case">
+        <h3>3 · Versões que não batem, e ninguém reconcilia</h3>
+        <p class="m">observado em 1 thread, mas é o modo mais grave</p>
+        <p>Num caso de desbloqueio, o atendimento registrou que o cliente parou de responder. Onze minutos depois, o CS trouxe a versão do outro lado:</p>
+        <q>A cliente disse que não recebeu retorno 🥲</q>
+        <p>As duas afirmações estão na mesma thread, a 11 minutos de distância, e a conversa termina sem ninguém checar qual é a verdadeira. Enquanto isso, o número "cliente não atendeu" vai virar estatística de atendimento.</p>
+      </div>
+
+      <div class="case">
+        <h3>4 · Dado errado na abertura</h3>
+        <p class="m">observado em 1 thread, com custo direto</p>
+        <p>Cliente na loja sem acesso ao app. O telefone no título estava incorreto: duas tentativas de contato falharam antes de alguém pedir a confirmação do número, que veio 8 minutos depois, de outro sistema.</p>
+        <p>Como o telefone é hoje a única chave de identificação da demanda, um dígito errado custa duas tentativas e uma rodada de cobrança.</p>
+      </div>
+
+      <div class="case">
+        <h3>5 · Script no lugar de ação</h3>
+        <p class="m">observado em 1 thread</p>
+        <p>Na mesma demanda, a primeira resposta veio em 2 minutos — mas foi o script de orientação colado no canal, não o atendimento ao cliente. Só depois de outra pessoa escrever <q>chama o cliente</q> é que a ação começou, com a explicação:</p>
+        <q>desculpe achei que ela estava só perguntando</q>
+        <p>É ambiguidade de contrato: o canal não distingue "me ensina" de "faz por mim", então quem lê precisa adivinhar.</p>
+      </div>
+    </div>
+
+    <div class="statement alert">
+      Os cinco modos têm a mesma raiz: a demanda entra sem dono, sem prazo e sem estado.
+      <small>Não é um problema de esforço — as pessoas respondem, cobram, tentam de novo. É que o canal é um chat, e chat não tem fila, não tem atribuição, não tem retomada automática e não tem virada de turno. Tudo isso está sendo feito na memória de quem abriu a demanda.</small>
+    </div>
+  </section>
+
+  <!-- CENTRAL -->
+  <section id="central">
+    <p class="overline">O canal oficial</p>
+    <h2>Quantas dessas demandas já tinham passado pela central</h2>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Evidência</th><th>Contagem</th><th>Como foi medida</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Cita falha do canal oficial <strong>no título</strong></td><td class="num">13 · 4,3%</td><td class="why">"sem retorno da central", "contato com a central sem sucesso", "não localizado pelo bot", "quase 1 hora de espera"</td></tr>
+        <tr><td class="name">Cita central, chat, live chat ou bot no título</td><td class="num">24 · 7,9%</td><td class="why">inclui menções neutras, sem afirmar falha</td></tr>
+        <tr><td class="name">Cita central + falha <strong>no corpo da thread</strong></td><td class="num">20+</td><td class="why">busca por expressão no canal inteiro; a listagem foi truncada, então é piso</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="prose" style="margin-top:36px">O que dá para afirmar: em pelo menos 4,3% das demandas o varejo ou o cliente <strong>declarou</strong> ter tentado o canal oficial sem sucesso antes de chegar aqui. Buscando no corpo das mensagens, o número cresce bem além disso. O que <strong>não</strong> dá para afirmar é o inverso — quantas das 303 não tentaram. O canal só registra tentativa quando alguém escreve espontaneamente, e a maioria não escreve.</p>
+
+    <div class="statement">
+      O achado mais acionável desta seção não é um número, é uma pergunta que alguém já fez no canal e não foi respondida.
+      <small>Em 16/06, sobre reset de senha de vendedor: <q>o time é orientado a procurar a central do varejo. Além da orientação dizer que não fazem, ainda orientam a buscar a central do cliente. Esse processo mudou?</q> — ou seja, existe pelo menos um tipo de demanda que as duas centrais recusam, e o vendedor circula entre elas até desistir e vir para cá. Isso não é fila mal dimensionada: é dono indefinido.</small>
+    </div>
+
+    <p class="tnote">Há também dois registros de instabilidade sistêmica documentados no canal com hora de início e de normalização — erro na geração de boletos pela central em 03/07 (09:45 → 11:22) e lentidão na Infobip em 10/06. No dia 03/07, três demandas de "cliente em loja tentando gerar boleto na central" entraram entre 09:20 e 09:43, <strong>antes</strong> do aviso interno. O canal detectou o incidente antes do monitoramento.</p>
+  </section>
+
+  <!-- RESPOSTAS -->
+  <section id="respostas">
+    <p class="overline">Suas perguntas</p>
+    <h2>As três perguntas que abriram este trabalho</h2>
+
+    <div class="qa">
+      <div class="q">
+        <h3>Essa demanda fica no limbo?</h3>
+        <p><strong>Fica, e é possível dizer com que frequência.</strong> Cinco demandas (1,7%) nunca receberam nenhuma resposta. Treze terminam com "sem retorno do cliente" e nenhuma retomada registrada. Trinta e nove passam de quatro horas. Somando o que é rastreável, algo entre 5% e 15% das demandas não chega a um desfecho verificável — e essa é a faixa, não o número, porque o canal não registra fechamento de forma padronizada.</p>
+        <p>O limbo tem duas formas distintas: a thread que ninguém pega (rara) e a thread que é trabalhada, esbarra no cliente que não responde e para ali (comum).</p>
+      </div>
+
+      <div class="q">
+        <h3>O atendente liga novamente?</h3>
+        <p><strong>Só quando o CS pede.</strong> Nas threads lidas não há um único caso de nova tentativa por iniciativa do atendimento ou por regra de processo. Onde houve retomada, ela foi disparada por uma cobrança no canal: 47 minutos depois num caso, 4 horas depois em outro.</p>
+        <p>Isso significa que a taxa de recontato hoje é, na prática, uma função de quanto o CS tem banda para cobrar. Num dia cheio, o caso morre.</p>
+      </div>
+
+      <div class="q">
+        <h3>Quanto tempo demora cada repasse?</h3>
+        <p><strong>O repasse em si é rápido; os vazios entre eles é que são longos.</strong> No caso reconstruído: 3, 5 e 17 minutos para cada indicação de dono. Depois disso, 6h50 de silêncio, e uma virada de turno que custou 15 horas.</p>
+        <p>A conclusão inverte a intuição: <strong>não adianta acelerar o repasse.</strong> Ele já é rápido. O que precisa existir é alguém obrigado a assumir quando o repasse não acontece.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONO -->
+  <section id="dono">
+    <p class="overline">Recomendação · parte 1</p>
+    <h2>O que deveria ficar com qual time</h2>
+    <p class="sub">Recorte por natureza da tarefa, não por volume. A pergunta é: essa demanda exige julgamento, acesso privilegiado, ou nenhum dos dois?</p>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Natureza</th><th>Motivos que caem aqui</th><th>Volume</th><th>Dono proposto</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="name">Execução padronizada<br><span class="pill at">sem julgamento</span></td>
+          <td class="why">boleto e 2ª via, código de compra, telefone e vínculo, cadastro e dados</td>
+          <td class="num">167<br>55,1%</td>
+          <td class="why"><strong>Central, primeira linha.</strong> Nada aqui exige decisão. Se está chegando ao CS, é falha de capacidade, de acesso da primeira linha ou de roteamento — não de complexidade.</td>
+        </tr>
+        <tr>
+          <td class="name">Investigação com sistema<br><span class="pill pr">precisa de acesso</span></td>
+          <td class="why">baixa de pagamento, pagamento não reconhecido, cancelamento, acesso e senha de operador</td>
+          <td class="num">74<br>24,4%</td>
+          <td class="why"><strong>Backoffice, com fila e prazo próprios.</strong> Mediana de 153 min em baixa de pagamento mostra que é trabalho de apuração, não de balcão. Precisa sair da fila de minutos e entrar numa fila de horas, com prazo declarado ao varejo.</td>
+        </tr>
+        <tr>
+          <td class="name">Decisão de negócio<br><span class="pill">precisa de alçada</span></td>
+          <td class="why">crédito e limite, renegociação, acordo, contestação, casos jurídicos</td>
+          <td class="num">16+<br>5,3%</td>
+          <td class="why"><strong>Time de crédito e risco.</strong> Volume baixo e alçada específica — não deveria transitar por canal aberto.</td>
+        </tr>
+        <tr>
+          <td class="name">Relacionamento e comercial<br><span class="pill at">outro dono</span></td>
+          <td class="why">contato de representante, nova parceria, insatisfação com atendimento</td>
+          <td class="num">9<br>3,0%</td>
+          <td class="why"><strong>Comercial.</strong> Chega aqui porque o lojista não sabe o caminho — é problema de roteamento, não de suporte.</td>
+        </tr>
+        <tr>
+          <td class="name">Incidente de plataforma<br><span class="pill pr">P0</span></td>
+          <td class="why">erro, instabilidade, bot que não localiza, boleto com valor errado</td>
+          <td class="num">4+<br>1,3%</td>
+          <td class="why"><strong>Produto e engenharia, via canal de incidente.</strong> Mediana de 521 min. O canal já vem detectando incidente antes do monitoramento — isso deveria virar alerta, não thread.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="tnote">O somatório não fecha em 303 porque "outros" (33 demandas, 10,9%) não foi atribuído — é a categoria que precisa ser lida caso a caso antes de virar regra. Os percentuais são sobre o total de 303.</p>
+
+    <div class="statement">
+      Metade do que chega ao CS não deveria chegar a time nenhum de exceção: é execução padronizada.
+      <small>167 demandas em três meses de boleto, código, telefone e cadastro. Se a primeira linha da central tivesse acesso e alçada para resolver essas quatro coisas, mais da metade do canal desapareceria — e o CS voltaria a tratar o que é de fato exceção.</small>
+    </div>
+  </section>
+
+  <!-- PROPOSTA -->
+  <section id="proposta">
+    <p class="overline">Recomendação · parte 2</p>
+    <h2>Como escalonar</h2>
+    <p class="sub">Sua proposta de SLA, ajustada ao que o dado mostra. A mudança principal não é o prazo — é o que acontece quando ele estoura.</p>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Classe</th><th>Gatilho</th><th>Prazo de aceite</th><th>Ao estourar</th></tr></thead>
+      <tbody>
+        <tr><td class="name">P0 · Cliente em loja</td><td class="why">o pedido diz "cliente em loja" ou equivalente</td><td class="num">5 min</td><td class="why">atribuição automática a um plantonista nomeado do turno; se ele não aceitar em 5 min, sobe para o coordenador</td></tr>
+        <tr><td class="name">P1 · Varejo operando</td><td class="why">vendedor travado, sem cliente esperando</td><td class="num">15 min</td><td class="why">entra na fila do time dono; CS deixa de ser responsável pelo acompanhamento</td></tr>
+        <tr><td class="name">P2 · Investigação</td><td class="why">baixa de pagamento, contestação, apuração</td><td class="num">4 h para o primeiro retorno</td><td class="why">prazo declarado ao varejo na abertura, com data de retorno — não fica em fila de minutos</td></tr>
+        <tr><td class="name">P3 · Sem urgência</td><td class="why">comercial, parceria, dúvida de processo</td><td class="num">1 dia útil</td><td class="why">roteado para o dono na abertura, fora deste canal</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="asks">
+      <div class="ask">
+        <div class="num">1</div>
+        <div>
+          <h3>Aceite nomeado, não marcação</h3>
+          <p>Hoje a demanda é endereçada marcando pessoas. Cada marcação pode virar outra marcação, e a cadeia só anda enquanto alguém olha. A troca é simples: <strong>toda demanda nasce com um dono do turno já definido</strong>, e o papel do CS passa a ser abrir com a classificação correta, não caçar quem resolve.</p>
+          <p>Isso é o que torna os 5 minutos possíveis. Sem isso, o prazo mede a sorte de quem está online.</p>
+        </div>
+      </div>
+      <div class="ask">
+        <div class="num">2</div>
+        <div>
+          <h3>Regra de recontato e de encerramento</h3>
+          <p>"Cliente não respondeu" não pode ser desfecho. Proposta mínima: <strong>três tentativas em janelas definidas</strong> (imediata, +2h, +1 dia útil), registro de cada uma, e só então encerramento como "não localizado" — com aviso ao varejo, que é quem está com o cliente na frente.</p>
+          <p>Isso ataca diretamente as 13 threads que hoje morrem na primeira tentativa sem volta.</p>
+        </div>
+      </div>
+      <div class="ask">
+        <div class="num">3</div>
+        <div>
+          <h3>Passagem de bastão no fim do turno</h3>
+          <p>O caso de 29 horas atravessou duas viradas de expediente, e as duas custaram tempo: <q>já tinha ido embora</q> e um atendimento encerrado às 17:20 que ninguém no canal soube. <strong>Nenhuma demanda aberta deveria virar o turno sem dono novo declarado.</strong></p>
+        </div>
+      </div>
+      <div class="ask">
+        <div class="num">4</div>
+        <div>
+          <h3>Dois campos na abertura</h3>
+          <p>Já pedidos no diagnóstico anterior e ainda mais úteis aqui: <strong>tentou o canal oficial antes?</strong> e, se sim, <strong>o que aconteceu lá?</strong> Hoje isso só existe quando alguém escreve espontaneamente — 4,3% dos casos. Com o campo, em quatro semanas se sabe se a central falha ou se é pulada, que é a decisão que trava o projeto inteiro.</p>
+          <p>Um terceiro campo resolveria o modo de falha 5: <strong>é dúvida ou é execução?</strong></p>
+        </div>
+      </div>
+      <div class="ask">
+        <div class="num">5</div>
+        <div>
+          <h3>Resolver a disputa de dono do reset de senha</h3>
+          <p>Existe pelo menos um tipo de demanda que a central do varejo e a central do cliente recusam entre si, documentado no canal em junho e sem resposta até hoje. Enquanto isso não tiver dono, o vendedor vai continuar circulando entre as duas e desembocando no CS. É a correção mais barata desta lista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALTA -->
+  <section id="falta">
+    <p class="overline">Limites e próximos passos</p>
+    <h2>O que este raio-x ainda não responde</h2>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Lacuna</th><th>Por que importa</th><th>O que destrava</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Volume e SLA da central</td><td class="why">sem o denominador, não dá para dizer se 303 demandas em 3 meses é vazamento grande ou marginal, nem se a central aguentaria absorvê-las</td><td class="why">extração da ferramenta de ticket da central, mesmo período</td></tr>
+        <tr><td class="name">O trecho antes do Slack</td><td class="why">todo o tempo medido aqui começa depois que o CS postou; a espera do varejo na central é invisível</td><td class="why">o mesmo dado acima, cruzado por telefone e janela</td></tr>
+        <tr><td class="name">Os grupos de WhatsApp</td><td class="why">é onde a demanda entra antes de virar post no Slack; sem isso não há como medir quantas viram post e quantas o CS resolve sozinho</td><td class="why">os exports que você vai anexar — é a parte 2</td></tr>
+        <tr><td class="name">Frequência dos modos de falha</td><td class="why">os cinco padrões estão descritos, mas só 6 threads foram lidas linha a linha e elas foram escolhidas entre os casos difíceis</td><td class="why">classificar as 303 threads por desfecho e número de repasses</td></tr>
+        <tr><td class="name">Normalização por vendas</td><td class="why">não dá para comparar varejos de tamanhos diferentes nem calcular demanda de suporte por 100 vendas</td><td class="why">volume de vendas por varejo no período</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="closing">O canal funciona. É rápido quando alguém está olhando, as pessoas cobram umas às outras e a maior parte das demandas se resolve em meia hora. <strong>O problema é que ele funciona por atenção, não por processo</strong> — e atenção não escala com 60% de crescimento em três meses. O que falta não é esforço nem gente: é dono, prazo e estado.</p>
+  </section>
+
+</div>
+</body>
+</html>

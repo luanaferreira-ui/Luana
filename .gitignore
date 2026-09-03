@@ -9,3 +9,6 @@ node_modules/
 demandas.json
 # Marcações de quais itens da caixa do radar já foram importados localmente.
 .radar-consumed.json
+
+# extração bruta do Slack: contém telefone de cliente em texto aberto
+analise/raio-x/all.tsv
