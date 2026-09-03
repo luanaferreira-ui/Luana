@@ -7,9 +7,12 @@ CS=["thiago corr","fernanda pimentel","pamela","pâmela","lidiany","ariel souza"
     "ingrid magalhaes","ingrid magalhães","jaqueline oliveira","livino menezes","elanny",
     "barbara nascimento","bárbara nascimento","amanda lopes","maraiza","luana jeniffer",
     "adelane","suzy","talita souza","maisa","maísa","stefanne","andressa","vanessa mendes",
+    # confirmados por comportamento na leitura dos grupos (delegam a Ume, distribuem material Ume):
+    "luiza falcone","pedro gedeon","ju ume","priscila ume","gustavo almeida",
     "gabriel massuda","luana roncato","raphaella","luciedja","caroline galv"]
 def lado(a):
     l=a.lower().lstrip('~ ').strip()
+    if l=='luana': return 'ume'   # distribui treinamento/checklist Ume em 6 grupos
     if re.search(r'\bume\b|\(corp\)',l): return 'ume'
     for c in CS:
         if c in l: return 'ume'
