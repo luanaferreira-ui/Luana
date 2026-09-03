@@ -12,3 +12,5 @@ demandas.json
 
 # extração bruta do Slack: contém telefone de cliente em texto aberto
 analise/raio-x/all.tsv
+analise/whatsapp/raw/
+analise/whatsapp/*.json
