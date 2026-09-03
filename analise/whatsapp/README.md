@@ -44,10 +44,43 @@ Ambíguos ainda não resolvidos: `Herbert` (152 msgs, agenda treinamentos em doi
 grupos) e `~ Bárbara Camilla` (51, fala em visita a filial). Precisam de confirmação
 humana.
 
-## Estado
+## Pipeline
 
-- Parser e classificação de lado: prontos e conferidos.
-- Classificação de demanda e motivo: **ainda não confiável**. Os grupos são de
-  propósito misto (relacionamento, treinamento, onboarding, cobrança de meta),
-  e o detector atual confunde saudação e agradecimento com pedido de suporte.
-  Precisa de calibração manual sobre uma amostra antes de gerar número.
+    python3 parse.py       # varre raw/, gera msgs.json   (SEM pipe: head mata por SIGPIPE)
+    python3 lados.py       # Ume x varejo   -> msgs2.json
+    python3 demanda.py     # demandas do varejo -> demandas2.json
+    python3 papel_ume.py   # papel da fala da Ume
+
+## Resultado atual (janela 03/06–03/09, mesma do Slack)
+
+- 9.115 mensagens nos 10 grupos
+- **606 demandas de suporte** do varejo (contra 303 no Slack no mesmo período)
+- primeira resposta da Ume no grupo: mediana 4 min, 55% em ≤5 min, 69% em ≤15 min
+- 3% das demandas ficam sem qualquer resposta da Ume
+
+### O grupo não é só suporte
+
+A Ume usa o canal para engajar o varejo, então a fatia dela mistura papéis:
+
+| papel da fala da Ume | % |
+|---|---:|
+| atendimento | 17% |
+| engajamento (meta, ranking, parabéns) | 17% |
+| social / ack curto | 7% |
+| anexo sem texto | 12% |
+| comunicado / treinamento | 1% |
+| não classificável por regra | 45% |
+
+**Ler "40% das mensagens são da Ume" como esforço de suporte é errado** — só cerca
+de um sexto disso é atendimento.
+
+## Limites conhecidos
+
+- 45% da fala da Ume e 41% das demandas não se classificam por regra. É conversa
+  encadeada, sem tema explícito na própria mensagem. Resolver exige leitura.
+- "pedido sem contexto" (16% das demandas) é categoria real, não falha: o varejo
+  abre com "alguém pode ajudar?" e o problema vem em imagem ou mensagem seguinte.
+- `cita canal oficial` (0,5%) e `cliente em loja` (3,8%) são **piso**: só contam
+  quando o varejo escreve. Nos prints o número é muito maior.
+- Tempo do WhatsApp é **primeira resposta**; o do Slack (parte 1) é **duração da
+  thread**. Não são comparáveis diretamente.

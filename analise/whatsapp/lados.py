@@ -9,6 +9,8 @@ CS=["thiago corr","fernanda pimentel","pamela","pâmela","lidiany","ariel souza"
     "adelane","suzy","talita souza","maisa","maísa","stefanne","andressa","vanessa mendes",
     # confirmados por comportamento na leitura dos grupos (delegam a Ume, distribuem material Ume):
     "luiza falcone","pedro gedeon","ju ume","priscila ume","gustavo almeida",
+    # confirmados pela Luana em 03/09:
+    "herbert","bárbara camilla","barbara camilla",
     "gabriel massuda","luana roncato","raphaella","luciedja","caroline galv"]
 def lado(a):
     l=a.lower().lstrip('~ ').strip()

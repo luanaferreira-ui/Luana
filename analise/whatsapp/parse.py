@@ -7,7 +7,7 @@ def pid(d): return "CLI-"+hashlib.sha256((SALT+d).encode()).hexdigest()[:6]
 def aid(n): return "P-"+hashlib.sha256((SALT+"autor"+n).encode()).hexdigest()[:5]
 
 LINE=re.compile(r'^\[(\d{2})/(\d{2})/(\d{4}), (\d{2}):(\d{2}):(\d{2})\]\s(.*?):\s(.*)$', re.S)
-SYS=re.compile(r'criou este grupo|adicionou|mudou a descri|mudou o assunto|mudou a imagem|saiu do grupo|entrou usando|foi adicionad|removeu|As mensagens e liga|c[oó]digo de seguran|Mensagem apagada|apagou esta mensagem|mudou o n[uú]mero|agora [eé] admin|convite do grupo|Voc[eê] foi adicionad|criptografia de ponta',re.I)
+SYS=re.compile(r'criou este grupo|adicionou|mudou a descri|mudou o assunto|mudou a imagem|saiu do grupo|^~?\s*[^:]{1,40}\ssaiu$|entrou usando|foi adicionad|removeu|As mensagens e liga|c[oó]digo de seguran|Mensagem apagada|apagou esta mensagem|mudou o n[uú]mero|agora [eé] admin|convite do grupo|Voc[eê] foi adicionad|criptografia de ponta',re.I)
 MEDIA=re.compile(r'<anexado:|imagem ocultada|v[ií]deo ocultado|[aá]udio ocultado|figurinha omitida|documento omitido|GIF omitido|sticker omitid',re.I)
 
 def phones(t):
