@@ -102,6 +102,9 @@
   .pill.pr{background:var(--red-bg); color:var(--red-ink); border-color:var(--red-line)}
   .tnote{font-size:13.5px; color:var(--muted); margin-top:14px; max-width:76ch; line-height:1.6}
 
+  .ev{display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+      padding:3px 9px; border-radius:5px; background:var(--ask-bg); color:var(--verde); border:1px solid var(--verde-pale)}
+
   /* cadeia medida */
   .chain{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:28px; margin-top:26px}
   .step{display:grid; grid-template-columns:92px 22px 1fr; gap:16px; align-items:start}
@@ -169,29 +172,29 @@
 <body>
 <div class="wrap">
 
-  <p class="overline">CS · Raio-X do escalonamento — parte 1 de 2: Slack</p>
+  <p class="overline">CS · Raio-X do escalonamento — os dois canais</p>
   <div class="head-grid">
     <div style="flex:1 1 540px">
       <h1>O que acontece com a demanda depois que ela sai da central</h1>
-      <p class="lede">Censo completo do canal <strong>#ask-retail-priority</strong> entre 03/06 e 03/09/2026: 303 demandas de atendimento, classificadas por tipo, motivo, urgência e tempo. É a metade da jornada que estava escura — o que acontece <em>depois</em> que o varejo desiste do canal oficial e o CS pede prioridade. A outra metade, os grupos de WhatsApp, entra na parte 2.</p>
+      <p class="lede">Censo dos dois canais por onde a demanda escapa do atendimento oficial, entre 03/06 e 03/09/2026: <strong>303 demandas no Slack</strong> <span style="white-space:nowrap">(#ask-retail-priority)</span> e <strong>606 no WhatsApp</strong>, em dez grupos de varejo. Mais a leitura dos prints que o varejo anexa, que é onde a conversa com a central aparece.</p>
     </div>
     <div class="meta">
       Luana Roncato Ferreira<br>
       03 set 2026<br>
-      303 demandas · 92 dias<br>
-      1 canal · 20 solicitantes
+      909 demandas · 92 dias<br>
+      2 canais · 10 grupos
     </div>
   </div>
   <div class="rule"></div>
 
   <div class="metrics">
     <div class="metric">
-      <div class="n">303</div>
-      <div class="l">demandas de atendimento em 3 meses, 4,0 por dia útil em média</div>
+      <div class="n">909</div>
+      <div class="l">demandas nos dois canais em 3 meses — 606 no WhatsApp, 303 no Slack</div>
     </div>
     <div class="metric">
-      <div class="n">+60%</div>
-      <div class="l">de crescimento na média diária entre junho e agosto</div>
+      <div class="n">+144%</div>
+      <div class="l">de crescimento na demanda por grupo de WhatsApp, já normalizado</div>
     </div>
     <div class="metric">
       <div class="n alert">48,6 min</div>
@@ -205,6 +208,7 @@
 
   <nav class="idx" aria-label="Índice">
     <a href="#metodo">Método</a>
+    <a href="#dois">Os dois canais</a>
     <a href="#volume">Volume</a>
     <a href="#oque">O que chega</a>
     <a href="#tempo">Quanto demora</a>
@@ -215,6 +219,7 @@
     <a href="#respostas">Suas perguntas</a>
     <a href="#dono">O que fica com quem</a>
     <a href="#proposta">Escalonamento proposto</a>
+    <a href="#prints">O que os prints mostram</a>
     <a href="#falta">O que falta</a>
   </nav>
 
@@ -231,22 +236,121 @@
         <tr><td class="name">Censo estrutural</td><td class="num">303 / 303</td><td class="why">volume, motivo, tipo, urgência, duração da thread, recorrência de contato. Todos os números com percentual neste material vêm daqui.</td></tr>
         <tr><td class="name">Busca dirigida por expressão</td><td class="num">canal inteiro</td><td class="why">contagem de desfechos e de menções a falha do canal oficial. Cobertura total, mas só encontra o que foi escrito com aquelas palavras — é piso, não teto.</td></tr>
         <tr><td class="name">Leitura profunda de thread</td><td class="num">6 threads</td><td class="why">a cadeia de repasses e os modos de falha. <strong>Amostra escolhida de propósito entre os casos difíceis</strong> — serve para descrever mecanismo, não para medir frequência.</td></tr>
+        <tr><td class="name">Censo dos grupos de WhatsApp</td><td class="num">10 grupos<br>9.115 msgs</td><td class="why">volume, motivo, tempo até a primeira resposta da Ume. Classificador calibrado em três rodadas contra amostra lida à mão.</td></tr>
+        <tr><td class="name">Leitura de prints anexados</td><td class="num">9 de 73</td><td class="why">é onde a conversa com a central aparece. Triagem por contexto de suporte; leitura ainda em curso.</td></tr>
       </tbody>
     </table>
     </div>
 
     <p class="tnote"><strong>Dados pessoais.</strong> Os títulos das demandas trazem telefone de cliente em texto aberto. Nada disso aparece aqui: cada contato foi convertido, no processamento, em um identificador derivado por hash (<code>CLI-xxxxxx</code>). Isso preserva a capacidade de dizer "é o mesmo cliente de novo" e de cruzar com o WhatsApp na parte 2, sem reproduzir o número. CPF não é usado como chave — quase não aparece no canal.</p>
     <p class="tnote"><strong>O relógio começa tarde.</strong> Tudo aqui é medido a partir do momento em que o CS postou no Slack. O trecho anterior — o varejo ou o cliente ligando para a central e não sendo resolvido — não está instrumentado em lugar nenhum a que este diagnóstico tenha acesso. Onde este material fala em "tempo", é sempre tempo de Slack em diante.</p>
+    <p class="tnote"><strong>As duas métricas de tempo não são a mesma coisa.</strong> No WhatsApp mede-se <em>tempo até a primeira resposta da Ume</em>. No Slack mede-se <em>duração da thread</em>, do post à última mensagem. Comparar os dois números diretamente seria errado, e este material não faz isso em nenhum lugar.</p>
     <p class="tnote"><strong>Duração ≠ tempo de resolução.</strong> A métrica de duração é do post até a última mensagem da thread. Como muitas terminam em "obrigada", ela superestima um pouco o tempo de trabalho e subestima os casos que morrem sem despedida. Onde o número exato importa, os casos foram lidos um a um.</p>
+  </section>
+
+
+  <!-- OS DOIS CANAIS -->
+  <section id="dois">
+    <p class="overline">Os dois canais</p>
+    <h2>O WhatsApp carrega o dobro do Slack — e não é a mesma demanda</h2>
+    <p class="sub">Dez grupos de varejo, 9.115 mensagens na mesma janela. O Slack é o que o CS escala; o WhatsApp é onde a demanda nasce.</p>
+
+    <div class="fig">
+      <p class="fig-h">Demandas por semana no WhatsApp, normalizadas por grupo ativo</p>
+      <p class="fig-s">A barra é o número absoluto. O crescimento não é efeito de entrarem mais grupos: por grupo ativo, a demanda vai de 2,9 para 7,1 por semana entre o começo e o fim da janela.</p>
+      <div class="cols">
+        <div class="col"><span class="v">14</span><div class="bar partial" style="height:16%"></div></div>
+        <div class="col"><span class="v">10</span><div class="bar" style="height:12%"></div></div>
+        <div class="col"><span class="v">14</span><div class="bar" style="height:16%"></div></div>
+        <div class="col"><span class="v">22</span><div class="bar" style="height:26%"></div></div>
+        <div class="col"><span class="v">15</span><div class="bar" style="height:17%"></div></div>
+        <div class="col"><span class="v">22</span><div class="bar" style="height:26%"></div></div>
+        <div class="col"><span class="v">45</span><div class="bar" style="height:52%"></div></div>
+        <div class="col"><span class="v">55</span><div class="bar" style="height:64%"></div></div>
+        <div class="col"><span class="v">73</span><div class="bar" style="height:85%"></div></div>
+        <div class="col"><span class="v">86</span><div class="bar" style="height:100%"></div></div>
+        <div class="col"><span class="v">63</span><div class="bar" style="height:73%"></div></div>
+        <div class="col"><span class="v">70</span><div class="bar" style="height:81%"></div></div>
+        <div class="col"><span class="v">61</span><div class="bar" style="height:71%"></div></div>
+        <div class="col"><span class="v">56</span><div class="bar partial" style="height:65%"></div></div>
+      </div>
+      <div class="xaxis">
+        <span>S23</span><span>S24</span><span>S25</span><span>S26</span><span>S27</span><span>S28</span><span>S29</span>
+        <span>S30</span><span>S31</span><span>S32</span><span>S33</span><span>S34</span><span>S35</span><span>S36</span>
+      </div>
+      <p class="fig-n">n = 606 demandas · barras claras = semanas parciais · grupos ativos vão de 4 a 10 ao longo da janela</p>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Tema</th><th>WhatsApp</th><th>Slack</th><th>O que a diferença diz</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Erro e instabilidade</td><td class="num" style="color:var(--mark-alert)">58 · 10%</td><td class="num">4 · 1%</td><td class="why">falha de produto aparece no grupo e quase não chega ao Slack — morre antes de virar escalação</td></tr>
+        <tr><td class="name">Pagamento e boleto</td><td class="num">51 · 8%</td><td class="num" style="color:var(--mark-alert)">97 · 32%</td><td class="why">o inverso: é o que o CS mais escala, porque exige acesso que o grupo não resolve</td></tr>
+        <tr><td class="name">Telefone e vínculo</td><td class="num">24 · 4%</td><td class="num">53 · 17%</td><td class="why">execução por cliente, quase sempre escalada</td></tr>
+        <tr><td class="name">Crédito, limite e regra</td><td class="num">29 · 5%</td><td class="num">16 · 5%</td><td class="why">único tema com peso igual nos dois</td></tr>
+        <tr><td class="name">Código e finalizar venda</td><td class="num">8 · 1%</td><td class="num">26 · 9%</td><td class="why">trava a venda, então sobe rápido</td></tr>
+        <tr><td class="name">Cancelamento e estorno</td><td class="num">8 · 1%</td><td class="num">24 · 8%</td><td class="why">exige alçada, nasce e sai do grupo</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="tnote"><strong>Os percentuais do WhatsApp são sobre uma base parcialmente classificada.</strong> 41% das 606 demandas não têm tema explícito na própria mensagem e 16% são pedido puro — "alguém pode ajudar?" e nada mais, com o problema na imagem seguinte. Os temas acima são piso.</p>
+
+    <div class="statement">
+      Os dois canais não carregam a mesma coisa: o grupo é onde a falha de produto aparece, o Slack é onde a execução por cliente é escalada.
+      <small>Erro e instabilidade são 10% no WhatsApp e 1% no Slack. Pagamento é 8% no WhatsApp e 32% no Slack. Isso significa que <strong>medir só o Slack esconde quase toda a falha de produto</strong> — ela é resolvida ou abandonada no grupo, sem deixar rastro na fila oficial.</small>
+    </div>
+
+    <div class="fig">
+      <p class="fig-h">Tempo até a primeira resposta da Ume no grupo</p>
+      <p class="fig-s">Faixas exclusivas. n = 585 demandas que receberam resposta; outras 21 (3%) não receberam nenhuma.</p>
+      <div class="hbars">
+        <div class="hb"><span class="k">até 5 min</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="v">320 <small>55%</small></span></div>
+        <div class="hb"><span class="k">5 a 15 min</span><div class="track"><div class="bar" style="width:26%"></div></div><span class="v">84 <small>14%</small></span></div>
+        <div class="hb"><span class="k">15 min a 1 h</span><div class="track"><div class="bar" style="width:23%"></div></div><span class="v">74 <small>13%</small></span></div>
+        <div class="hb"><span class="k">1 h a 4 h</span><div class="track"><div class="bar" style="width:14%"></div></div><span class="v">45 <small>8%</small></span></div>
+        <div class="hb"><span class="k">mais de 4 h</span><div class="track"><div class="bar alert" style="width:19%"></div></div><span class="v">62 <small>11%</small></span></div>
+      </div>
+      <p class="fig-n">mediana 4 min · p75 25 min · p90 4,1 h · máximo 47 h</p>
+    </div>
+
+    <p class="prose" style="margin-top:36px">Metade das demandas do grupo é respondida em <strong>quatro minutos</strong>. É por isso que o canal vence — e é o número que qualquer SLA oficial precisa encarar. Mas a cauda existe aqui também: 11% passam de quatro horas, e o pior caso levou quase dois dias.</p>
+
+    <div class="statement alert">
+      O grupo não é só suporte, e ler a fatia da Ume como esforço de atendimento superestima em seis vezes.
+      <small>Das 4.038 mensagens da Ume nos grupos, <strong>17% são atendimento e 17% são engajamento</strong> — meta, ranking, parabéns, campanha. Outros 12% são anexo sem texto, 7% resposta curta, 1% comunicado, e 45% não se classificam por regra. A mesma pessoa que resolve o caso posta o ranking de vendas vinte minutos depois.</small>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Grupo</th><th>Mensagens</th><th>Do varejo</th><th>Ume atendendo</th><th>Ume engajando</th></tr></thead>
+      <tbody>
+        <tr><td class="name">UME · CVLB</td><td class="num">2.922</td><td class="num">61%</td><td class="num">12%</td><td class="num">4%</td></tr>
+        <tr><td class="name">Big Lar</td><td class="num">2.502</td><td class="num">64%</td><td class="num">1%</td><td class="num">7%</td></tr>
+        <tr><td class="name">Policred</td><td class="num">960</td><td class="num">46%</td><td class="num">6%</td><td class="num">9%</td></tr>
+        <tr><td class="name">Sipolatti</td><td class="num">904</td><td class="num">36%</td><td class="num">14%</td><td class="num">15%</td></tr>
+        <tr><td class="name">Mag Duarte</td><td class="num">470</td><td class="num">36%</td><td class="num">10%</td><td class="num">19%</td></tr>
+        <tr><td class="name">Top Móveis</td><td class="num">462</td><td class="num">55%</td><td class="num">5%</td><td class="num">8%</td></tr>
+        <tr><td class="name">Solar Móveis</td><td class="num">325</td><td class="num">28%</td><td class="num">15%</td><td class="num">24%</td></tr>
+        <tr><td class="name">Mini Preço</td><td class="num">221</td><td class="num">73%</td><td class="num">1%</td><td class="num">0%</td></tr>
+        <tr><td class="name">10&amp;Cia</td><td class="num">185</td><td class="num">45%</td><td class="num">2%</td><td class="num">1%</td></tr>
+        <tr><td class="name">Novo Mundo <span class="pill">técnico</span></td><td class="num">68</td><td class="num">81%</td><td class="num">6%</td><td class="num">0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="tnote">A vocação do grupo varia muito. CVLB é o mais operacional (12% atendimento contra 4% engajamento). Big Lar e Mini Preço são praticamente comerciais. Solar Móveis e Mag Duarte pendem para engajamento. <strong>Tratar os dez como o mesmo canal produziria número errado</strong> — e é por isso que a média geral vale pouco aqui.</p>
+
+    <p class="tnote">A demanda no grupo entra mais cedo e sai mais tarde que no Slack: <strong>7% fora da faixa 8h–19h</strong>, contra 1,7% no Slack, com movimento até 22h. Quem responde à noite está fora de qualquer escala formal.</p>
   </section>
 
   <!-- VOLUME -->
   <section id="volume">
-    <p class="overline">Volume</p>
-    <h2>A demanda cresce, e acelera no fim da janela</h2>
+    <p class="overline">Volume · Slack</p>
+    <h2>No Slack a demanda também cresce, em ritmo mais lento</h2>
+    <p class="sub">Daqui em diante, tudo se refere ao <strong>#ask-retail-priority</strong>. As 303 demandas escaladas pelo CS.</p>
 
     <div class="fig">
-      <p class="fig-h">Demandas abertas por semana</p>
+      <p class="fig-h">Demandas abertas por semana no Slack</p>
       <p class="fig-s">Semanas ISO de 2026. As duas barras claras são semanas parciais — a janela começa numa quarta e termina numa quinta —, então não comparam com as demais.</p>
       <div class="cols">
         <div class="col"><span class="v">12</span><div class="bar partial" style="height:30%"></div></div>
@@ -293,11 +397,11 @@
 
   <!-- O QUE CHEGA -->
   <section id="oque">
-    <p class="overline">Composição</p>
+    <p class="overline">Composição · Slack</p>
     <h2>O que chega pelo canal</h2>
 
     <div class="fig">
-      <p class="fig-h">Motivo da demanda</p>
+      <p class="fig-h">Motivo da demanda no Slack</p>
       <p class="fig-s">Classificação por expressão no título. "Outros" reúne casos sem padrão reconhecível e pedidos únicos.</p>
       <div class="hbars">
         <div class="hb"><span class="k">Boleto e 2ª via</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="v">68 <small>22,4%</small></span></div>
@@ -334,7 +438,7 @@
 
   <!-- TEMPO -->
   <section id="tempo">
-    <p class="overline">Tempo</p>
+    <p class="overline">Tempo · Slack</p>
     <h2>Metade resolve em meia hora. A outra metade é o problema.</h2>
 
     <div class="fig">
@@ -618,13 +722,14 @@
           <td class="name">Incidente de plataforma<br><span class="pill pr">P0</span></td>
           <td class="why">erro, instabilidade, bot que não localiza, boleto com valor errado</td>
           <td class="num">4+<br>1,3%</td>
-          <td class="why"><strong>Produto e engenharia, via canal de incidente.</strong> Mediana de 521 min. O canal já vem detectando incidente antes do monitoramento — isso deveria virar alerta, não thread.</td>
+          <td class="why"><strong>Produto e engenharia, via canal de incidente.</strong> No Slack são só 4 casos, mas no WhatsApp são <strong>58 — o maior tema de lá</strong>. A falha de produto morre no grupo e não chega à fila oficial. O canal já detecta incidente antes do monitoramento; isso deveria virar alerta, não thread.</td>
         </tr>
       </tbody>
     </table>
     </div>
 
-    <p class="tnote">O somatório não fecha em 303 porque "outros" (33 demandas, 10,9%) não foi atribuído — é a categoria que precisa ser lida caso a caso antes de virar regra. Os percentuais são sobre o total de 303.</p>
+    <p class="tnote">O somatório não fecha em 303 porque "outros" (33 demandas, 10,9%) não foi atribuído — é a categoria que precisa ser lida caso a caso antes de virar regra. Os percentuais são sobre o total de 303 do Slack.</p>
+    <p class="tnote"><strong>O WhatsApp muda o peso de uma linha.</strong> Incidente de plataforma parece marginal olhando só o Slack (1,3%) e é o maior tema do grupo (10%). Qualquer priorização feita apenas sobre a fila oficial vai subdimensionar produto.</p>
 
     <div class="statement">
       Metade do que chega ao CS não deveria chegar a time nenhum de exceção: é execução padronizada.
@@ -692,6 +797,67 @@
     </div>
   </section>
 
+
+  <!-- PRINTS -->
+  <section id="prints">
+    <p class="overline">O que os prints mostram</p>
+    <h2>A conversa com a central, vista por dentro</h2>
+    <p class="sub">O varejo fotografa a tela e posta no grupo. É a única janela existente para o que a central respondeu. Nove prints lidos até aqui, de 73 triados.</p>
+
+    <div class="statement">
+      A central declara ao varejo um prazo de conclusão de até 12 horas úteis.
+      <small><span class="ev">observado</span> &nbsp;Print do canal <strong>Ume – Atendimento ao Varejo</strong> (verificado): <em>"A solicitação será encaminhada para análise e poderá ser concluída em até 12 horas úteis, após o envio completo das informações."</em> No mesmo print, a conversa é de 11 de junho e o varejista ainda mandava "oi" sem resposta em 3 de julho — 22 dias depois.</small>
+    </div>
+
+    <p class="prose" style="margin-top:32px">Esse número reposiciona a discussão de SLA. A proposta em avaliação — 15 minutos para varejo, 5 minutos com cliente na loja — é <strong>duas ordens de grandeza</strong> mais agressiva que o compromisso atual. Isso não invalida a proposta: explica o vazamento. Com o cliente no balcão, ninguém espera 12 horas úteis, e o grupo responde em quatro minutos.</p>
+
+    <div class="cases">
+      <div class="case">
+        <h3>O bot atende fora do horário, não resolve, e oferece renegociação</h3>
+        <p class="m">print de 02/09, canal Ume – Apoio Financeiro (verificado), mensagem das 08:40 de uma quarta-feira</p>
+        <q>Como nossa equipe humana está fora do horário de atendimento, não consigo verificar o que aconteceu com o pagamento feito há mais de um mês.</q>
+        <q>Posso te ajudar com outra coisa que esteja ao meu alcance, como gerar um boleto para a próxima parcela ou para quitar sua dívida, ou iniciar um processo de renegociação?</q>
+        <p>São três problemas empilhados. É bot, e ele próprio declara que não há humano — às 8h40 de dia útil, com a loja aberta. Não consegue verificar o pagamento, que é a única coisa que resolveria. E oferece, a uma cliente que pagou e segue cobrada, <strong>quitar a dívida ou renegociar</strong>.</p>
+        <p>O terceiro item não é problema de experiência. Vale checar com Risco e Jurídico se esse fluxo pode oferecer renegociação num caso com pagamento contestado e não conciliado.</p>
+      </div>
+
+      <div class="case">
+        <h3>A regra que produz o ping-pong de senha</h3>
+        <p class="m">print de 03/07, canal Ume – Atendimento ao Varejo</p>
+        <q>Por medida de segurança, somente o gerente pode solicitar acesso para a loja. Peça para ele entrar em contato através do número cadastrado e clicar na opção "Cadastrar Operador"</q>
+        <p>A regra existe e está documentada. O que falta é ela chegar a quem atende: em 16/06 alguém perguntou no Slack por que o time é mandado para a central do varejo, ouve que ali não fazem, e é mandado para a central do cliente. A pergunta segue sem resposta.</p>
+      </div>
+
+      <div class="case">
+        <h3>O que o varejo diz sobre o canal oficial, nas palavras dele</h3>
+        <p class="m">frases recorrentes nos grupos</p>
+        <q>no atendimento de vocês nunca consigo resolver, pois fica voltando ao menu</q>
+        <q>No atendimento fica só mandando mensagem automática</q>
+        <q>só conseguimos falar com vocês quando pede prioridade</q>
+        <q>não é o primeiro cliente que paga no sábado e não dá baixa</q>
+        <p>Nenhuma delas é sobre demora. Todas são sobre <strong>o canal não conseguir concluir</strong> — loop de menu, resposta automática, e a necessidade de pedir prioridade para alcançar uma pessoa.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif); font-size:22px; margin:48px 0 0">Um caso nos três canais, do pagamento ao abandono</h3>
+    <p class="sub" style="margin-top:8px">Reconstruído por timestamp: os prints postados no grupo às 09:09:08 e 09:11:01 são os mesmos arquivos anexados à thread do Slack às 10:25. Contatos pseudonimizados.</p>
+
+    <div class="chain" style="margin-top:22px">
+      <div class="step"><div class="t">01/08</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Vencimento da parcela.</span></p></div></div>
+      <div class="step"><div class="t">03/08</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Cliente paga em dinheiro no banco.</span> Comprovante fotografado, valor e autenticação legíveis.</p></div></div>
+      <div class="step wait"><div class="t">19/08 09:33</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Primeira escalação, no grupo.</span> <q>mais de 15 dias e não deram baixa</q> · <q>No atendimento fica só mandando mensagem automática</q> · <q>Não consegui resolver por lá</q><span class="gap">16 dias desde o pagamento</span></p></div></div>
+      <div class="step wait"><div class="t">01/09 08:55</div><div class="dot"><i></i></div><div class="b"><p><span class="who">O mesmo cliente volta à loja.</span> <q>os clientes que pagam no sábado estão sendo cobrados indevidamente</q> · <q>nunca consigo resolver, pois fica voltando ao menu</q><span class="gap">13 dias após a primeira escalação, sem resolução</span></p></div></div>
+      <div class="step"><div class="t">09:07</div><div class="dot"><i></i></div><div class="b"><p><span class="who">A central responde ao cliente</span> e pergunta como o pagamento foi feito.</p></div></div>
+      <div class="step"><div class="t">09:09 – 09:14</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Varejo posta 3 prints no grupo</span> e cobra: <q>Alguém?????</q></p></div></div>
+      <div class="step wait"><div class="t">09:38 <b>+43min</b></div><div class="dot"><i></i></div><div class="b"><p><span class="who">Primeira resposta da Ume no grupo.</span><span class="gap">43 min com o cliente esperando na loja</span></p></div></div>
+      <div class="step wait"><div class="t">09:56</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Cliente vai embora.</span> <q>Não sei ele foi embora, não podia esperar</q></p></div></div>
+      <div class="step"><div class="t">10:25</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Escalado ao Slack.</span> Começa aqui a cadeia de repasses descrita adiante.</p></div></div>
+      <div class="step"><div class="t">02/09 08:40</div><div class="dot"><i></i></div><div class="b"><p><span class="who">O bot diz que a equipe humana está fora do horário</span> e oferece renegociação.</p></div></div>
+      <div class="step wait"><div class="t">02/09 15:34</div><div class="dot"><i></i></div><div class="b"><p><span class="who">Encerrado sem resolução.</span> <q>reforcei com o varejo que o cliente não atendeu</q><span class="gap">30 dias do pagamento · 2 escalações · 1 visita perdida</span></p></div></div>
+    </div>
+    <p class="tnote">O cruzamento por timestamp de arquivo funciona e é exato — não depende de casar telefone. Vale como método para toda a base: cada print postado no grupo e reanexado no Slack liga os dois registros ao segundo.</p>
+  </section>
+
   <!-- FALTA -->
   <section id="falta">
     <p class="overline">Limites e próximos passos</p>
@@ -703,14 +869,16 @@
       <tbody>
         <tr><td class="name">Volume e SLA da central</td><td class="why">sem o denominador, não dá para dizer se 303 demandas em 3 meses é vazamento grande ou marginal, nem se a central aguentaria absorvê-las</td><td class="why">extração da ferramenta de ticket da central, mesmo período</td></tr>
         <tr><td class="name">O trecho antes do Slack</td><td class="why">todo o tempo medido aqui começa depois que o CS postou; a espera do varejo na central é invisível</td><td class="why">o mesmo dado acima, cruzado por telefone e janela</td></tr>
-        <tr><td class="name">Os grupos de WhatsApp</td><td class="why">é onde a demanda entra antes de virar post no Slack; sem isso não há como medir quantas viram post e quantas o CS resolve sozinho</td><td class="why">os exports que você vai anexar — é a parte 2</td></tr>
+        <tr><td class="name">Primeira resposta no Slack</td><td class="why">o WhatsApp tem tempo até a primeira resposta; o Slack só tem duração de thread. Sem a mesma métrica, não dá para comparar os canais de frente</td><td class="why">ler as 303 threads do Slack e extrair o primeiro retorno útil</td></tr>
         <tr><td class="name">Frequência dos modos de falha</td><td class="why">os cinco padrões estão descritos, mas só 6 threads foram lidas linha a linha e elas foram escolhidas entre os casos difíceis</td><td class="why">classificar as 303 threads por desfecho e número de repasses</td></tr>
+        <tr><td class="name">O resto dos prints</td><td class="why">9 de 73 lidos. É a única fonte sobre o que a central respondeu, e já rendeu o prazo de 12 h e o comportamento do bot</td><td class="why">seguir a leitura; os grupos novos vieram sem mídia</td></tr>
+        <tr><td class="name">57% das demandas do WhatsApp sem tema</td><td class="why">41% não têm tema explícito e 16% são pedido puro, com o problema na imagem seguinte</td><td class="why">leitura; regra não resolve sem virar overfitting</td></tr>
         <tr><td class="name">Normalização por vendas</td><td class="why">não dá para comparar varejos de tamanhos diferentes nem calcular demanda de suporte por 100 vendas</td><td class="why">volume de vendas por varejo no período</td></tr>
       </tbody>
     </table>
     </div>
 
-    <p class="closing">O canal funciona. É rápido quando alguém está olhando, as pessoas cobram umas às outras e a maior parte das demandas se resolve em meia hora. <strong>O problema é que ele funciona por atenção, não por processo</strong> — e atenção não escala com 60% de crescimento em três meses. O que falta não é esforço nem gente: é dono, prazo e estado.</p>
+    <p class="closing">Os dois canais funcionam, e é esse o problema. O grupo responde em quatro minutos, o Slack resolve metade em meia hora, e as pessoas cobram umas às outras até sair. <strong>Mas funcionam por atenção, não por processo</strong> — e atenção não escala com 144% de crescimento em três meses. Enquanto o caminho oficial declarar 12 horas úteis e o atalho entregar 4 minutos, nenhuma comunicação vai convencer o varejo a usar o caminho oficial. O que falta não é esforço nem gente: é dono, prazo e estado.</p>
   </section>
 
 </div>
