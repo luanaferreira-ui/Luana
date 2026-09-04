@@ -15,22 +15,39 @@ Telefones são convertidos por hash (`CLI-xxxxxx`) com o **mesmo salt** usado na
 parte 1 (Slack), o que permite cruzar o mesmo contato entre os dois canais sem
 expor o número.
 
-## Base atual (10 grupos)
+## Base atual (13 grupos, 14.406 mensagens de conversa)
 
 | grupo | msgs | janela | Ume% |
-|---|---|---|---|
-| UME \| CVLB | 4.134 | 28/04–03/09 | 30% |
+|---|---:|---|---:|
+| UME \| CVLB | 4.033 | 28/04–03/09 | 31% |
+| Mega Vintão \| Gerentes Ume | 2.991 | 18/03–04/09 | 47% |
 | Big Lar – Crédito Digital Ume | 2.502 | 17/07–03/09 | 36% |
-| POLICRED | 1.018 | 27/05–03/09 | 53% |
+| POLICRED | 1.011 | 27/05–03/09 | 54% |
 | UME \\ SIPOLATTI FILIAIS | 904 | 16/06–03/09 | 64% |
+| Baianão <> Ume | 554 | 16/05–04/09 | 44% |
 | Mini Preço <> Ume | 539 | 06/02–02/09 | 27% |
-| UME \| MAG DUARTE | 535 | 20/05–03/09 | 54% |
-| UME \| TOP MÓVEIS | 464 | 03/08–03/09 | 20% |
+| UME \| MAG DUARTE | 535 | 20/05–03/09 | 61% |
+| UME \| TOP MÓVEIS | 462 | 03/08–03/09 | 45% |
 | Ume e Solar Moveis e Eletros | 444 | 13/05–03/09 | 64% |
-| Ume – 10&Cia | 185 | 21/07–03/09 | 27% |
+| Ume – 10&Cia | 185 | 21/07–03/09 | 55% |
+| Novo Lar <> Ume | 178 | 16/05–03/09 | 78% |
 | Novo Mundo <> Ume – Integração | 68 | 14/08–31/08 | 19% |
 
-Total 10.793 mensagens de conversa. Na janela 03/06–03/09 (mesma do Slack): 9.115.
+Na janela 03/06–03/09 (mesma do Slack): 11.191 mensagens, **680 demandas**
+(contra 303 no Slack).
+
+## Três formatos de export
+
+O parser cobre os três que apareceram. Sempre conferir qual chegou:
+
+| formato | cabeçalho | arquivo |
+|---|---|---|
+| A · pt-BR | `[DD/MM/AAAA, HH:MM:SS] Autor:` | `_chat.txt` |
+| B · en-US | `[M/D/AA, H:MM:SS AM] Autor:` | `chat.txt` |
+| C · en-US com hífen | `[M/D/AA, H:MM:SS PM] - Autor:` | `chat.txt` |
+
+No formato B/C o autor pode vir como `Você` (é quem exportou — conta Ume) ou
+como telefone cru, que é pseudonimizado para `PART-xxxxx`.
 
 ## Classificação de lado — não confiar no nome
 

@@ -14,6 +14,8 @@ CS=["thiago corr","fernanda pimentel","pamela","pâmela","lidiany","ariel souza"
     "gabriel massuda","luana roncato","raphaella","luciedja","caroline galv"]
 def lado(a):
     l=a.lower().lstrip('~ ').strip()
+    if l.startswith('voce (exportador'): return 'ume'   # export feito de uma conta Ume
+    if l.startswith('part-'): return 'varejo'            # participante so identificado por telefone
     if l=='luana': return 'ume'   # distribui treinamento/checklist Ume em 6 grupos
     if re.search(r'\bume\b|\(corp\)',l): return 'ume'
     for c in CS:
