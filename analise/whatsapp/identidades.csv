@@ -1,0 +1,325 @@
+identificador_id,tipo_dado,quem,varejo,canais,n_slack,n_whatsapp,total,primeiro,ultimo,motivo_principal,motivos
+CPF-6d40c1e3ee,cpf,cliente (citado no grupo),Sipolatti,whatsapp,0,3,3,2026-07-02,2026-07-03,citado fora de demanda,citado fora de demanda
+CPF-78ce5ef0c7,cpf,cliente (citado no grupo),Novo Mundo,whatsapp,0,2,2,2026-08-25,2026-08-25,erro / instabilidade,erro / instabilidade | citado fora de demanda
+CPF-b4ab2d9002,cpf,cliente (citado no grupo),Novo Mundo,whatsapp,0,2,2,2026-08-25,2026-08-25,erro / instabilidade,erro / instabilidade | citado fora de demanda
+CPF-02eb99d50d,cpf,cliente (citado no grupo),Mag Duarte,whatsapp,0,1,1,2026-08-07,2026-08-07,cadastro / dados,cadastro / dados
+CPF-15e3e4f06f,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-13,2026-06-13,citado fora de demanda,citado fora de demanda
+CPF-328283916f,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-13,2026-06-13,citado fora de demanda,citado fora de demanda
+CPF-345957e64a,cpf,cliente (citado no grupo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+CPF-5e11823326,cpf,cliente (citado no grupo),Policred,whatsapp,0,1,1,2026-06-05,2026-06-05,citado fora de demanda,citado fora de demanda
+CPF-841ae465cb,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-05,2026-08-05,citado fora de demanda,citado fora de demanda
+CPF-8e2bac8133,cpf,cliente (citado no grupo),Mini Preco,whatsapp,0,1,1,2026-05-14,2026-05-14,citado fora de demanda,citado fora de demanda
+CPF-9484b738ad,cpf,cliente (citado no grupo),Novo Mundo,whatsapp,0,1,1,2026-08-28,2026-08-28,citado fora de demanda,citado fora de demanda
+CPF-a92dcada4a,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-03,2026-06-03,citado fora de demanda,citado fora de demanda
+CPF-acdc356f2d,cpf,cliente (citado no grupo),Novo Lar,whatsapp,0,1,1,2026-07-06,2026-07-06,citado fora de demanda,citado fora de demanda
+CPF-b45b8194a5,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-01,2026-08-01,citado fora de demanda,citado fora de demanda
+CPF-b4c2cfe6d0,cpf,cliente (citado no grupo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+CPF-b7fda5634a,cpf,cliente (citado no grupo),Novo Mundo,whatsapp,0,1,1,2026-08-21,2026-08-21,citado fora de demanda,citado fora de demanda
+CPF-b8c58dc735,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-06,2026-08-06,citado fora de demanda,citado fora de demanda
+CPF-bb4f733063,cpf,cliente,(nao identificado),slack,1,0,1,2026-06-15,2026-06-15,boleto / 2a via,boleto / 2a via
+CPF-d6c4238e70,cpf,cliente (citado no grupo),Sipolatti,whatsapp,0,1,1,2026-07-03,2026-07-03,citado fora de demanda,citado fora de demanda
+CPF-e1fed071e5,cpf,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-31,2026-07-31,citado fora de demanda,citado fora de demanda
+TEL-40f46,telefone,varejo (participante do grupo),Mega Vintao,whatsapp,0,87,87,2026-03-19,2026-08-20,,
+TEL-d472d2334c,telefone,institucional / canal divulgado,CVLB,whatsapp,0,60,60,2026-05-13,2026-09-03,citado fora de demanda,citado fora de demanda
+TEL-eba7242379,telefone,institucional / canal divulgado,Baianao / CVLB / Mag Duarte / Mega Vintao / Policred / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,52,52,2026-05-27,2026-09-04,citado fora de demanda,citado fora de demanda
+TEL-6316c3158e,telefone,institucional / canal divulgado,CVLB,whatsapp,0,49,49,2026-07-08,2026-09-03,citado fora de demanda,citado fora de demanda
+TEL-4053f0aec1,telefone,institucional / canal divulgado,Baianao / CVLB / Mag Duarte / Mega Vintao / Novo Mundo / Policred / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,40,40,2026-05-27,2026-09-01,citado fora de demanda,citado fora de demanda
+TEL-bbac9,telefone,varejo (participante do grupo),Baianao,whatsapp,0,22,22,2026-06-09,2026-08-14,boleto / 2a via,boleto / 2a via
+TEL-aba5a,telefone,varejo (participante do grupo),Mega Vintao,whatsapp,0,17,17,2026-05-27,2026-06-02,,
+TEL-e5f05,telefone,varejo (participante do grupo),Baianao,whatsapp,0,14,14,2026-07-13,2026-08-21,credito / limite,credito / limite | codigo / comprovante de compra
+TEL-d5e9e,telefone,varejo (participante do grupo),Baianao,whatsapp,0,10,10,2026-08-05,2026-08-19,credito / limite,credito / limite
+TEL-49189,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,9,9,2026-07-06,2026-07-06,boleto / 2a via,boleto / 2a via
+TEL-4e1b0e54ea,telefone,institucional / canal divulgado,Mag Duarte / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,9,9,2026-08-06,2026-08-08,citado fora de demanda,citado fora de demanda
+TEL-52623e08c0,telefone,institucional / canal divulgado,CVLB,whatsapp,0,9,9,2026-05-13,2026-07-14,citado fora de demanda,citado fora de demanda
+TEL-f564f,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,6,6,2026-05-19,2026-08-12,,
+TEL-25d04a2f07,telefone,cliente / cliente (citado no grupo),Sipolatti,ambos,1,4,5,2026-08-06,2026-09-03,citado fora de demanda,citado fora de demanda | baixa de pagamento
+TEL-55cf9,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,5,5,2026-06-11,2026-08-17,,
+TEL-001a4,telefone,varejo (participante do grupo),Mega Vintao,whatsapp,0,4,4,2026-04-03,2026-08-31,,
+TEL-043c5,telefone,varejo (participante do grupo),Baianao,whatsapp,0,4,4,2026-06-30,2026-08-31,,
+TEL-359b7cdddd,telefone,indefinido / varejo,(nao identificado),slack,4,0,4,2026-08-07,2026-09-02,boleto / 2a via,boleto / 2a via | codigo / comprovante de compra
+TEL-72a0e,telefone,varejo (participante do grupo),Baianao,whatsapp,0,4,4,2026-09-04,2026-09-04,,
+TEL-890b5a724d,telefone,institucional / canal divulgado,Top Moveis,whatsapp,0,4,4,2026-08-03,2026-08-04,relatorio / material,relatorio / material
+TEL-b9855,telefone,varejo (participante do grupo),Mega Vintao,whatsapp,0,4,4,2026-04-07,2026-06-04,,
+TEL-d9f28c311e,telefone,cliente / cliente (citado no grupo),Sipolatti,ambos,3,1,4,2026-08-20,2026-09-01,baixa de pagamento,baixa de pagamento | boleto / 2a via | citado fora de demanda
+TEL-1a0c87e297,telefone,varejo,(nao identificado),slack,3,0,3,2026-08-27,2026-09-01,boleto / 2a via,boleto / 2a via
+TEL-2d3a41ff65,telefone,cliente / varejo,(nao identificado),slack,3,0,3,2026-06-10,2026-09-02,cadastro / dados,cadastro / dados | codigo / comprovante de compra | outros
+TEL-424c3,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,3,3,2026-06-11,2026-07-06,,
+TEL-550c109284,telefone,cliente,(nao identificado),slack,3,0,3,2026-07-06,2026-08-06,baixa de pagamento,baixa de pagamento
+TEL-5d77ee9332,telefone,cliente / cliente (citado no grupo),Sipolatti,ambos,2,1,3,2026-08-19,2026-09-01,baixa de pagamento,baixa de pagamento | citado fora de demanda
+TEL-86c199056b,telefone,cliente (citado no grupo),Top Moveis,whatsapp,0,3,3,2026-08-03,2026-08-04,relatorio / material,relatorio / material
+TEL-8dcf295c87,telefone,varejo,(nao identificado),slack,3,0,3,2026-07-24,2026-07-31,acesso / senha,acesso / senha | cadastro / dados
+TEL-b033004f36,telefone,varejo,(nao identificado),slack,3,0,3,2026-08-26,2026-08-31,boleto / 2a via,boleto / 2a via | codigo / comprovante de compra
+TEL-0edbb8a588,telefone,varejo,(nao identificado),slack,2,0,2,2026-08-31,2026-09-01,codigo / comprovante de compra,codigo / comprovante de compra | outros
+TEL-16c9798efd,telefone,institucional / canal divulgado,Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,citado fora de demanda,citado fora de demanda
+TEL-27372,telefone,varejo (participante do grupo),Baianao,whatsapp,0,2,2,2026-05-29,2026-05-29,,
+TEL-27455,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,2,2,2026-06-30,2026-06-30,,
+TEL-2c7331c7fc,telefone,cliente,(nao identificado),slack,2,0,2,2026-07-20,2026-07-24,cadastro / dados,cadastro / dados | telefone / vinculo
+TEL-3066b46bc7,telefone,cliente,(nao identificado),slack,2,0,2,2026-06-13,2026-07-31,cadastro / dados,cadastro / dados | telefone / vinculo
+TEL-33944c20fb,telefone,cliente (citado no grupo),Novo Mundo,whatsapp,0,2,2,2026-08-25,2026-08-25,erro / instabilidade,erro / instabilidade | citado fora de demanda
+TEL-369c88ddb3,telefone,varejo,(nao identificado),slack,2,0,2,2026-08-27,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-436ea82a89,telefone,varejo,(nao identificado),slack,2,0,2,2026-08-26,2026-08-28,boleto / 2a via,boleto / 2a via
+TEL-4602d5f165,telefone,institucional / canal divulgado,Mega Vintao,whatsapp,0,2,2,2026-07-08,2026-07-09,citado fora de demanda,citado fora de demanda
+TEL-7c642,telefone,varejo (participante do grupo),Baianao,whatsapp,0,2,2,2026-06-25,2026-06-25,acesso / senha,acesso / senha
+TEL-88d997a5a6,telefone,cliente / varejo,(nao identificado),slack,2,0,2,2026-08-01,2026-09-02,outros,outros | codigo / comprovante de compra
+TEL-9340266384,telefone,institucional / canal divulgado,Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,citado fora de demanda,citado fora de demanda
+TEL-9acf09a9fa,telefone,cliente (citado no grupo),Mega Vintao,whatsapp,0,2,2,2026-08-18,2026-08-19,citado fora de demanda,citado fora de demanda
+TEL-a409de1c19,telefone,cliente / cliente (citado no grupo),Sipolatti,ambos,1,1,2,2026-07-31,2026-07-31,cadastro / dados,cadastro / dados | citado fora de demanda
+TEL-aee5cff260,telefone,varejo,(nao identificado),slack,2,0,2,2026-09-02,2026-09-02,boleto / 2a via,boleto / 2a via
+TEL-ccf0e34b65,telefone,cliente / cliente (citado no grupo),Sipolatti,ambos,1,1,2,2026-09-01,2026-09-01,baixa de pagamento,baixa de pagamento | citado fora de demanda
+TEL-e98dc,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,2,2,2026-07-06,2026-07-06,,
+TEL-ed21f202e6,telefone,cliente / varejo,(nao identificado),slack,2,0,2,2026-07-07,2026-07-08,outros,outros | cancelamento / estorno
+TEL-00f855e440,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,baixa de pagamento,baixa de pagamento
+TEL-0223222678,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,desbloqueio,desbloqueio
+TEL-047d96da9e,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-13,2026-07-13,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-04a080a854,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,boleto / 2a via,boleto / 2a via
+TEL-059cdb545d,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-23,2026-07-23,baixa de pagamento,baixa de pagamento
+TEL-05f8b72936,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,desbloqueio,desbloqueio
+TEL-0740b27ab0,telefone,cliente (citado no grupo),CVLB,whatsapp,0,1,1,2026-08-22,2026-08-22,telefone / vinculo,telefone / vinculo
+TEL-075c3df984,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-16,2026-05-16,citado fora de demanda,citado fora de demanda
+TEL-0789356627,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,credito / limite,credito / limite
+TEL-07aa4dd83d,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,telefone / vinculo,telefone / vinculo
+TEL-08ff8b5258,telefone,cliente (citado no grupo),Novo Lar,whatsapp,0,1,1,2026-05-16,2026-05-16,citado fora de demanda,citado fora de demanda
+TEL-0b5db392b2,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-06,2026-06-06,telefone / vinculo,telefone / vinculo
+TEL-1059a6acde,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,cadastro / dados,cadastro / dados
+TEL-116fee1972,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,telefone / vinculo,telefone / vinculo
+TEL-13660dd9db,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-15,2026-07-15,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-1369263238,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,baixa de pagamento,baixa de pagamento
+TEL-13ee3879e7,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-1470f48088,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,baixa de pagamento,baixa de pagamento
+TEL-17f733fc8a,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,telefone / vinculo,telefone / vinculo
+TEL-1827e7ac40,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,desbloqueio,desbloqueio
+TEL-184bbce717,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-16,2026-05-16,citado fora de demanda,citado fora de demanda
+TEL-1aab37e10d,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-16,2026-06-16,telefone / vinculo,telefone / vinculo
+TEL-1acc4295a1,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,desbloqueio,desbloqueio
+TEL-1b1c88343c,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,citado fora de demanda,citado fora de demanda
+TEL-1bc0467507,telefone,cliente (citado no grupo),Mega Vintao,whatsapp,0,1,1,2026-08-07,2026-08-07,citado fora de demanda,citado fora de demanda
+TEL-1c0ae86c5f,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,baixa de pagamento,baixa de pagamento
+TEL-1d361fcdc8,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-09,2026-06-09,citado fora de demanda,citado fora de demanda
+TEL-1e567c43e2,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,desbloqueio,desbloqueio
+TEL-1e6ed17a14,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,telefone / vinculo,telefone / vinculo
+TEL-1efba04ff3,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,cancelamento / estorno,cancelamento / estorno
+TEL-1f054f9691,telefone,cliente (citado no grupo),Solar Moveis,whatsapp,0,1,1,2026-08-06,2026-08-06,citado fora de demanda,citado fora de demanda
+TEL-1f7cf1f264,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-30,2026-07-30,credito / limite,credito / limite
+TEL-1fd1d86207,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-04,2026-07-04,cadastro / dados,cadastro / dados
+TEL-20c29bb659,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,telefone / vinculo,telefone / vinculo
+TEL-2102cb4fea,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,baixa de pagamento,baixa de pagamento
+TEL-21249c34bc,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-216c5da5ae,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,cancelamento / estorno,cancelamento / estorno
+TEL-21b0856804,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-08,2026-07-08,citado fora de demanda,citado fora de demanda
+TEL-21baa307b8,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-23,2026-06-23,telefone / vinculo,telefone / vinculo
+TEL-22825e6037,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,cancelamento / estorno,cancelamento / estorno
+TEL-22fb5d1ed8,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-23587,telefone,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,,
+TEL-2587dfdbda,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-07,2026-07-07,telefone / vinculo,telefone / vinculo
+TEL-263800324d,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-16,2026-07-16,telefone / vinculo,telefone / vinculo
+TEL-26c32d2b6b,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-25,2026-08-25,citado fora de demanda,citado fora de demanda
+TEL-271e7eb09d,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,telefone / vinculo,telefone / vinculo
+TEL-28fdb52e9d,telefone,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-08-14,2026-08-14,citado fora de demanda,citado fora de demanda
+TEL-2a517b0c5b,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-2aad560371,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-19,2026-06-19,citado fora de demanda,citado fora de demanda
+TEL-2e85838231,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-02,2026-07-02,cancelamento / estorno,cancelamento / estorno
+TEL-2fa32bbee0,telefone,cliente,Novo Mundo,slack,1,0,1,2026-06-16,2026-06-16,cancelamento / estorno,cancelamento / estorno
+TEL-2fa797d5cc,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-29,2026-08-29,outros,outros
+TEL-314e6c1320,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-21,2026-07-21,telefone / vinculo,telefone / vinculo
+TEL-3163560356,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-24,2026-07-24,acesso / senha,acesso / senha
+TEL-31c549d894,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,baixa de pagamento,baixa de pagamento
+TEL-3461cdfebb,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,cadastro / dados,cadastro / dados
+TEL-3479d6b3d6,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,telefone / vinculo,telefone / vinculo
+TEL-35c7e637dc,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-20,2026-05-20,citado fora de demanda,citado fora de demanda
+TEL-36cafbb555,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-23,2026-05-23,citado fora de demanda,citado fora de demanda
+TEL-3829045ef0,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,sem retorno da central,sem retorno da central
+TEL-383ae25db7,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,boleto / 2a via,boleto / 2a via
+TEL-38bfe21410,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,cancelamento / estorno,cancelamento / estorno
+TEL-391128f68d,telefone,indefinido,Casa e Video,slack,1,0,1,2026-07-15,2026-07-15,sem retorno da central,sem retorno da central
+TEL-3a0e9b14bb,telefone,cliente,Boticario,slack,1,0,1,2026-08-10,2026-08-10,baixa de pagamento,baixa de pagamento
+TEL-3a9692ceaf,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,telefone / vinculo,telefone / vinculo
+TEL-3bd825d0b3,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-09-03,2026-09-03,citado fora de demanda,citado fora de demanda
+TEL-3be38ae298,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-13,2026-07-13,cadastro / dados,cadastro / dados
+TEL-3c91f2a5bc,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-3c9cd90488,telefone,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-07-08,2026-07-08,citado fora de demanda,citado fora de demanda
+TEL-3f9d7e37c0,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,cancelamento / estorno,cancelamento / estorno
+TEL-3fc86520ad,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-29,2026-06-29,desbloqueio,desbloqueio
+TEL-4032b42989,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,boleto / 2a via,boleto / 2a via
+TEL-436b94f987,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-21,2026-08-21,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-43e79092d2,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-01,2026-09-01,outros,outros
+TEL-44e20d6c56,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,outros,outros
+TEL-45b1f8eb63,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,cadastro / dados,cadastro / dados
+TEL-46a4c48de4,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,telefone / vinculo,telefone / vinculo
+TEL-47d90ca8e7,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,boleto / 2a via,boleto / 2a via
+TEL-482e7baeab,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-21,2026-08-21,telefone / vinculo,telefone / vinculo
+TEL-4a956692ec,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-01,2026-08-01,citado fora de demanda,citado fora de demanda
+TEL-4c438ff832,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-08,2026-07-08,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-4df4e0bcdd,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-4e14bb6c9f,telefone,indefinido,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto / 2a via,boleto / 2a via
+TEL-50495faf55,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+TEL-50a70e7e05,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-21,2026-08-21,outros,outros
+TEL-50da2f3855,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,credito / limite,credito / limite
+TEL-520221db04,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto / 2a via,boleto / 2a via
+TEL-52532f2e23,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,baixa de pagamento,baixa de pagamento
+TEL-53dca,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,1,1,2026-06-30,2026-06-30,,
+TEL-54a5d5243b,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,cancelamento / estorno,cancelamento / estorno
+TEL-54d0cc6740,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+TEL-55288744ee,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,baixa de pagamento,baixa de pagamento
+TEL-55affa48b2,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-23,2026-06-23,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-56830884ae,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-12,2026-08-12,cancelamento / estorno,cancelamento / estorno
+TEL-56c123dac8,telefone,cliente (citado no grupo),Top Moveis,whatsapp,0,1,1,2026-08-04,2026-08-04,citado fora de demanda,citado fora de demanda
+TEL-58f573cc53,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,cancelamento / estorno,cancelamento / estorno
+TEL-5b0ab75926,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-01,2026-09-01,baixa de pagamento,baixa de pagamento
+TEL-5c6b99771a,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto / 2a via,boleto / 2a via
+TEL-5caf1baefa,telefone,cliente,Boticario,slack,1,0,1,2026-08-07,2026-08-07,boleto / 2a via,boleto / 2a via
+TEL-5da56f8c68,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,telefone / vinculo,telefone / vinculo
+TEL-5f4e7f285b,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone / vinculo,telefone / vinculo
+TEL-5f6fca14ac,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,credito / limite,credito / limite
+TEL-5f9c51e3ef,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-14,2026-07-14,telefone / vinculo,telefone / vinculo
+TEL-61f270e4b1,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,baixa de pagamento,baixa de pagamento
+TEL-63afaf26fb,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,cancelamento / estorno,cancelamento / estorno
+TEL-63fad700e7,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,telefone / vinculo,telefone / vinculo
+TEL-645031e9f2,telefone,varejo,Anjuss,slack,1,0,1,2026-06-24,2026-06-24,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-64f8860dd2,telefone,cliente (citado no grupo),10&Cia,whatsapp,0,1,1,2026-07-27,2026-07-27,demanda sem motivo explicito,demanda sem motivo explicito
+TEL-65768e6080,telefone,cliente (citado no grupo),CVLB,whatsapp,0,1,1,2026-07-21,2026-07-21,citado fora de demanda,citado fora de demanda
+TEL-6716d81a8f,telefone,indefinido,(nao identificado),slack,1,0,1,2026-06-03,2026-06-03,telefone / vinculo,telefone / vinculo
+TEL-681415be4a,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-15,2026-07-15,credito / limite,credito / limite
+TEL-6948a1db93,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-30,2026-06-30,telefone / vinculo,telefone / vinculo
+TEL-6c6fb4cea3,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-08,2026-06-08,telefone / vinculo,telefone / vinculo
+TEL-6ccb84714b,telefone,cliente (citado no grupo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+TEL-6dac7,telefone,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,,
+TEL-6e37a821d3,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-29,2026-05-29,citado fora de demanda,citado fora de demanda
+TEL-70e4d9711a,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,boleto / 2a via,boleto / 2a via
+TEL-7295305703,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-14,2026-07-14,telefone / vinculo,telefone / vinculo
+TEL-74a0dda597,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-13,2026-08-13,boleto / 2a via,boleto / 2a via
+TEL-75a80504bf,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto / 2a via,boleto / 2a via
+TEL-760e3ca837,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto / 2a via,boleto / 2a via
+TEL-7648b3da1a,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-07,2026-07-07,cancelamento / estorno,cancelamento / estorno
+TEL-78ecd45f6c,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-29,2026-07-29,citado fora de demanda,citado fora de demanda
+TEL-790d06df80,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,cancelamento / estorno,cancelamento / estorno
+TEL-7ce4b03557,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,baixa de pagamento,baixa de pagamento
+TEL-7d37c37065,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,sem retorno da central,sem retorno da central
+TEL-7df9d0b511,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto / 2a via,boleto / 2a via
+TEL-80f30f684a,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-19,2026-06-19,citado fora de demanda,citado fora de demanda
+TEL-815e9d1d3e,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,telefone / vinculo,telefone / vinculo
+TEL-818830b544,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-11,2026-06-11,credito / limite,credito / limite
+TEL-81e87ba3c2,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-825c93474b,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-828556ecc5,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-83b2dcf713,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-08,2026-08-08,citado fora de demanda,citado fora de demanda
+TEL-83e966f6c4,telefone,cliente,Boticario,slack,1,0,1,2026-08-06,2026-08-06,boleto / 2a via,boleto / 2a via
+TEL-8449c0d11a,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,citado fora de demanda,citado fora de demanda
+TEL-87ee56d299,telefone,indefinido,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,acesso / senha,acesso / senha
+TEL-8823612a12,telefone,indefinido,(nao identificado),slack,1,0,1,2026-08-25,2026-08-25,baixa de pagamento,baixa de pagamento
+TEL-8b150a8313,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,outros,outros
+TEL-8be65114e4,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,outros,outros
+TEL-8c130b7a44,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,cadastro / dados,cadastro / dados
+TEL-8cb5023279,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto / 2a via,boleto / 2a via
+TEL-8e18650360,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-08,2026-07-08,cadastro / dados,cadastro / dados
+TEL-90d336799f,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,cobranca indevida,cobranca indevida
+TEL-91508,telefone,varejo (participante do grupo),Novo Lar,whatsapp,0,1,1,2026-05-16,2026-05-16,,
+TEL-921828c248,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,boleto / 2a via,boleto / 2a via
+TEL-9257f56a47,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,baixa de pagamento,baixa de pagamento
+TEL-929153d8d6,telefone,cliente (citado no grupo),Novo Lar,whatsapp,0,1,1,2026-06-30,2026-06-30,citado fora de demanda,citado fora de demanda
+TEL-9484b738ad,telefone,cliente (citado no grupo),Novo Mundo,whatsapp,0,1,1,2026-08-28,2026-08-28,citado fora de demanda,citado fora de demanda
+TEL-984008d889,telefone,cliente (citado no grupo),Mag Duarte,whatsapp,0,1,1,2026-05-20,2026-05-20,citado fora de demanda,citado fora de demanda
+TEL-98cfe37686,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone / vinculo,telefone / vinculo
+TEL-99da207638,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,citado fora de demanda,citado fora de demanda
+TEL-9a156a63d0,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,citado fora de demanda,citado fora de demanda
+TEL-9b3187b3e8,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-30,2026-07-30,citado fora de demanda,citado fora de demanda
+TEL-9b52faa316,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-9bf998e3fe,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-27,2026-08-27,boleto / 2a via,boleto / 2a via
+TEL-9cda1e7ba6,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,boleto / 2a via,boleto / 2a via
+TEL-9dfd5655cf,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-24,2026-07-24,sem retorno da central,sem retorno da central
+TEL-9e3b6dc887,telefone,indefinido,(nao identificado),slack,1,0,1,2026-07-20,2026-07-20,cadastro / dados,cadastro / dados
+TEL-9e77cff4b5,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-9ea6be8878,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-15,2026-06-15,citado fora de demanda,citado fora de demanda
+TEL-9fbad852bd,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-10,2026-08-10,citado fora de demanda,citado fora de demanda
+TEL-9fe53a704e,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,telefone / vinculo,telefone / vinculo
+TEL-9ff33d3c03,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,baixa de pagamento,baixa de pagamento
+TEL-a0acd0dbb4,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,boleto / 2a via,boleto / 2a via
+TEL-a0b1cf3d74,telefone,indefinido,(nao identificado),slack,1,0,1,2026-08-29,2026-08-29,cancelamento / estorno,cancelamento / estorno
+TEL-a0c9e66947,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,cancelamento / estorno,cancelamento / estorno
+TEL-a84349478a,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,citado fora de demanda,citado fora de demanda
+TEL-a9983982cf,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-25,2026-07-25,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-aab264a33d,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,citado fora de demanda,citado fora de demanda
+TEL-ac1e92810d,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto / 2a via,boleto / 2a via
+TEL-ac291b47db,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-acf60d82c8,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,citado fora de demanda,citado fora de demanda
+TEL-ad3df6f071,telefone,cliente,Boticario,slack,1,0,1,2026-09-01,2026-09-01,acesso / senha,acesso / senha
+TEL-adc872769b,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,cadastro / dados,cadastro / dados
+TEL-ae0edf40b2,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,outros,outros
+TEL-aecda3b1a4,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,acesso / senha,acesso / senha
+TEL-b0589c292f,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-02,2026-07-02,telefone / vinculo,telefone / vinculo
+TEL-b202e3c937,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-10,2026-06-10,telefone / vinculo,telefone / vinculo
+TEL-b31ab9beb6,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-08,2026-07-08,citado fora de demanda,citado fora de demanda
+TEL-b67637d975,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,cancelamento / estorno,cancelamento / estorno
+TEL-b6f91d475a,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-10,2026-06-10,desbloqueio,desbloqueio
+TEL-b92fc9ed61,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-25,2026-08-25,telefone / vinculo,telefone / vinculo
+TEL-ba91d9c5df,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,telefone / vinculo,telefone / vinculo
+TEL-bbeb5cc9e5,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,boleto / 2a via,boleto / 2a via
+TEL-bc13119536,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,cancelamento / estorno,cancelamento / estorno
+TEL-bc3fa624f7,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-19,2026-08-19,citado fora de demanda,citado fora de demanda
+TEL-bcd9abfa30,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,telefone / vinculo,telefone / vinculo
+TEL-bf052ade19,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-bf6bdd390a,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-22,2026-06-22,citado fora de demanda,citado fora de demanda
+TEL-c10e571381,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-c1f6581c7f,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,cobranca indevida,cobranca indevida
+TEL-c37fd47941,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-30,2026-06-30,telefone / vinculo,telefone / vinculo
+TEL-c381c4cbc0,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-31,2026-08-31,citado fora de demanda,citado fora de demanda
+TEL-c3ce634f73,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,acesso / senha,acesso / senha
+TEL-c7014e6821,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,telefone / vinculo,telefone / vinculo
+TEL-c79620b95b,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,boleto / 2a via,boleto / 2a via
+TEL-c7da76829a,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,acesso / senha,acesso / senha
+TEL-c86beaf067,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,boleto / 2a via,boleto / 2a via
+TEL-c8a16139a6,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,telefone / vinculo,telefone / vinculo
+TEL-cb97db2344,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-06-11,2026-06-11,citado fora de demanda,citado fora de demanda
+TEL-cd0b4ec48e,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto / 2a via,boleto / 2a via
+TEL-cd4eba02f9,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,baixa de pagamento,baixa de pagamento
+TEL-d0b06ae7db,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,boleto / 2a via,boleto / 2a via
+TEL-d5694ef943,telefone,cliente (citado no grupo),Novo Lar,whatsapp,0,1,1,2026-06-02,2026-06-02,citado fora de demanda,citado fora de demanda
+TEL-d5d4b3077e,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,boleto / 2a via,boleto / 2a via
+TEL-d640948fb0,telefone,cliente (citado no grupo),CVLB,whatsapp,0,1,1,2026-07-16,2026-07-16,citado fora de demanda,citado fora de demanda
+TEL-d663218ab3,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,telefone / vinculo,telefone / vinculo
+TEL-d7084c5874,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,boleto / 2a via,boleto / 2a via
+TEL-d7614db445,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,telefone / vinculo,telefone / vinculo
+TEL-d821439dba,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,acesso / senha,acesso / senha
+TEL-d9dd493ec1,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,citado fora de demanda,citado fora de demanda
+TEL-da6030eb56,telefone,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-07-07,2026-07-07,citado fora de demanda,citado fora de demanda
+TEL-db205,telefone,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,,
+TEL-dc47f478de,telefone,indefinido,(nao identificado),slack,1,0,1,2026-06-03,2026-06-03,telefone / vinculo,telefone / vinculo
+TEL-dd699ab2ac,telefone,cliente (citado no grupo),Sipolatti,whatsapp,0,1,1,2026-07-03,2026-07-03,citado fora de demanda,citado fora de demanda
+TEL-ddbdd8baf7,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,telefone / vinculo,telefone / vinculo
+TEL-dde4fb8d2e,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,cadastro / dados,cadastro / dados
+TEL-de51415bba,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-31,2026-08-31,citado fora de demanda,citado fora de demanda
+TEL-df0f3f4d27,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-06,2026-07-06,baixa de pagamento,baixa de pagamento
+TEL-dfa12,telefone,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-08-18,2026-08-18,pedido sem contexto,pedido sem contexto
+TEL-dfbb4267ca,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-27,2026-08-27,citado fora de demanda,citado fora de demanda
+TEL-e14016fc5b,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-10,2026-08-10,telefone / vinculo,telefone / vinculo
+TEL-e2483aa9e3,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-11,2026-06-11,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-e2d76af732,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,telefone / vinculo,telefone / vinculo
+TEL-e3ac5568b6,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone / vinculo,telefone / vinculo
+TEL-e3b81a4755,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,boleto / 2a via,boleto / 2a via
+TEL-e3cfd65c4f,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,credito / limite,credito / limite
+TEL-e46b9889f5,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-08-08,2026-08-08,citado fora de demanda,citado fora de demanda
+TEL-e491ab7588,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,credito / limite,credito / limite
+TEL-e648d0e816,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,boleto / 2a via,boleto / 2a via
+TEL-e70e84033f,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,baixa de pagamento,baixa de pagamento
+TEL-e74f252ebd,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,baixa de pagamento,baixa de pagamento
+TEL-e7a988763b,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-27,2026-08-27,boleto / 2a via,boleto / 2a via
+TEL-e8951ee535,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,telefone / vinculo,telefone / vinculo
+TEL-e92d9fe20d,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,sem retorno da central,sem retorno da central
+TEL-e931904a7f,telefone,cliente,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,outros,outros
+TEL-ecdfe839d8,telefone,varejo,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,telefone / vinculo,telefone / vinculo
+TEL-f27fb58c32,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-09,2026-07-09,outros,outros
+TEL-f2933953e9,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-15,2026-08-15,cadastro / dados,cadastro / dados
+TEL-f42edd09f1,telefone,varejo,(nao identificado),slack,1,0,1,2026-06-24,2026-06-24,boleto / 2a via,boleto / 2a via
+TEL-f4ea7dc874,telefone,cliente,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,baixa de pagamento,baixa de pagamento
+TEL-f540fd5c18,telefone,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto / 2a via,boleto / 2a via
+TEL-f7e387d9cd,telefone,indefinido,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,sem retorno da central,sem retorno da central
+TEL-f7e9e38f49,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,telefone / vinculo,telefone / vinculo
+TEL-f8c66d4edc,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-13,2026-08-13,codigo / comprovante de compra,codigo / comprovante de compra
+TEL-f909a412a1,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-16,2026-07-16,baixa de pagamento,baixa de pagamento
+TEL-f9dc5ded24,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-17,2026-06-17,telefone / vinculo,telefone / vinculo
+TEL-fac3e00a28,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-21,2026-07-21,telefone / vinculo,telefone / vinculo
+TEL-fb1c8bd45d,telefone,varejo,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,sem retorno da central,sem retorno da central
+TEL-fb6e3d98f6,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-18,2026-06-18,telefone / vinculo,telefone / vinculo
+TEL-fbeccbbe29,telefone,cliente,(nao identificado),slack,1,0,1,2026-06-18,2026-06-18,boleto / 2a via,boleto / 2a via
+TEL-febeee7d9f,telefone,cliente (citado no grupo),Novo Mundo,whatsapp,0,1,1,2026-08-18,2026-08-18,erro / instabilidade,erro / instabilidade
+TEL-ff4d768383,telefone,cliente,(nao identificado),slack,1,0,1,2026-07-27,2026-07-27,telefone / vinculo,telefone / vinculo
+TEL-ff9d18599a,telefone,cliente (citado no grupo),Baianao,whatsapp,0,1,1,2026-07-27,2026-07-27,citado fora de demanda,citado fora de demanda
