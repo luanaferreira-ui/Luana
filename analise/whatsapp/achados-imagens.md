@@ -63,3 +63,52 @@ RISCO: cliente que pagou e segue cobrado recebe oferta de quitar dívida ou rene
 01/09 17:30 (10 fotos, "clientes não conseguem resolver pendências"),
 02/09 09:24 (11 fotos, mesmo caso do A3), 24/08 10&Cia (5, condição de venda),
 29/08 Top Móveis (6, conferir venda), 04/08 Top Móveis (4, acessos nova financeira).
+
+---
+
+# Colheita de identificadores — 2ª rodada (14 prints lidos)
+
+## A7. O bot responde "você não tem nenhuma compra em aberto" — e a cobrança continua
+
+Padrão confirmado em **dois clientes distintos**, ambos no canal
+**Ume – Atendimento ao Cliente** (verificado), roteiro idêntico:
+
+1. bot: "Entendi que você já pagou, mas ainda está recebendo cobranças.
+   Foi por PIX ou código de barras?"
+2. bot: "se foi por código de barras, pode levar até **3 dias úteis** para compensar"
+3. cliente: "código de barras"
+4. bot: "**[nome], vi aqui que você não tem nenhuma compra em aberto com a Ume 😀**"
+
+- Cliente A (CPF-9f7b325b64), 19/08 09:43 — pagamento de 03/08, 16 dias antes
+- Cliente B (sem CPF visível), 01/09 16:56 — mesma sequência, mesmo dia em que
+  o cliente A voltou à loja
+
+A conversa termina ali. A cobrança automática segue disparando. São dois sistemas
+da Ume dando respostas opostas sobre o mesmo contrato, no mesmo dia.
+
+## A8. Segundo prazo oficial declarado
+
+Além das **12 horas úteis** para solicitação do varejo (A1), o canal do cliente
+declara **3 dias úteis** para compensação de pagamento por código de barras.
+Nos dois casos observados o pagamento tinha 16 e 29 dias — muito fora do prazo
+declarado, e ainda assim sem baixa.
+
+## A9. A mensagem de cobrança automática tem defeito de template
+
+Print de 15/07: "Confirmação de pagamento Crédito Sipolatti pendente
+**OiMaria**, ainda não recebemos a confirmação do seu pagamento."
+Saudação e nome colados. Cliente já havia pago em 06/07; a cobrança de 15/07
+pedia R$ 297,95 contra os R$ 286,36 pagos — diferença de juros sobre parcela quitada.
+
+## A10. O funil de vendas por filial circula nos grupos
+
+Print de 06/08 (Sipolatti): tabela "Funil de vendas por ponto de venda" com
+25 filiais, colunas clientes consultados / aprovados / vendas / valor financiado.
+**É o denominador de normalização que falta ao projeto** — e ele já existe,
+é gerado internamente e postado no grupo.
+
+## Rendimento da colheita de CPF
+
+14 prints lidos, **2 CPFs** colhidos, ambos de comprovante bancário.
+Conversa com a central mostra só o primeiro nome; tela de erro não mostra nada.
+Confirma o diagnóstico: o print serve para provar o caso, não para indexar o cliente.
