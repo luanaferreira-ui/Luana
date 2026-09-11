@@ -1,0 +1,338 @@
+contato_id,tipo,varejo,canais,n_slack,n_whatsapp,total,primeiro,ultimo,motivos
+CT-40f46,varejo (participante do grupo),Mega Vintao,whatsapp,0,87,87,2026-03-19,2026-08-20,
+CT-d472d2334c,institucional / canal divulgado,CVLB,whatsapp,0,60,60,2026-05-13,2026-09-03,boleto/2a via | cadastro/dados | credito/limite | erro/instabilidade | numero divulgado no grupo | outros
+CT-eba7242379,institucional / canal divulgado,Baianao / CVLB / Mag Duarte / Mega Vintao / Policred / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,53,53,2026-05-27,2026-09-04,acesso/senha | boleto/2a via | cadastro/dados | cancelamento | numero divulgado no grupo | outros
+CT-6316c3158e,cliente (citado pelo varejo),CVLB,whatsapp,0,49,49,2026-07-08,2026-09-03,boleto/2a via | cadastro/dados | credito/limite | erro/instabilidade | outros
+CT-4053f0aec1,institucional / canal divulgado,Baianao / CVLB / Mag Duarte / Mega Vintao / Novo Mundo / Policred / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,40,40,2026-05-27,2026-09-01,baixa de pagamento | boleto/2a via | cadastro/dados | erro/instabilidade | numero divulgado no grupo | outros
+CT-bbac9,varejo (participante do grupo),Baianao,whatsapp,0,22,22,2026-06-09,2026-08-14,
+CT-aba5a,varejo (participante do grupo),Mega Vintao,whatsapp,0,17,17,2026-05-27,2026-06-02,
+CT-e5f05,varejo (participante do grupo),Baianao,whatsapp,0,14,14,2026-07-13,2026-08-21,
+CT-d5e9e,varejo (participante do grupo),Baianao,whatsapp,0,10,10,2026-08-05,2026-08-19,
+CT-49189,varejo (participante do grupo),Novo Lar,whatsapp,0,9,9,2026-07-06,2026-07-06,
+CT-4e1b0e54ea,institucional / canal divulgado,Mag Duarte / Sipolatti / Solar Moveis / Top Moveis,whatsapp,0,9,9,2026-08-06,2026-08-08,cadastro/dados | numero divulgado no grupo | outros
+CT-52623e08c0,cliente (citado pelo varejo),CVLB,whatsapp,0,9,9,2026-05-13,2026-07-14,boleto/2a via | outros
+CT-f564f,varejo (participante do grupo),Novo Lar,whatsapp,0,6,6,2026-05-19,2026-08-12,
+CT-25d04a2f07,cliente / cliente (citado pelo varejo),Sipolatti,ambos,1,4,5,2026-08-06,2026-09-03,baixa de pagamento | outros
+CT-55cf9,varejo (participante do grupo),Novo Lar,whatsapp,0,5,5,2026-06-11,2026-08-17,
+CT-001a4,varejo (participante do grupo),Mega Vintao,whatsapp,0,4,4,2026-04-03,2026-08-31,
+CT-043c5,varejo (participante do grupo),Baianao,whatsapp,0,4,4,2026-06-30,2026-08-31,
+CT-359b7cdddd,indefinido / varejo,(nao identificado),slack,4,0,4,2026-08-07,2026-09-02,boleto/2a via | codigo de compra
+CT-72a0e,varejo (participante do grupo),Baianao,whatsapp,0,4,4,2026-09-04,2026-09-04,
+CT-890b5a724d,institucional / canal divulgado,Top Moveis,whatsapp,0,4,4,2026-08-03,2026-08-04,numero divulgado no grupo | outros
+CT-b9855,varejo (participante do grupo),Mega Vintao,whatsapp,0,4,4,2026-04-07,2026-06-04,
+CT-c999344d50,cliente (citado pelo varejo),Top Moveis,whatsapp,0,4,4,2026-08-03,2026-08-04,outros
+CT-d9f28c311e,cliente / cliente (citado pelo varejo),Sipolatti,ambos,3,1,4,2026-08-20,2026-09-01,baixa de pagamento | boleto/2a via | outros
+CT-1a0c87e297,varejo,(nao identificado),slack,3,0,3,2026-08-27,2026-09-01,boleto/2a via
+CT-1d5f5759f5,cliente (citado pelo varejo),Top Moveis,whatsapp,0,3,3,2026-08-03,2026-08-04,outros
+CT-2d3a41ff65,cliente / varejo,(nao identificado),slack,3,0,3,2026-06-10,2026-09-02,cadastro/dados | codigo de compra | outros
+CT-424c3,varejo (participante do grupo),Novo Lar,whatsapp,0,3,3,2026-06-11,2026-07-06,
+CT-550c109284,cliente,(nao identificado),slack,3,0,3,2026-07-06,2026-08-06,baixa de pagamento
+CT-5d77ee9332,cliente / cliente (citado pelo varejo),Sipolatti,ambos,2,1,3,2026-08-19,2026-09-01,baixa de pagamento | outros
+CT-86c199056b,cliente (citado pelo varejo),Top Moveis,whatsapp,0,3,3,2026-08-03,2026-08-04,outros
+CT-8dcf295c87,varejo,(nao identificado),slack,3,0,3,2026-07-24,2026-07-31,acesso/senha | cadastro/dados
+CT-b033004f36,varejo,(nao identificado),slack,3,0,3,2026-08-26,2026-08-31,boleto/2a via | codigo de compra
+CT-0edbb8a588,varejo,(nao identificado),slack,2,0,2,2026-08-31,2026-09-01,codigo de compra | outros
+CT-16c9798efd,institucional / canal divulgado,Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,numero divulgado no grupo | outros
+CT-27372,varejo (participante do grupo),Baianao,whatsapp,0,2,2,2026-05-29,2026-05-29,
+CT-27455,varejo (participante do grupo),Novo Lar,whatsapp,0,2,2,2026-06-30,2026-06-30,
+CT-2c7331c7fc,cliente,(nao identificado),slack,2,0,2,2026-07-20,2026-07-24,cadastro/dados | telefone/vinculo
+CT-3066b46bc7,cliente,(nao identificado),slack,2,0,2,2026-06-13,2026-07-31,cadastro/dados | telefone/vinculo
+CT-3073d26e86,cliente (citado pelo varejo),Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,outros
+CT-337fc3edcd,cliente (citado pelo varejo),Novo Mundo,whatsapp,0,2,2,2026-08-25,2026-08-25,acesso/senha | outros
+CT-33944c20fb,cliente (citado pelo varejo),Novo Mundo,whatsapp,0,2,2,2026-08-25,2026-08-25,acesso/senha | outros
+CT-369c88ddb3,varejo,(nao identificado),slack,2,0,2,2026-08-27,2026-08-31,boleto/2a via
+CT-436ea82a89,varejo,(nao identificado),slack,2,0,2,2026-08-26,2026-08-28,boleto/2a via
+CT-4602d5f165,institucional / canal divulgado,Mega Vintao,whatsapp,0,2,2,2026-07-08,2026-07-09,numero divulgado no grupo | outros
+CT-7c642,varejo (participante do grupo),Baianao,whatsapp,0,2,2,2026-06-25,2026-06-25,
+CT-821d5d24da,cliente (citado pelo varejo),Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,outros
+CT-88d997a5a6,cliente / varejo,(nao identificado),slack,2,0,2,2026-08-01,2026-09-02,codigo de compra | outros
+CT-9340266384,institucional / canal divulgado,Solar Moveis,whatsapp,0,2,2,2026-05-18,2026-05-19,numero divulgado no grupo | outros
+CT-9acf09a9fa,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,2,2,2026-08-18,2026-08-19,outros
+CT-a409de1c19,cliente / cliente (citado pelo varejo),Sipolatti,ambos,1,1,2,2026-07-31,2026-07-31,cadastro/dados | outros
+CT-aee5cff260,varejo,(nao identificado),slack,2,0,2,2026-09-02,2026-09-02,boleto/2a via
+CT-b469530b11,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,2,2,2026-07-08,2026-07-09,outros
+CT-b9ce404534,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,2,2,2026-08-18,2026-08-19,outros
+CT-ccf0e34b65,cliente / cliente (citado pelo varejo),Sipolatti,ambos,1,1,2,2026-09-01,2026-09-01,baixa de pagamento | outros
+CT-e98dc,varejo (participante do grupo),Novo Lar,whatsapp,0,2,2,2026-07-06,2026-07-06,
+CT-ed21f202e6,cliente / varejo,(nao identificado),slack,2,0,2,2026-07-07,2026-07-08,cancelamento | outros
+CT-00f855e440,cliente,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,baixa de pagamento
+CT-0223222678,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,acesso/senha
+CT-047d96da9e,cliente,(nao identificado),slack,1,0,1,2026-07-13,2026-07-13,outros
+CT-04a080a854,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,boleto/2a via
+CT-059cdb545d,cliente,(nao identificado),slack,1,0,1,2026-07-23,2026-07-23,baixa de pagamento
+CT-05f8b72936,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,credito/limite
+CT-060464122a,cliente (citado pelo varejo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-0740b27ab0,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-08-22,2026-08-22,outros
+CT-075c3df984,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-16,2026-05-16,erro/instabilidade
+CT-0789356627,cliente,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,credito/limite
+CT-07aa4dd83d,cliente,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,telefone/vinculo
+CT-08ff8b5258,cliente (citado pelo varejo),Novo Lar,whatsapp,0,1,1,2026-05-16,2026-05-16,outros
+CT-0b5db392b2,cliente,(nao identificado),slack,1,0,1,2026-06-06,2026-06-06,telefone/vinculo
+CT-1059a6acde,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,cadastro/dados
+CT-114a778c7e,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-03,2026-06-03,outros
+CT-116fee1972,cliente,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,telefone/vinculo
+CT-13660dd9db,varejo,(nao identificado),slack,1,0,1,2026-07-15,2026-07-15,codigo de compra
+CT-1369263238,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,baixa de pagamento
+CT-13ee3879e7,cliente,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,codigo de compra
+CT-1470f48088,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,baixa de pagamento
+CT-17f733fc8a,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,telefone/vinculo
+CT-1827e7ac40,cliente,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,acesso/senha
+CT-184bbce717,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-16,2026-05-16,erro/instabilidade
+CT-1aab37e10d,cliente,(nao identificado),slack,1,0,1,2026-06-16,2026-06-16,telefone/vinculo
+CT-1acc4295a1,cliente,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,acesso/senha
+CT-1b1c88343c,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,outros
+CT-1bc0467507,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,1,1,2026-08-07,2026-08-07,outros
+CT-1c0ae86c5f,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,boleto/2a via
+CT-1c2c64e1b7,cliente (citado pelo varejo),Mag Duarte,whatsapp,0,1,1,2026-08-07,2026-08-07,outros
+CT-1d361fcdc8,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-09,2026-06-09,outros
+CT-1e567c43e2,cliente,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,credito/limite
+CT-1e6ed17a14,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,telefone/vinculo
+CT-1efba04ff3,varejo,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,cancelamento
+CT-1f054f9691,cliente (citado pelo varejo),Solar Moveis,whatsapp,0,1,1,2026-08-06,2026-08-06,outros
+CT-1f7cf1f264,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-30,2026-07-30,outros
+CT-1fd1d86207,cliente,(nao identificado),slack,1,0,1,2026-07-04,2026-07-04,cadastro/dados
+CT-20c29bb659,cliente,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,telefone/vinculo
+CT-2102cb4fea,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,baixa de pagamento
+CT-21249c34bc,varejo,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,codigo de compra
+CT-216c5da5ae,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,cancelamento
+CT-21b0856804,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-08,2026-07-08,outros
+CT-21baa307b8,cliente,(nao identificado),slack,1,0,1,2026-06-23,2026-06-23,telefone/vinculo
+CT-22825e6037,varejo,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,cancelamento
+CT-22fb5d1ed8,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-23587,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,
+CT-2587dfdbda,cliente,(nao identificado),slack,1,0,1,2026-07-07,2026-07-07,telefone/vinculo
+CT-263800324d,cliente,(nao identificado),slack,1,0,1,2026-07-16,2026-07-16,telefone/vinculo
+CT-26c32d2b6b,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-25,2026-08-25,outros
+CT-271e7eb09d,cliente,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,telefone/vinculo
+CT-28fdb52e9d,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-08-14,2026-08-14,comercial | numero divulgado no grupo
+CT-2a517b0c5b,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo de compra
+CT-2aad560371,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-19,2026-06-19,outros
+CT-2e85838231,varejo,(nao identificado),slack,1,0,1,2026-07-02,2026-07-02,cancelamento
+CT-2fa32bbee0,cliente,(nao identificado),slack,1,0,1,2026-06-16,2026-06-16,cancelamento
+CT-2fa797d5cc,varejo,(nao identificado),slack,1,0,1,2026-08-29,2026-08-29,outros
+CT-302c0f62f6,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-05,2026-08-05,outros
+CT-314e6c1320,cliente,(nao identificado),slack,1,0,1,2026-07-21,2026-07-21,telefone/vinculo
+CT-3163560356,varejo,(nao identificado),slack,1,0,1,2026-07-24,2026-07-24,acesso/senha
+CT-31c549d894,varejo,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,baixa de pagamento
+CT-3461cdfebb,varejo,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,cadastro/dados
+CT-3479d6b3d6,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,telefone/vinculo
+CT-35c7e637dc,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-20,2026-05-20,outros
+CT-36cafbb555,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-23,2026-05-23,outros
+CT-3829045ef0,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,outros
+CT-383ae25db7,varejo,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,boleto/2a via
+CT-38bfe21410,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,cancelamento
+CT-391128f68d,indefinido,(nao identificado),slack,1,0,1,2026-07-15,2026-07-15,outros
+CT-39c2f16c75,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-31,2026-07-31,outros
+CT-3a0e9b14bb,cliente,(nao identificado),slack,1,0,1,2026-08-10,2026-08-10,baixa de pagamento
+CT-3a9692ceaf,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,telefone/vinculo
+CT-3bd825d0b3,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-09-03,2026-09-03,outros
+CT-3be38ae298,cliente,(nao identificado),slack,1,0,1,2026-07-13,2026-07-13,cadastro/dados
+CT-3c91f2a5bc,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo de compra
+CT-3c9cd90488,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-07-08,2026-07-08,numero divulgado no grupo | outros
+CT-3f9d7e37c0,varejo,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,cancelamento
+CT-3fc86520ad,cliente,(nao identificado),slack,1,0,1,2026-06-29,2026-06-29,credito/limite
+CT-4032b42989,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,boleto/2a via
+CT-41da71a3ae,cliente (citado pelo varejo),10&Cia,whatsapp,0,1,1,2026-07-27,2026-07-27,outros
+CT-436b94f987,cliente,(nao identificado),slack,1,0,1,2026-08-21,2026-08-21,codigo de compra
+CT-43e79092d2,cliente,(nao identificado),slack,1,0,1,2026-09-01,2026-09-01,outros
+CT-44e20d6c56,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,outros
+CT-45b1f8eb63,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,outros
+CT-46a4c48de4,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,telefone/vinculo
+CT-47d90ca8e7,varejo,(nao identificado),slack,1,0,1,2026-08-24,2026-08-24,boleto/2a via
+CT-482e7baeab,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-21,2026-08-21,cadastro/dados
+CT-4a956692ec,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-01,2026-08-01,outros
+CT-4c438ff832,cliente,(nao identificado),slack,1,0,1,2026-07-08,2026-07-08,codigo de compra
+CT-4df4e0bcdd,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-4e14bb6c9f,indefinido,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto/2a via
+CT-50495faf55,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-50a70e7e05,varejo,(nao identificado),slack,1,0,1,2026-08-21,2026-08-21,outros
+CT-50da2f3855,cliente,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,credito/limite
+CT-51a8e9d3a3,cliente,(nao identificado),slack,1,0,1,2026-08-17,2026-08-17,cadastro/dados
+CT-520221db04,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto/2a via
+CT-52532f2e23,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,baixa de pagamento
+CT-53dca,varejo (participante do grupo),Novo Lar,whatsapp,0,1,1,2026-06-30,2026-06-30,
+CT-54a5d5243b,varejo,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,cancelamento
+CT-54d0cc6740,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-55288744ee,varejo,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,baixa de pagamento
+CT-55affa48b2,cliente,(nao identificado),slack,1,0,1,2026-06-23,2026-06-23,codigo de compra
+CT-56830884ae,varejo,(nao identificado),slack,1,0,1,2026-08-12,2026-08-12,cancelamento
+CT-56c123dac8,cliente (citado pelo varejo),Top Moveis,whatsapp,0,1,1,2026-08-04,2026-08-04,outros
+CT-58f573cc53,varejo,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,cancelamento
+CT-5b0ab75926,cliente,(nao identificado),slack,1,0,1,2026-09-01,2026-09-01,baixa de pagamento
+CT-5ba13a9b0d,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-31,2026-07-31,outros
+CT-5c6b99771a,varejo,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto/2a via
+CT-5caf1baefa,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,boleto/2a via
+CT-5da56f8c68,cliente,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,telefone/vinculo
+CT-5f475be4c2,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-05-14,2026-05-14,outros
+CT-5f4e7f285b,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone/vinculo
+CT-5f6fca14ac,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,credito/limite
+CT-5f9c51e3ef,cliente,(nao identificado),slack,1,0,1,2026-07-14,2026-07-14,telefone/vinculo
+CT-61f270e4b1,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,boleto/2a via
+CT-63afaf26fb,cliente,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,cancelamento
+CT-63fad700e7,cliente,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,telefone/vinculo
+CT-645031e9f2,varejo,(nao identificado),slack,1,0,1,2026-06-24,2026-06-24,outros
+CT-64a729e0c5,cliente (citado pelo varejo),Novo Mundo,whatsapp,0,1,1,2026-08-21,2026-08-21,baixa de pagamento
+CT-64f8860dd2,cliente (citado pelo varejo),10&Cia,whatsapp,0,1,1,2026-07-27,2026-07-27,outros
+CT-65768e6080,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-21,2026-07-21,outros
+CT-6716d81a8f,indefinido,(nao identificado),slack,1,0,1,2026-06-03,2026-06-03,telefone/vinculo
+CT-681415be4a,cliente,(nao identificado),slack,1,0,1,2026-07-15,2026-07-15,credito/limite
+CT-6948a1db93,cliente,(nao identificado),slack,1,0,1,2026-06-30,2026-06-30,telefone/vinculo
+CT-6c6fb4cea3,cliente,(nao identificado),slack,1,0,1,2026-06-08,2026-06-08,telefone/vinculo
+CT-6ccb84714b,cliente (citado pelo varejo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-6dac7,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,
+CT-6e37a821d3,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-29,2026-05-29,outros
+CT-70e4d9711a,cliente,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,boleto/2a via
+CT-7295305703,cliente,(nao identificado),slack,1,0,1,2026-07-14,2026-07-14,telefone/vinculo
+CT-74a0dda597,cliente,(nao identificado),slack,1,0,1,2026-08-13,2026-08-13,boleto/2a via
+CT-75a80504bf,varejo,(nao identificado),slack,1,0,1,2026-08-28,2026-08-28,boleto/2a via
+CT-760e3ca837,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto/2a via
+CT-7648b3da1a,varejo,(nao identificado),slack,1,0,1,2026-07-07,2026-07-07,cancelamento
+CT-78ecd45f6c,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-29,2026-07-29,outros
+CT-790d06df80,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,cancelamento
+CT-7ce4b03557,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,baixa de pagamento
+CT-7d37c37065,cliente,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,credito/limite
+CT-7df9d0b511,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto/2a via
+CT-7f70f06679,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-31,2026-07-31,outros
+CT-80f30f684a,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-19,2026-06-19,outros
+CT-815e9d1d3e,cliente,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,telefone/vinculo
+CT-818830b544,cliente,(nao identificado),slack,1,0,1,2026-06-11,2026-06-11,credito/limite
+CT-81e87ba3c2,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-825c93474b,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-828556ecc5,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-82dc40a0ea,cliente (citado pelo varejo),Policred,whatsapp,0,1,1,2026-06-05,2026-06-05,outros
+CT-83b2dcf713,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-08,2026-08-08,outros
+CT-83e966f6c4,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,boleto/2a via
+CT-8449c0d11a,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,outros
+CT-846a2d8fe3,cliente (citado pelo varejo),Sipolatti,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-87ee56d299,indefinido,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,acesso/senha
+CT-8823612a12,indefinido,(nao identificado),slack,1,0,1,2026-08-25,2026-08-25,baixa de pagamento
+CT-8b150a8313,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,outros
+CT-8be65114e4,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,outros
+CT-8c130b7a44,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,cadastro/dados
+CT-8cb5023279,varejo,(nao identificado),slack,1,0,1,2026-08-31,2026-08-31,boleto/2a via
+CT-8e18650360,cliente,(nao identificado),slack,1,0,1,2026-07-08,2026-07-08,outros
+CT-90d336799f,cliente,(nao identificado),slack,1,0,1,2026-07-22,2026-07-22,outros
+CT-91508,varejo (participante do grupo),Novo Lar,whatsapp,0,1,1,2026-05-16,2026-05-16,
+CT-921828c248,varejo,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,boleto/2a via
+CT-9257f56a47,varejo,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,baixa de pagamento
+CT-929153d8d6,cliente (citado pelo varejo),Novo Lar,whatsapp,0,1,1,2026-06-30,2026-06-30,outros
+CT-9484b738ad,cliente (citado pelo varejo),Novo Mundo,whatsapp,0,1,1,2026-08-28,2026-08-28,baixa de pagamento
+CT-984008d889,cliente (citado pelo varejo),Mag Duarte,whatsapp,0,1,1,2026-05-20,2026-05-20,comercial
+CT-98cfe37686,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone/vinculo
+CT-99da207638,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-02,2026-07-02,outros
+CT-9a156a63d0,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,outros
+CT-9b3187b3e8,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-30,2026-07-30,outros
+CT-9b52faa316,cliente,(nao identificado),slack,1,0,1,2026-07-29,2026-07-29,outros
+CT-9b563b3ef8,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,1,1,2026-08-14,2026-08-14,comercial
+CT-9bf998e3fe,varejo,(nao identificado),slack,1,0,1,2026-08-27,2026-08-27,boleto/2a via
+CT-9cda1e7ba6,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,boleto/2a via
+CT-9d0dee9a65,varejo,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,boleto/2a via
+CT-9dfd5655cf,varejo,(nao identificado),slack,1,0,1,2026-07-24,2026-07-24,outros
+CT-9e3b6dc887,indefinido,(nao identificado),slack,1,0,1,2026-07-20,2026-07-20,cadastro/dados
+CT-9e77cff4b5,varejo,(nao identificado),slack,1,0,1,2026-08-05,2026-08-05,codigo de compra
+CT-9ea6be8878,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-15,2026-06-15,outros
+CT-9fbad852bd,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-10,2026-08-10,outros
+CT-9fce916046,cliente,(nao identificado),slack,1,0,1,2026-06-15,2026-06-15,boleto/2a via
+CT-9fe53a704e,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,telefone/vinculo
+CT-9ff33d3c03,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,boleto/2a via
+CT-a0acd0dbb4,varejo,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,outros
+CT-a0b1cf3d74,indefinido,(nao identificado),slack,1,0,1,2026-08-29,2026-08-29,cancelamento
+CT-a0c9e66947,varejo,(nao identificado),slack,1,0,1,2026-06-19,2026-06-19,cancelamento
+CT-a84349478a,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,outros
+CT-a8ca84f52f,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-31,2026-07-31,outros
+CT-a9983982cf,cliente,(nao identificado),slack,1,0,1,2026-07-25,2026-07-25,outros
+CT-aab264a33d,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,outros
+CT-ac1e92810d,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto/2a via
+CT-ac291b47db,cliente,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,codigo de compra
+CT-acf60d82c8,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,outros
+CT-ad3df6f071,cliente,(nao identificado),slack,1,0,1,2026-09-01,2026-09-01,acesso/senha
+CT-adc872769b,varejo,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,cadastro/dados
+CT-ae0edf40b2,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,outros
+CT-aecda3b1a4,varejo,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,acesso/senha
+CT-b0589c292f,cliente,(nao identificado),slack,1,0,1,2026-07-02,2026-07-02,telefone/vinculo
+CT-b202e3c937,cliente,(nao identificado),slack,1,0,1,2026-06-10,2026-06-10,telefone/vinculo
+CT-b31ab9beb6,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-08,2026-07-08,outros
+CT-b559cace16,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-31,2026-07-31,outros
+CT-b67637d975,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,cancelamento
+CT-b6f91d475a,cliente,(nao identificado),slack,1,0,1,2026-06-10,2026-06-10,credito/limite
+CT-b92fc9ed61,cliente,(nao identificado),slack,1,0,1,2026-08-25,2026-08-25,telefone/vinculo
+CT-ba91d9c5df,cliente,(nao identificado),slack,1,0,1,2026-06-25,2026-06-25,telefone/vinculo
+CT-bbeb5cc9e5,varejo,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,boleto/2a via
+CT-bc13119536,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,cancelamento
+CT-bc3fa624f7,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-19,2026-08-19,outros
+CT-bcd9abfa30,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,telefone/vinculo
+CT-bf052ade19,varejo,(nao identificado),slack,1,0,1,2026-08-08,2026-08-08,codigo de compra
+CT-bf6bdd390a,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-22,2026-06-22,outros
+CT-c0d57f99fd,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-01,2026-08-01,outros
+CT-c10e571381,varejo,(nao identificado),slack,1,0,1,2026-08-01,2026-08-01,codigo de compra
+CT-c1f6581c7f,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,cadastro/dados
+CT-c37fd47941,cliente,(nao identificado),slack,1,0,1,2026-06-30,2026-06-30,telefone/vinculo
+CT-c381c4cbc0,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-31,2026-08-31,outros
+CT-c3ce634f73,varejo,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,acesso/senha
+CT-c7014e6821,cliente,(nao identificado),slack,1,0,1,2026-07-01,2026-07-01,telefone/vinculo
+CT-c79620b95b,cliente,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,boleto/2a via
+CT-c7da76829a,varejo,(nao identificado),slack,1,0,1,2026-06-09,2026-06-09,acesso/senha
+CT-c86beaf067,varejo,(nao identificado),slack,1,0,1,2026-07-30,2026-07-30,boleto/2a via
+CT-c8a16139a6,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,telefone/vinculo
+CT-cb97db2344,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-06-11,2026-06-11,outros
+CT-cce17a6d37,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-20,2026-07-20,outros
+CT-cd0b4ec48e,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,boleto/2a via
+CT-cd4eba02f9,cliente,(nao identificado),slack,1,0,1,2026-08-19,2026-08-19,baixa de pagamento
+CT-d0b06ae7db,varejo,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,boleto/2a via
+CT-d5694ef943,cliente (citado pelo varejo),Novo Lar,whatsapp,0,1,1,2026-06-02,2026-06-02,outros
+CT-d5d4b3077e,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,boleto/2a via
+CT-d640948fb0,cliente (citado pelo varejo),CVLB,whatsapp,0,1,1,2026-07-16,2026-07-16,outros
+CT-d663218ab3,cliente,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,telefone/vinculo
+CT-d7084c5874,cliente,(nao identificado),slack,1,0,1,2026-08-26,2026-08-26,boleto/2a via
+CT-d7614db445,cliente,(nao identificado),slack,1,0,1,2026-08-11,2026-08-11,telefone/vinculo
+CT-d821439dba,cliente,(nao identificado),slack,1,0,1,2026-08-06,2026-08-06,acesso/senha
+CT-d853279c1d,cliente (citado pelo varejo),Mag Duarte,whatsapp,0,1,1,2026-08-07,2026-08-07,outros
+CT-d8838de774,cliente (citado pelo varejo),Mini Preco,whatsapp,0,1,1,2026-05-14,2026-05-14,outros
+CT-d9dd493ec1,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-20,2026-07-20,outros
+CT-da6030eb56,institucional / canal divulgado,Mega Vintao,whatsapp,0,1,1,2026-07-07,2026-07-07,numero divulgado no grupo | outros
+CT-db205,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-05-30,2026-05-30,
+CT-dc47f478de,indefinido,(nao identificado),slack,1,0,1,2026-06-03,2026-06-03,telefone/vinculo
+CT-dcf9037840,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,1,1,2026-07-08,2026-07-08,outros
+CT-dd699ab2ac,cliente (citado pelo varejo),Sipolatti,whatsapp,0,1,1,2026-07-03,2026-07-03,outros
+CT-ddbdd8baf7,cliente,(nao identificado),slack,1,0,1,2026-08-14,2026-08-14,telefone/vinculo
+CT-dde4fb8d2e,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,cadastro/dados
+CT-de51415bba,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-31,2026-08-31,outros
+CT-df0f3f4d27,cliente,(nao identificado),slack,1,0,1,2026-07-06,2026-07-06,baixa de pagamento
+CT-dfa12,varejo (participante do grupo),Baianao,whatsapp,0,1,1,2026-08-18,2026-08-18,
+CT-dfbb4267ca,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-27,2026-08-27,outros
+CT-dfc9540529,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,erro/instabilidade
+CT-e14016fc5b,cliente,(nao identificado),slack,1,0,1,2026-08-10,2026-08-10,telefone/vinculo
+CT-e2483aa9e3,varejo,(nao identificado),slack,1,0,1,2026-06-11,2026-06-11,codigo de compra
+CT-e2d76af732,cliente,(nao identificado),slack,1,0,1,2026-06-27,2026-06-27,telefone/vinculo
+CT-e3ac5568b6,cliente,(nao identificado),slack,1,0,1,2026-06-05,2026-06-05,telefone/vinculo
+CT-e3b81a4755,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,boleto/2a via
+CT-e3cfd65c4f,cliente,(nao identificado),slack,1,0,1,2026-08-07,2026-08-07,credito/limite
+CT-e46b9889f5,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-08-08,2026-08-08,outros
+CT-e491ab7588,cliente,(nao identificado),slack,1,0,1,2026-07-10,2026-07-10,credito/limite
+CT-e648d0e816,cliente,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,boleto/2a via
+CT-e692e860e7,cliente (citado pelo varejo),Mega Vintao,whatsapp,0,1,1,2026-07-07,2026-07-07,outros
+CT-e70e84033f,cliente,(nao identificado),slack,1,0,1,2026-08-04,2026-08-04,baixa de pagamento
+CT-e74f252ebd,cliente,(nao identificado),slack,1,0,1,2026-07-03,2026-07-03,baixa de pagamento
+CT-e7a988763b,varejo,(nao identificado),slack,1,0,1,2026-08-27,2026-08-27,boleto/2a via
+CT-e8951ee535,cliente,(nao identificado),slack,1,0,1,2026-06-22,2026-06-22,telefone/vinculo
+CT-e92d9fe20d,cliente,(nao identificado),slack,1,0,1,2026-07-31,2026-07-31,acesso/senha
+CT-e931904a7f,cliente,(nao identificado),slack,1,0,1,2026-09-03,2026-09-03,cadastro/dados
+CT-ecdfe839d8,varejo,(nao identificado),slack,1,0,1,2026-07-28,2026-07-28,telefone/vinculo
+CT-f27fb58c32,cliente,(nao identificado),slack,1,0,1,2026-07-09,2026-07-09,outros
+CT-f2933953e9,cliente,(nao identificado),slack,1,0,1,2026-08-15,2026-08-15,cadastro/dados
+CT-f42edd09f1,varejo,(nao identificado),slack,1,0,1,2026-06-24,2026-06-24,boleto/2a via
+CT-f4c332678d,cliente (citado pelo varejo),Novo Lar,whatsapp,0,1,1,2026-07-06,2026-07-06,outros
+CT-f4ea7dc874,cliente,(nao identificado),slack,1,0,1,2026-08-18,2026-08-18,baixa de pagamento
+CT-f540fd5c18,varejo,(nao identificado),slack,1,0,1,2026-09-02,2026-09-02,boleto/2a via
+CT-f7e387d9cd,indefinido,(nao identificado),slack,1,0,1,2026-07-17,2026-07-17,outros
+CT-f7e9e38f49,cliente,(nao identificado),slack,1,0,1,2026-06-12,2026-06-12,telefone/vinculo
+CT-f8c66d4edc,varejo,(nao identificado),slack,1,0,1,2026-08-13,2026-08-13,codigo de compra
+CT-f909a412a1,cliente,(nao identificado),slack,1,0,1,2026-07-16,2026-07-16,baixa de pagamento
+CT-f9dc5ded24,cliente,(nao identificado),slack,1,0,1,2026-06-17,2026-06-17,telefone/vinculo
+CT-fac3e00a28,cliente,(nao identificado),slack,1,0,1,2026-07-21,2026-07-21,telefone/vinculo
+CT-fb1c8bd45d,varejo,(nao identificado),slack,1,0,1,2026-08-03,2026-08-03,acesso/senha
+CT-fb6e3d98f6,cliente,(nao identificado),slack,1,0,1,2026-06-18,2026-06-18,telefone/vinculo
+CT-fbeccbbe29,cliente,(nao identificado),slack,1,0,1,2026-06-18,2026-06-18,boleto/2a via
+CT-febeee7d9f,cliente (citado pelo varejo),Novo Mundo,whatsapp,0,1,1,2026-08-18,2026-08-18,erro/instabilidade
+CT-ff4d768383,cliente,(nao identificado),slack,1,0,1,2026-07-27,2026-07-27,telefone/vinculo
+CT-ff9d18599a,cliente (citado pelo varejo),Baianao,whatsapp,0,1,1,2026-07-27,2026-07-27,cadastro/dados
