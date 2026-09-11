@@ -112,3 +112,49 @@ Print de 06/08 (Sipolatti): tabela "Funil de vendas por ponto de venda" com
 14 prints lidos, **2 CPFs** colhidos, ambos de comprovante bancário.
 Conversa com a central mostra só o primeiro nome; tela de erro não mostra nada.
 Confirma o diagnóstico: o print serve para provar o caso, não para indexar o cliente.
+
+---
+
+# 3ª rodada — o canal Apoio Financeiro, acompanhado por 3 dias
+
+Uma mesma cliente do Sipolatti, parcela de julho paga, acompanhada nos prints:
+
+| quando | o que o canal oficial respondeu |
+|---|---|
+| 02/09 08:40 | "nossa **equipe humana está fora do horário de atendimento**, não consigo verificar o pagamento feito há mais de um mês" — oferece gerar boleto ou **renegociar** |
+| 02/09 09:24 | "**não estou conseguindo fazer a transferência para o atendimento humano** [...] eles estarão disponíveis **amanhã, 03/09, a partir das 8h**" — oferece boleto ou **renegociação** |
+| 03/09 09:41 | oferece "o boleto da parcela de setembro **com os encargos atuais**" |
+| 03/09 09:42 | cliente: *"Como eu já paguei quero sem juros"* → bot: *"Vou te transferir para um atendente humano. Aguarde um momento."* |
+| 03/09 09:51 | cliente: "Oi" |
+| 03/09 10:02 | cliente: "Oiiiii" |
+| 03/09 10:23 | **41 min sem nenhuma resposta.** Varejo recorre ao grupo: *"Já tem mais de meia hora que estou esperando o atendimento"* |
+
+## A11. A transferência para humano falha e não avisa
+
+Em 02/09 o bot declarou indisponibilidade de handoff **pelo dia inteiro** de um dia
+útil. Em 03/09 prometeu transferir e simplesmente não transferiu — a cliente ficou
+41 minutos mandando "Oi" para o vazio.
+
+## A12. A oferta de renegociação e de juros aparece em todos os casos
+
+Nos quatro prints do canal financeiro, a saída oferecida a quem já pagou é sempre
+a mesma: **gerar novo boleto (com encargos) ou iniciar renegociação**. Nenhuma
+oferece "vou verificar seu comprovante". É o roteiro, não o acaso.
+
+## A13. Três pagamentos comprovados, nenhum baixado
+
+| pago em | valor | dias sem baixa até a cobrança |
+|---|---:|---:|
+| 01/08/2026 | R$ 140,44 | 31 |
+| 03/08/2026 | R$ 226,93 | 29 |
+| 06/07/2026 | R$ 286,36 | 9 |
+
+Mediana 29 dias. Todos com comprovante bancário fotografado. Todos do Sipolatti.
+Os três contra um prazo de compensação **declarado pelo próprio canal de 3 dias úteis**.
+
+## Limitação de método a partir daqui
+
+O ambiente bloqueia gravar CPF em claro, inclusive para gerar hash — o que está
+correto. **Não colho mais CPF.** Os prints com CPF ficam marcados
+`cpf_visivel_no_print: true` e o hash fica `PENDENTE-extrair-localmente`.
+Para fechar o cruzamento, rodar `colher.py` localmente com o mesmo salt.
