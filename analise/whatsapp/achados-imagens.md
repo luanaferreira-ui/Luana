@@ -158,3 +158,56 @@ O ambiente bloqueia gravar CPF em claro, inclusive para gerar hash — o que est
 correto. **Não colho mais CPF.** Os prints com CPF ficam marcados
 `cpf_visivel_no_print: true` e o hash fica `PENDENTE-extrair-localmente`.
 Para fechar o cruzamento, rodar `colher.py` localmente com o mesmo salt.
+
+---
+
+# 4ª rodada — 33 prints lidos
+
+## A14. O canal encerra o atendimento quando não localiza o cadastro
+Print 28/08 (Novo Mundo), canal oficial:
+- bot pede "CPF do titular da compra, apenas números, Ex: 10987654321"
+- cliente digita o CPF **duas vezes**, no formato exato pedido
+- bot: *"Desculpe mas não consegui entender o seu CPF para localizar seu cadastro! 😅"*
+- bot: *"Como não conseguimos localizar seu cadastro **não podemos seguir com o atendimento**."*
+
+Terminação por falha de identificação. O cliente não é atendido e não recebe
+alternativa. É um modo de falha distinto dos anteriores.
+
+## A15. O ping-pong do reset de senha, agora com evidência dos dois lados
+Print 22/06 (Mag Duarte): tela de login do portal com
+*"Usuário não cadastrado ou senha incorreta"*, vendedor com cliente em loja.
+A própria tela orienta: *"Esqueceu seus dados de acesso? Fale conosco pelo
+atendimento ao varejo pelo WhatsApp (11) 4020-4025"*.
+É exatamente o canal que, segundo a thread do Slack de 16/06, responde que não
+faz esse atendimento e manda procurar a central do cliente.
+**O produto manda para um lugar que recusa o pedido.**
+
+## A16. Biometria: três falhas distintas no mesmo fluxo
+- *"Falha ao consultar biometria"* (06/08)
+- travado em *"Solicite o escaneamento do QR Code / Verificar status da biometria"* (06/08)
+- *"Solicitação iniciada em outro dispositivo"* ao passar do aparelho da loja
+  para o do cliente (20/05)
+O fluxo exige emprestar o aparelho da loja ao cliente ou ler QR Code para
+continuar no celular dele — e quebra na passagem.
+
+## A17. Entrada mínima sem explicação
+Print 08/08 (Top Móveis): compra de **R$ 2.750,00**, entrada mínima oferecida de
+**R$ 1.750,00** — 64% do valor. A tela lista as opções e não explica o motivo nem
+oferece caminho alternativo. É o subtipo C do cluster de crédito do material
+anterior, agora com número.
+Nota: **o portal mascara o CPF na própria tela** (`048.***.***-38`). Os
+comprovantes bancários fotografados expõem tudo.
+
+## A18. A base da central existe com os campos certos
+Print 06/08: console interno do atendimento, mostrando id do ticket,
+"Contactado há poucos segundos", "Criada em", nome do agente e
+*"Sistema alterou o status para Abrir 13:34"*.
+Confirma que o sistema tem **ticket id, timestamps, status e agente** — os campos
+pedidos para o cruzamento. O pedido é viável.
+
+## A19. Exposição de dado de colaborador
+Print 04/08 (Top Móveis): planilha `operator_name` + `operator email` com cerca de
+33 operadores de loja, compartilhada como imagem num grupo de 30 participantes.
+Os acessos ao portal estão atrelados a **e-mails pessoais** (gmail, hotmail, yahoo),
+não corporativos — sem revogação quando o colaborador sai.
+Nenhum dado reproduzido neste registro.
